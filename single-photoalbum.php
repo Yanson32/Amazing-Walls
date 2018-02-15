@@ -1,0 +1,51 @@
+<?php
+	get_header();
+	get_sidebar( 'primary' );
+?>
+
+<!-- print the name of the page when in debug mode -->
+<?php aw_print_name('Single-photoalbum.php'); ?>
+<?php //Show album download link ?>
+<?php if(is_user_logged_in() && aw_has_field("Download")) { ?>
+	<div id="single_gallery_button_div">
+		<a class="Button ButtonColor" href=<?php echo amazing_walls_get_custom_field("Download"); ?> download>Download</a>
+	</div>
+<?php }?>
+
+<div class="single_gallery_image_div">
+   
+   
+	<h2><?php global $post; echo get_the_title($post->ID);?></h2>
+	<?php
+	
+  	// Make sure the post has a gallery in it
+ 	if(has_shortcode( $post->post_content, 'gallery' ) )
+	{
+
+    	echo do_shortcode('[gallery]');
+	}
+
+
+    /*//Retrieve all galleries of this post
+ 	$galleries = get_post_galleries_images( $post );
+
+	//Loop through all galleries found
+	foreach( $galleries as $gallery )
+	{
+
+        //Loop through each image in each gallery
+		foreach( $gallery as $image )
+		{
+			echo "<div class=gallery_image><a href=$image ><image class=thumbnail src=$image></a></div>";
+
+		}
+
+	}*/
+      ?>
+</div>
+<div style="clear:left"></div>
+<nav class="post_navigation_menu">
+   <?php wpbeginner_numeric_posts_nav(); ?>
+</nav>
+<?php get_footer(); ?>
+

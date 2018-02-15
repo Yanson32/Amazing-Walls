@@ -1,0 +1,113 @@
+.BodyColor 
+{
+    background-color: black;
+    color: red;
+}
+
+.ButtonColor
+{
+	color:white;
+	border-color:red;
+	background-color: black;
+}
+
+.ButtonColor:hover
+{
+	color:red;
+	border-color:red;
+}
+
+.FooterMenuColor li,
+.MainMenuColor li
+{
+	border-color:red;
+}
+
+.FooterMenuColor a:hover,
+.MainMenuColor a:hover
+{
+	color:red;
+}
+
+.FooterMenuColor a,
+.MainMenuColor a
+{
+    color: white;
+}
+
+
+.SidebarColor
+{
+	background-color: white;
+}
+
+.SidebarColor a 
+{
+    color: black;
+}
+.SidebarColor a:hover 
+{
+    color: red;
+}
+
+.current-menu-item
+{
+	background-color:red;
+}
+
+.current-menu-item:hover > a:hover
+{
+	color: black;
+}
+
+.gallery-item:hover
+{
+	outline-color:red;
+
+}
+
+.gallery-item
+{
+	outline-color:transparent;
+}
+
+.photoalbum:hover
+{
+	outline-color:blue;
+}
+
+.photoalbum
+{
+	outline-color:transparent;
+}
+
+.video:hover
+{
+	outline-color:#58FA58;
+}
+
+.video
+{
+	outline-color:transparent;
+}
+
+.photo:hover
+{
+	outline-color:yellow;
+}
+
+.photo
+{
+	outline-color:transparent;
+}
+
+.HeaderColor
+{
+	background-color: black;
+}
+
+.HeaderContainerColor
+{
+	border-color: grey;
+	color:white;
+}

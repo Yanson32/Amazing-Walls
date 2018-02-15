@@ -1,0 +1,275 @@
+ul
+{
+	list-style-type: none;
+}
+
+#index_all_posts
+{
+}
+.single_gallery_image_div
+{
+	max-width:80%;
+}
+
+/*-------------------------------------------------------General-------------------------------------------------------*/
+/*Button Styling*/
+
+
+.FooterMenu li,
+.MainMenu li,
+.attachment_page_table_ul a,
+.Button
+{
+    	border-style: solid;
+    	border-width: 1px;
+    	border-radius: 5px;
+		text-decoration:none;
+		padding:5px;
+
+}
+.FooterMenu a,
+.MainMenu a,
+.Button a
+{
+	width:100%;
+	height:100%;
+}
+
+#single_gallery_button_div a
+{
+    padding:5px;
+	text-decoration: none;
+}
+.archive_gallery_all_posts,
+.archive_mobile_all_posts,
+.archive_all_posts
+{
+	max-width:80%;
+}
+
+
+.archive_single_post
+{
+	margin:5px;
+    width: auto;
+    float: left;
+}
+
+
+/*Archive Page Main Content*/
+
+
+/*-------------------------------------------------------Sidebar styling-------------------------------------------------------*/
+
+.sidebar {
+    border-radius: 25px;
+    float: right;
+    height: auto;
+    width: 20%;
+    padding: 10px;
+}
+.sidebar ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+
+
+/*CSS for navigation menu at bottom of post page.*/
+
+.post_navigation_menu {
+    text-align: center;
+}
+.post_navigation_menu li a,
+.post_navigation_menu li a:hover,
+.post_navigation_menu li.active a,
+.post_navigation_menu li.disabled {
+    text-decoration: none;
+	color: black;
+}
+.post_navigation_menu li {
+    display: inline;
+}
+.post_navigation_menu li a,
+.post_navigation_menu li a:hover,
+.post_navigation_menu li.active a,
+.post_navigation_menu li.disabled {
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 12px;
+    padding: 0.75rem;
+	background-color:white;
+}
+
+.post_navigation_menu li a:hover,
+.post_navigation_menu li.active a 
+{
+    background-color: red;
+}
+/*-------------------------------------------------------Main Menu-------------------------------------------------------*/
+
+
+.MainMenu {
+    margin-left: 50px;
+    font-size: 2em;
+    padding: 0px;
+    font-weight: bold;
+}
+.MainMenu li {
+
+    display: inline-block;
+    padding: 10px;
+}
+.MainMenu ul {
+    list-style-type: none;
+}
+
+.MainMenu a:link {
+
+    boarder-style: none;
+    text-decoration: none;
+}
+
+
+.FooterMenu {
+    margin-left: 50px;
+    font-size: 1em;
+    padding: 0px;
+    font-weight: bold;
+}
+.FooterMenu li {
+
+    display: inline-block;
+    padding: 10px;
+}
+.FooterMenu ul {
+    list-style-type: none;
+}
+
+.FooterMenu a:link {
+
+    boarder-style: none;
+    text-decoration: none;
+}
+/*-------------------------------------------------------Header File-------------------------------------------------------*/
+
+#search_form
+{
+	margin-right:20px;
+	float:right;
+	font-size: 16px;
+	text-style:none;
+	text-shadow:none;
+}
+
+.header_text 
+{
+
+    text-align: left;
+    font-style: italic;
+    font-size: 4em;
+    font-family: "Times New Roman", Times, serif;
+	text-shadow: 3px 2px red;
+}
+.HeaderDescritionText 
+{
+    text-align: center;
+	text-shadow:none;
+	font-size: 2em;
+}
+
+.HeaderSearch
+{
+	float:right;
+	padding:5px;
+}
+
+.HeaderContainer
+{
+	border-style: outset;
+    border-width: 2px;
+}
+
+/*Attachment page styling*/
+.attachment_page_image 
+{
+    width: 100%;
+    height: 100%;
+}
+.attachment_page_table 
+{
+    padding: 0;
+    width: 50%;
+    margin: auto;
+}
+
+.gallery_image
+{
+	margin:5px;
+    float: left;
+}
+
+.gallery-item
+{
+	float:left;
+	outline-width:5px;
+	outline-style:solid;
+}
+
+
+
+.thumbnail
+{
+    max-width:300px;
+	max-height:150px;
+}
+
+.gallery-icon
+{
+	width:auto;
+	margin:0px;
+	padding:0px;
+}
+
+.portrait
+{
+	width:auto;
+	margin:0px;
+	padding:0px;
+}
+
+h2
+{
+	text-align:center;
+}
+#single_video
+{
+	max-width:50%;
+	
+}
+
+
+.photoalbum
+{
+	outline-width:5px;
+	outline-style:solid
+}
+
+.video
+{
+	outline-width:5px;
+	outline-style:solid
+}
+
+.photo
+{
+	outline-width:5px;
+	outline-style:solid
+}
+
+#ContactForm
+{
+	text-align:center;
+	margin:auto;
+	width:50%;
+}
