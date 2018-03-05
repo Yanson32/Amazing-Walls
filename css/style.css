@@ -1,3 +1,26 @@
+h1
+{
+	font-size: 25px;
+}
+#single-content
+{
+	max-width: 75%;
+	text-align:center;
+}
+
+div.mejs-container
+{
+	clear:none;
+}
+
+div.wp-video
+{
+	margin:auto;
+}
+div#test
+{
+	max-width:75%;
+}
 ul
 {
 	list-style-type: none;
@@ -8,7 +31,7 @@ ul
 }
 .single_gallery_image_div
 {
-	max-width:80%;
+	max-width:75%;
 }
 
 /*-------------------------------------------------------General-------------------------------------------------------*/
@@ -102,7 +125,7 @@ ul
 }
 
 .post_navigation_menu li a:hover,
-.post_navigation_menu li.active a 
+.post_navigation_menu li.active a
 {
     background-color: red;
 }
@@ -162,7 +185,7 @@ ul
 	text-shadow:none;
 }
 
-.header_text 
+.header_text
 {
 
     text-align: left;
@@ -171,7 +194,7 @@ ul
     font-family: "Times New Roman", Times, serif;
 	text-shadow: 3px 2px red;
 }
-.HeaderDescritionText 
+.HeaderDescritionText
 {
     text-align: center;
 	text-shadow:none;
@@ -191,12 +214,12 @@ ul
 }
 
 /*Attachment page styling*/
-.attachment_page_image 
+.attachment_page_image
 {
     width: 100%;
     height: 100%;
 }
-.attachment_page_table 
+.attachment_page_table
 {
     padding: 0;
     width: 50%;
@@ -245,7 +268,7 @@ h2
 #single_video
 {
 	max-width:50%;
-	
+
 }
 
 

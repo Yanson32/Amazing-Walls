@@ -5,9 +5,51 @@
    	require('includes/helpers.php');
     require('includes/AWPlugins/AWPlugins.php');
 
-	
+    // 3. Make Courses posts show up in archive pages
+    add_filter( 'pre_get_posts', 'wpshout_add_custom_post_types_to_query' );
+    function wpshout_add_custom_post_types_to_query( $query ) {
+    	if(
+    		is_archive() &&
+    		$query->is_main_query() &&
+    		empty( $query->query_vars['suppress_filters'] )
+    	) {
+    		$query->set( 'post_type', array(
+    			'post',
+    			'photo',
+          'photoalbum',
+          'video'
+    		) );
+    	}
+    }
+
    add_filter( 'widget_meta_poweredby', '__return_empty_string' );
 
+   // // Deactivate default MediaElement.js styles by WordPress
+   // function remove_mediaelement_styles() {
+   //
+   //         wp_dequeue_style('wp-mediaelement');
+   //         wp_deregister_style('wp-mediaelement');
+   // }
+   // add_action( 'wp_print_styles', 'remove_mediaelement_styles' );
+
+	add_filter( 'pre_get_posts', 'tgm_io_cpt_search' );
+	/**
+	 * This function modifies the main WordPress query to include an array of
+	 * post types instead of the default 'post' post type.
+	 *
+	 * @param object $query  The original query.
+	 * @return object $query The amended query.
+	 */
+	function tgm_io_cpt_search( $query )
+	{
+
+		if ( $query->is_search ) {
+		$query->set( 'post_type', array( 'post', 'photo', 'photoalbum', 'video' ) );
+		}
+
+		return $query;
+
+	}
 
    function get_featured_image_url($size)
    {

@@ -1,26 +1,27 @@
 <?php get_header(); ?>
 <?php get_sidebar( 'primary' ); ?>
 
-
 <!-- print the name of the page when in debug mode -->
 <?php aw_print_name('index.php'); ?>
 
+<!-- The Loop -->
+ <?php if ( have_posts() ) : ?>
+   <?php while ( have_posts() ) : ?>
+     <?php the_post(); ?>
+     <?php get_template_part('/Templates/Parts/post'); ?>
+   <?php endwhile; ?>
+ <?php endif; ?>
 
-
- <!-- Start the Loop. -->
- <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-	<?php get_template_part('/Templates/Parts/post'); ?>
-	<?php endwhile; ?>
- 	<?php endif; ?>
+<!-- Add comments to template -->
+ <?php if ( comments_open() || get_comments_number() ) : ?>
+   <?php comments_template(); ?>
+ <?php endif; ?>
 
 <div style="clear:left"></div>
 
 <!-- Create post navigation menu -->
 <nav class="post_navigation_menu post_navigation_menu_color">
-   <?php amazing_walls_numeric_posts_nav(); ?>
+  <?php global $wp_query; amazing_walls_numeric_posts_nav($wp_query, "Previous", "Next"); ?>
 </nav>
-</br>
-</br>
 
 <?php get_footer(); ?>
