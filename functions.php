@@ -9,7 +9,10 @@
     add_filter( 'pre_get_posts', 'wpshout_add_custom_post_types_to_query' );
     function wpshout_add_custom_post_types_to_query( $query ) {
     	if(
-    		is_archive() &&
+
+        is_search() ||
+        is_category() ||
+    		is_tag() &&
     		$query->is_main_query() &&
     		empty( $query->query_vars['suppress_filters'] )
     	) {
@@ -63,44 +66,6 @@
    	echo "<a href=\"$featured_image_full\"><img src=\"$featured_image_full\" class=\"attachment_page_image\"></a>";
    }
 
-function pw_show_gallery_image_urls( $content ) {
-
- 	global $post;
-
- 	// Only do this on singular items
- 	if( ! is_singular() )
- 		return $content;
-
- 	// Make sure the post has a gallery in it
- 	if( ! has_shortcode( $post->post_content, 'gallery' ) )
- 		return $content;
-
- 	// Retrieve all galleries of this post
- 	$galleries = get_post_galleries_images( $post );
-
-	$image_list = '<ul>';
-
-	// Loop through all galleries found
-	foreach( $galleries as $gallery ) {
-
-		// Loop through each image in each gallery
-		foreach( $gallery as $image ) {
-
-			$image_list .= '<li>' . $image . '</li>';
-
-		}
-
-	}
-
-	$image_list .= '</ul>';
-
-	// Append our image list to the content of our post
-	$content .= $image_list;
-
- 	return $content;
-
- }
- add_filter( 'the_content', 'pw_show_gallery_image_urls' );
 
 
 /******************************************************************************************************************
@@ -210,61 +175,5 @@ $wp_customize->add_setting( 'header_textcolor' , array(
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
 
-
-   if ( ! function_exists( 'shape_comment' ) ) :
-   /**
-    * Template for comments and pingbacks.
-    *
-    * Used as a callback by wp_list_comments() for displaying the comments.
-    *
-    * @since Shape 1.0
-    */
-   function shape_comment( $comment, $args, $depth ) {
-       $GLOBALS['comment'] = $comment;
-       switch ( $comment->comment_type ) :
-           case 'pingback' :
-           case 'trackback' :
-       ?>
-<li class="post pingback">
-   <p><?php _e( 'Pingback:', 'amazing_walls' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'shape' ), ' ' ); ?></p>
-   <?php
-      break;
-      default :
-      ?>
-<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-   <article id="comment-<?php comment_ID(); ?>" class="comment">
-      <footer>
-         <div class="comment-author vcard">
-            <?php echo get_avatar( $comment, 40 ); ?>
-            <?php printf( __( '%s <span class="says">says:</span>', 'shape' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
-         </div>
-         <!-- .comment-author .vcard -->
-         <?php if ( $comment->comment_approved == '0' ) : ?>
-         <em><?php _e( 'Your comment is awaiting moderation.', 'amazing_walls' ); ?></em>
-         <br />
-         <?php endif; ?>
-         <div class="comment-meta commentmetadata">
-            <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
-            <?php
-               /* translators: 1: date, 2: time */
-               printf( __( '%1$s at %2$s', 'shape' ), get_comment_date(), get_comment_time() ); ?>
-            </time></a>
-            <?php edit_comment_link( __( '(Edit)', 'shape' ), ' ' );
-               ?>
-         </div>
-         <!-- .comment-meta .commentmetadata -->
-      </footer>
-      <div class="comment-content"><?php comment_text(); ?></div>
-      <div class="reply">
-         <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-      </div>
-      <!-- .reply -->
-   </article>
-   <!-- #comment-## -->
-   <?php
-      break;
-      endswitch;
-      }
-      endif; // ends check for shape_comment()
 
       ?>

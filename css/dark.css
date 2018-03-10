@@ -1,4 +1,24 @@
-.BodyColor 
+h1
+{
+	color:white;
+}
+
+h2
+{
+  color:white;
+}
+.TagColor a
+{
+  color:white;
+	border-color: red;
+	background-color:transparent;
+}
+.TagColor a:hover
+{
+	color:red;
+}
+
+.BodyColor
 {
     background-color: black;
     color: red;
@@ -41,11 +61,11 @@
 	background-color: white;
 }
 
-.SidebarColor a 
+.SidebarColor a
 {
     color: black;
 }
-.SidebarColor a:hover 
+.SidebarColor a:hover
 {
     color: red;
 }
