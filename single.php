@@ -34,16 +34,17 @@
 		<?php next_post_link(); ?>
 	</div>
 
+	<br style="clear:both">
+
+	<!-- Add comments to template -->
+	<div class="comments">
+		<?php if ( comments_open() || get_comments_number() ) : ?>
+			<?php comments_template(); ?>
+		<?php endif; ?>
+	</div>
+
 </div>
 
 <br style="clear:both">
-
-<!-- Add comments to template -->
-<div class="comments">
-	<?php if ( comments_open() || get_comments_number() ) : ?>
-		<?php comments_template(); ?>
-	<?php endif; ?>
-</div>
-
 
 <?php get_footer(); ?>

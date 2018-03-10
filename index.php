@@ -8,7 +8,11 @@
  <?php if ( have_posts() ) : ?>
    <?php while ( have_posts() ) : ?>
      <?php the_post(); ?>
-     <?php get_template_part('/Templates/Parts/post'); ?>
+     <?php if ( post_password_required() ): ?>
+      <?php get_template_part('/Templates/Parts/locked-post'); ?>
+     <?php else: ?>
+       <?php get_template_part('/Templates/Parts/post'); ?>
+     <?php endif; ?>
    <?php endwhile; ?>
  <?php endif; ?>
 

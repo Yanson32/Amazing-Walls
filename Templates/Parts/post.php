@@ -4,7 +4,6 @@
    	$image = get_the_post_thumbnail_url();
    	$thumb_link =  Get_most_recent_permalink();
    	echo "<a href=$thumb_link><img src=$image></a>";
-   	
+
    	endif; ?>
 </div>
-   	
