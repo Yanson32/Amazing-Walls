@@ -12,10 +12,9 @@
 		<?php if( has_post_thumbnail() ) : ?>
 			<?php echo the_post_thumbnail(); ?>
 		<?php endif; ?>
-		</br>
-		</br>
 	<?php endwhile; ?>
 <?php endif; ?>
+
 
 <!-- Create post navigation menu -->
 <nav class="post_navigation_menu post_navigation_menu_color">
