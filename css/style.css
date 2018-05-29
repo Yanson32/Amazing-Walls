@@ -1,19 +1,42 @@
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#single-body
+{
+	width:75%;
+	margin:10px;
+}
+.comments
+{
+	float:left;
+	width:100%;
+}
+
+html, body
+{
+	min-height:100%;
+}
 
 .Tag a
 {
 	border-style:solid;
 	border-width: 1px;
-	text-decoration: none;
 	border-radius:3px;
+	text-decoration: none;
 	padding:2px;
 	width:100%;
 	height:100%;
 	margin:2px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 #single-content
 {
-	width: 75%;
+	width: 100%;
+	margin:auto;
 	text-align:center;
 	float:left;
 }

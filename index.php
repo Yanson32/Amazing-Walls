@@ -5,6 +5,7 @@
 <?php aw_print_name('index.php'); ?>
 
 <!-- The Loop -->
+<div class="group">
  <?php if ( have_posts() ) : ?>
    <?php while ( have_posts() ) : ?>
      <?php the_post(); ?>
@@ -15,13 +16,12 @@
      <?php endif; ?>
    <?php endwhile; ?>
  <?php endif; ?>
-
+</div>
 <!-- Add comments to template -->
  <?php if ( comments_open() || get_comments_number() ) : ?>
    <?php comments_template(); ?>
  <?php endif; ?>
 
-<div style="clear:left"></div>
 
 <!-- Create post navigation menu -->
 <nav class="post_navigation_menu post_navigation_menu_color">
