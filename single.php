@@ -31,7 +31,7 @@
 			<?php next_post_link(); ?>
 		</div>
 	</div>
-		<!-- Add comments to template -->
+	<!-- Add comments to template -->
 	<div class="comments group">
 		<hr style="width:100%">
 		<?php if ( comments_open() || get_comments_number() ) : ?>

@@ -5,14 +5,14 @@
 	
 	<!-- Alt text set to image title if available -->
 	<?php $alt_text = get_the_title(); ?>
-	<?php if($alt_text == ""): ?>
+	<?php if($alt_text == "" || $alt_text == "Private:"): ?>
 		<?php $alt_text = "Featured Image"; ?>
 	<?php endif; ?>
 
 	<!-- Get the featured image url -->
 	<?php $image = get_the_post_thumbnail_url(); ?>	
 	<?php if(!has_post_thumbnail()) : ?>
-		<?php $image = the_default_featured_image(); ?>
+		<?php $image = the_default_featured_image_url(); ?>
 	<?php endif; ?>
 
 	<!-- get the defined width and height of the post featured image -->

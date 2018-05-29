@@ -1,3 +1,7 @@
+*{
+	padding:0px;
+	margin:0px;
+}
 .group:after {
   content: "";
   display: table;
@@ -12,6 +16,7 @@
 {
 	float:left;
 	width:100%;
+	margin-top:20px;
 }
 
 html, body
@@ -94,6 +99,10 @@ ul.MainMenu li a,
 	padding:0px;
 }
 
+.MainMenu
+{
+	margin:20px;
+}
 #single_gallery_button_div a
 {
     padding:5px;
@@ -138,6 +147,7 @@ ul.MainMenu li a,
 
 .post_navigation_menu {
     text-align: center;
+	margin:20px;
 }
 .post_navigation_menu li a,
 .post_navigation_menu li a:hover,

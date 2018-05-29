@@ -175,14 +175,15 @@ $wp_customize->add_setting( 'header_textcolor' , array(
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
 
-function the_default_featured_image()
+function the_default_featured_image_url()
 {
 	return get_template_directory()."/Assets/Images/Default Post Image.jpg";
 }
 
 function the_lock_post_image_url()
 {
-	get_template_directory()."/Assets/Images/locked.png";
+	return "/Assets/Images";
+	return get_template_directory()."/Assets/Images/locked.png";
 }
 @ini_set('upload_max_size', '64M');
 @ini_set('post_max_size', '256M');
