@@ -8,14 +8,19 @@
 	<header class="HeaderColor">
 
 		<div class="HeaderContainer HeaderContainerColor">
+
+			<div class="header_text">
+				<?php the_custom_logo(); ?>
+				<div id="header-text">
+					<?php bloginfo('name'); ?>
+				</div>
+			</div>
+
+			<div id="header-subtext" class="HeaderDescritionText">
+				<?php bloginfo('description'); ?>
+			</div>
 			<div class="HeaderSearch">
 				<?php get_search_form(); ?>		
-			</div>
-			<div class="header_text">
-				<?php the_custom_logo(); bloginfo('name'); ?>
-			</div>
-			<div class="HeaderDescritionText">
-				<?php bloginfo('description'); ?>
 			</div>
 		</div>
 

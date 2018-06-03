@@ -75,8 +75,9 @@ if ( ! function_exists( 'amazing_walls_enqued' ) )
 {
 	function amazing_walls_enqued()
    	{
-		wp_enqueue_style('customstyle', get_template_directory_uri().'/css/style.css', array(), '1.0.0', 'all');
-		wp_enqueue_style('customstyle', get_template_directory_uri().'/css/format.css', array(), '1.0.0', 'all');
+		wp_enqueue_style('desktop-style', get_template_directory_uri().'/css/style.css', array(), '1.0.0', 'all');
+		wp_enqueue_style('format-style', get_template_directory_uri().'/css/format.css', array(), '1.0.0', 'all');
+		wp_enqueue_style('mobile-style', get_template_directory_uri().'/css/mobile.css', array(), '1.0.0', 'all and (max-width: 600px)');
 		wp_enqueue_script('customjs', get_template_directory_uri().'/js/amazing.js', array(), '1.0.0', true);
 
 		$style = get_option('aw_style');
@@ -102,7 +103,7 @@ if ( ! function_exists( 'amazing_walls_setup' ) )
 
 
    		//adds featuered image support
-   		add_theme_support( 'post-thumbnails' );
+   		add_theme_support( 'post-thumbnail' );
    		set_post_thumbnail_size( 300, 169, true );
    		/*add_image_size("post-thumbnail", 300, 169, true);*/
 

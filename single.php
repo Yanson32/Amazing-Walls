@@ -18,7 +18,7 @@
 						<h1><?php the_title(); ?></h1>
 						<?php the_content(); ?>
 						<div class="Tag TagColor">
-							<?php the_tags(null, ' '); ?>
+							<?php the_tags('<ul class="tags"><li>', '</li><li>', '</li></ul>'); ?>
 						</div>
 				<?php endwhile; ?>
 			<?php endif; ?>

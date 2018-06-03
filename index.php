@@ -5,7 +5,7 @@
 <?php aw_print_name('index.php'); ?>
 
 <!-- The Loop -->
-<div class="group">
+<div id="index-content" class="group">
  <?php if ( have_posts() ) : ?>
    <?php while ( have_posts() ) : ?>
      <?php the_post(); ?>
