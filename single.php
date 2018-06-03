@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 <?php get_sidebar( 'primary' ); ?>
 
-<!-- Exit if password is required -->
-<?php if ( post_password_required() ): ?>
-	<?php return; ?>
-<?php endif; ?>
-
 <!-- print the name of the page when in debug mode -->
 <?php aw_print_name('Single.php'); ?>
+
+<!-- get password if post is locked -->
+<?php if ( post_password_required() ): ?>
+	<?php get_the_password_form(); ?>
+<?php endif; ?>
 
 <div id="single-body" class="group">
 	<div id="single-content">
@@ -15,11 +15,19 @@
 			<?php if ( have_posts() ) : ?>
 				<?php while ( have_posts() ) : ?>
 						<?php the_post(); ?>
-						<h1><?php the_title(); ?></h1>
+
+						<!-- Don't show the title when password protected -->
+						<?php if(!post_password_required()): ?>
+							<h1><?php the_title(); ?></h1>
+						<?php endif; ?>
 						<?php the_content(); ?>
-						<div class="Tag TagColor">
-							<?php the_tags('<ul class="tags"><li>', '</li><li>', '</li></ul>'); ?>
-						</div>
+
+						<!-- Don't show tags when password protected -->
+						<?php if(!post_password_required()): ?>
+							<div class="Tag TagColor">
+								<?php the_tags('<ul class="tags"><li>', '</li><li>', '</li></ul>'); ?>
+							</div>
+						<?php endif; ?>
 				<?php endwhile; ?>
 			<?php endif; ?>
 

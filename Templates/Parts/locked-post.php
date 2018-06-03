@@ -6,5 +6,5 @@
 	<?php global $_wp_additional_image_sizes; ?>
 	<?php $image_width = $_wp_additional_image_sizes['post-thumbnail']['width']; ?>
 	<?php $image_height = $_wp_additional_image_sizes['post-thumbnail']['height']; ?>
-   	<img src="<?php echo $image; ?>" alt="Post Locked" style="width:<?php echo $image_width; ?>; height:<?php echo $image_height; ?>">
+   	<a href=<?php echo $thumb_link; ?>><img src="<?php echo $image; ?>" alt="Post Locked" style="width:<?php echo $image_width; ?>; height:<?php echo $image_height; ?>"></a>
 </div>

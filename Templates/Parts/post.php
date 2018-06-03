@@ -5,7 +5,7 @@
 	
 	<!-- Alt text set to image title if available -->
 	<?php $alt_text = get_the_title(); ?>
-	<?php if($alt_text == "" || $alt_text == "Private:"): ?>
+	<?php if($alt_text == "" || $alt_text == "Private:" || $alt_text == "Protected:"): ?>
 		<?php $alt_text = "Featured Image"; ?>
 	<?php endif; ?>
 
