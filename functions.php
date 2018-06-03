@@ -183,7 +183,6 @@ function the_default_featured_image_url()
 
 function the_lock_post_image_url()
 {
-	return "/Assets/Images";
 	return get_template_directory()."/Assets/Images/locked.png";
 }
 @ini_set('upload_max_size', '64M');

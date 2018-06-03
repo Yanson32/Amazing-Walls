@@ -9,18 +9,21 @@
 
 		<div class="HeaderContainer HeaderContainerColor">
 
-			<div class="header_text">
-				<?php the_custom_logo(); ?>
-				<div id="header-text">
+			<div class="header-main group flex-container-header-main">
+				<div id="site-logo">
+					<?php the_custom_logo(); ?>
+				</div>
+				<div id="header-text" class="group">
 					<?php bloginfo('name'); ?>
 				</div>
 			</div>
-
-			<div id="header-subtext" class="HeaderDescritionText">
-				<?php bloginfo('description'); ?>
-			</div>
-			<div class="HeaderSearch">
-				<?php get_search_form(); ?>		
+			<div id="flex-container-header-sub">
+				<div id="header-subtext" class="HeaderDescritionText">
+					<?php bloginfo('description'); ?>
+				</div>
+				<div class="HeaderSearch">
+					<?php get_search_form(); ?>		
+				</div>
 			</div>
 		</div>
 

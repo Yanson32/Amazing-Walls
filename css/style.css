@@ -2,6 +2,19 @@
 	padding:0px;
 	margin:0px;
 }
+.post-thumbnail:hover
+{
+	transform:scale(1.03);
+}
+.flex-container-header-main
+{
+	display:flex;
+}
+#flex-container-header-sub
+{
+	display:flex;
+}
+
 .group:after {
   content: "";
   display: table;
@@ -254,7 +267,7 @@ ul.MainMenu li a,
 	text-shadow:none;
 }
 
-.header_text
+.header-main
 {
 
     text-align: left;
@@ -267,7 +280,8 @@ ul.MainMenu li a,
 {
     text-align: center;
 	text-shadow:none;
-	font-size: 2em;
+	font-size: 1.5em;
+	flex:1;
 }
 
 .HeaderSearch
