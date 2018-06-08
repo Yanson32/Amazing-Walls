@@ -77,7 +77,8 @@ if ( ! function_exists( 'amazing_walls_enqued' ) )
    	{
 		wp_enqueue_style('desktop-style', get_template_directory_uri().'/css/style.css', array(), '1.0.0', 'all');
 		wp_enqueue_style('format-style', get_template_directory_uri().'/css/format.css', array(), '1.0.0', 'all');
-		wp_enqueue_style('mobile-style', get_template_directory_uri().'/css/mobile.css', array(), '1.0.0', 'all and (max-width: 600px)');
+		wp_enqueue_style('tablet-style', get_template_directory_uri().'/css/tablet.css', array(), '1.0.0', 'all and (max-width: 600px)');
+    wp_enqueue_style('phone-style', get_template_directory_uri().'/css/phone.css', array(), '1.0.0', 'all and (max-width: 300px)');
 		wp_enqueue_script('customjs', get_template_directory_uri().'/js/amazing.js', array(), '1.0.0', true);
 
 		$style = get_option('aw_style');
@@ -176,14 +177,19 @@ $wp_customize->add_setting( 'header_textcolor' , array(
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
 
-function the_default_featured_image_url()
+function the_featured_image_url($id)
 {
-	return get_template_directory()."/Assets/Images/Default Post Image.jpg";
+  $post = get_post($id);
+  if($post->has_post_thumbnail):
+    return get_the_post_thumbnail_url($id);
+  else:
+	   return get_template_directory_uri()."/assets/images/default-featured-image.jpg";
+  endif;
 }
 
 function the_lock_post_image_url()
 {
-	return get_template_directory()."/Assets/Images/locked.png";
+	return get_template_directory_uri()."/assets/images/default-password-protected-image.jpg";
 }
 @ini_set('upload_max_size', '64M');
 @ini_set('post_max_size', '256M');

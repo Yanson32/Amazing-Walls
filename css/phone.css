@@ -1,0 +1,61 @@
+div.gallery
+{
+	max-width:98%;
+	width:100%;
+	margin:10px;
+}
+div.gallery .gallery-item
+{
+  display:block;
+	max-width:100%;
+  float:left;
+}
+div.galler br
+{
+  float:left;
+}
+div.gallery .gallery-item img
+{
+  float:left;
+}
+div.gallery .gallery-item img
+{
+	width:95%;
+	margin:10px;
+}
+div.gallery .gallery-item img:hover
+{
+	width:95%;
+	margin:10px;
+	transform:scale(1.03);
+}
+div.gallery
+{
+	float:left;
+}
+.gallery-columns-3
+{
+
+}
+
+.gallery-columns-2
+{
+
+}
+.gallery-columns-1
+{
+
+}
+
+#single-body
+{
+  width:100%;
+  margin:0px;
+  padding:0px;
+}
+#single-content
+{
+  width:100%;
+  margin:0px;
+  padding:0px;
+}
