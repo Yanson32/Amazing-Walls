@@ -88,3 +88,8 @@ div.HeaderSearch input
 	text-align:center;
 	padding:5px;
 }
+#single-body
+{
+	width:100%;
+	margin:0px;
+}

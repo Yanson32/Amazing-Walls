@@ -427,3 +427,7 @@ h2
 {
 	width:50%;
 }
+textarea
+{
+	max-width:100%;
+}

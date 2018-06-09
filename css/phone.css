@@ -1,13 +1,12 @@
 div.gallery
 {
-	max-width:98%;
 	width:100%;
-	margin:10px;
+	padding:0px;
 }
 div.gallery .gallery-item
 {
   display:block;
-	max-width:100%;
+	width:100%;
   float:left;
 }
 div.galler br
@@ -20,14 +19,15 @@ div.gallery .gallery-item img
 }
 div.gallery .gallery-item img
 {
-	width:95%;
-	margin:10px;
+	width:100%;
+	margin:0px;
+	float:left;
 }
 div.gallery .gallery-item img:hover
 {
-	width:95%;
-	margin:10px;
-	transform:scale(1.03);
+	transform:0%;
+	padding:0px;
+	margin:0px;
 }
 div.gallery
 {

@@ -77,7 +77,7 @@ if ( ! function_exists( 'amazing_walls_enqued' ) )
    	{
 		wp_enqueue_style('desktop-style', get_template_directory_uri().'/css/style.css', array(), '1.0.0', 'all');
 		wp_enqueue_style('format-style', get_template_directory_uri().'/css/format.css', array(), '1.0.0', 'all');
-		wp_enqueue_style('tablet-style', get_template_directory_uri().'/css/tablet.css', array(), '1.0.0', 'all and (max-width: 600px)');
+		wp_enqueue_style('tablet-style', get_template_directory_uri().'/css/tablet.css', array(), '1.0.0', 'all and (max-width: 640px)');
     wp_enqueue_style('phone-style', get_template_directory_uri().'/css/phone.css', array(), '1.0.0', 'all and (max-width: 300px)');
 		wp_enqueue_script('customjs', get_template_directory_uri().'/js/amazing.js', array(), '1.0.0', true);
 
@@ -180,11 +180,21 @@ add_action( 'customize_register', 'mytheme_customize_register' );
 function the_featured_image_url($id)
 {
   $post = get_post($id);
+
+  //Set the default featured image
+  $featured_image_url = get_template_directory_uri()."/assets/images/default-featured-image.jpg";
+
+  //If has a thumbnail
   if($post->has_post_thumbnail):
-    return get_the_post_thumbnail_url($id);
-  else:
-	   return get_template_directory_uri()."/assets/images/default-featured-image.jpg";
+    $featured_image_url = get_the_post_thumbnail_url($id);
   endif;
+
+  //If post is Locked
+  if(post_password_required()):
+    $featured_image_url = get_template_directory_uri()."/assets/images/default-password-protected-image.jpg";
+  endif;
+
+  return $featured_image_url;
 }
 
 function the_lock_post_image_url()
