@@ -51,26 +51,7 @@
 
    		}
 	}
-   /******************************************************************************************************************
-   *	Get the most recent permalink
-   ******************************************************************************************************************/
-   	if ( ! function_exists( 'Get_most_recent_permalink' ) ) :
-   		function Get_most_recent_permalink(){
-       			global $post;
-       			$tmp_post = $post;
-       			$args = array(
-           			'numberposts'     => 1,
-           			'offset'          => 0,
-           			'orderby'         => 'post_date',
-           			'order'           => 'DESC',
-           			'post_type'       => 'Painting',
-           			'post_status'     => 'publish' );
-       			$myposts = get_posts( $args );
-       			$permalink = get_permalink($myposts[0]->ID);
-       			$post = $tmp_post;
-       			return $permalink;
-   		}
-    	endif;
+	
 
    /******************************************************************************************************************
    *	Add numeric pagination to page

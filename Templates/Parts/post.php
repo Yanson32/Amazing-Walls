@@ -1,7 +1,7 @@
 <div class="archive_single_post <?php echo get_post_type(); ?>">
 
 	<!-- Permalink of post -->
-	<?php $thumb_link =  Get_most_recent_permalink(); ?>
+	<?php $thumb_link =  get_permalink(); ?>
 
 	<!-- Alt text set to image title if available -->
 	<?php $alt_text = get_the_title(); ?>
@@ -10,7 +10,8 @@
 	<?php endif; ?>
 
 	<!-- Get the featured image url -->
-		<?php $image = the_featured_image_url(get_the_ID()); ?>
+	<?php $image = the_featured_image_url(get_the_ID()); ?>
+
 	<!-- get the defined width and height of the post featured image -->
 	<?php global $_wp_additional_image_sizes; ?>
 	<?php $image_width = $_wp_additional_image_sizes['post-thumbnail']['width']; ?>

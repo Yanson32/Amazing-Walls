@@ -11,7 +11,7 @@
  <?php if ( have_posts() ) : ?>
    <?php while ( have_posts() ) : ?>
      <?php the_post(); ?>
-     <?php get_template_part('/Templates/Parts/post'); ?>
+    <?php get_template_part('/Templates/Parts/post'); ?>
    <?php endwhile; ?>
  <?php endif; ?>
 </div>

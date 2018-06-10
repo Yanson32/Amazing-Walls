@@ -11,6 +11,7 @@
 
 <div id="single-body" class="group">
 	<div id="single-content">
+
 			<!-- The Loop -->
 			<?php if ( have_posts() ) : ?>
 				<?php while ( have_posts() ) : ?>
@@ -20,6 +21,8 @@
 						<?php if(!post_password_required()): ?>
 							<h1><?php the_title(); ?></h1>
 						<?php endif; ?>
+
+						<!-- The main content of the post -->
 						<?php the_content(); ?>
 
 						<!-- Don't show tags when password protected -->
@@ -32,7 +35,7 @@
 			<?php endif; ?>
 
 			</br>
-	
+
 		<!-- navigation links -->
 		<div class="nav-links">
 			<?php previous_post_link(); ?>

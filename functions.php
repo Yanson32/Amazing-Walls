@@ -4,7 +4,7 @@
    	require('widgets/Resolution.php');
    	require('includes/helpers.php');
     require('includes/AWPlugins/AWPlugins.php');
-
+add_theme_support( 'post-thumbnails' );
     // 3. Make Courses posts show up in archive pages
     add_filter( 'pre_get_posts', 'wpshout_add_custom_post_types_to_query' );
     function wpshout_add_custom_post_types_to_query( $query ) {
@@ -179,13 +179,13 @@ add_action( 'customize_register', 'mytheme_customize_register' );
 
 function the_featured_image_url($id)
 {
-  $post = get_post($id);
 
   //Set the default featured image
   $featured_image_url = get_template_directory_uri()."/assets/images/default-featured-image.jpg";
 
+
   //If has a thumbnail
-  if($post->has_post_thumbnail):
+  if(has_post_thumbnail($id)):
     $featured_image_url = get_the_post_thumbnail_url($id);
   endif;
 
@@ -197,10 +197,6 @@ function the_featured_image_url($id)
   return $featured_image_url;
 }
 
-function the_lock_post_image_url()
-{
-	return get_template_directory_uri()."/assets/images/default-password-protected-image.jpg";
-}
 @ini_set('upload_max_size', '64M');
 @ini_set('post_max_size', '256M');
 @ini_set('max_execution_time', '400');
