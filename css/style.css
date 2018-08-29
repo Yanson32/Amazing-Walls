@@ -46,12 +46,14 @@ img
 	max-width:100%;
 	height:auto;
 }
+
 .post-thumbnail:hover
 {
 	transform:scale(1.03);
 }
 .flex-container-header-main
 {
+	align-self:end;
 	display:flex;
 }
 #flex-container-header-sub
@@ -163,7 +165,7 @@ ul.MainMenu li a,
 .Button a
 {
 	margin:0px;
-	padding:0px;
+	padding:10px;
 }
 
 ul.MainMenu
@@ -281,12 +283,16 @@ ul.MainMenu
 .FooterMenu li {
 
     display: inline-block;
-    padding: 10px;
 }
 .FooterMenu ul {
     list-style-type: none;
 }
 
+.FooterMenu a
+{
+	display:block;
+	padding:5px;
+}
 .FooterMenu a:link {
 
     boarder-style: none;

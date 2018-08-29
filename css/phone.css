@@ -59,3 +59,20 @@ div.gallery
   margin:0px;
   padding:0px;
 }
+.MainMenu li
+{
+	display:inline-block;
+	width:100%;
+}
+.MainMenu a:link
+{
+	display:block;
+
+	text-align:center;
+}
+
+.FooterMenu li
+{
+	display:block;
+	width:100%;
+}

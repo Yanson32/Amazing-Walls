@@ -1,10 +1,12 @@
 <?php
 
-    require('includes/Amazing Walls Menu/amazing walls menu.php');
-   	require('widgets/Resolution.php');
-   	require('includes/helpers.php');
-    require('includes/AWPlugins/AWPlugins.php');
-add_theme_support( 'post-thumbnails' );
+    require_once('Admin/Admin.php');
+   	require_once('widgets/Resolution.php');
+    require_once('widgets/TagFilter.php');
+   	require_once('includes/helpers.php');
+    require_once('includes/AWPlugins/AWPlugins.php');
+    add_theme_support( 'post-thumbnails' );
+
     // 3. Make Courses posts show up in archive pages
     add_filter( 'pre_get_posts', 'wpshout_add_custom_post_types_to_query' );
     function wpshout_add_custom_post_types_to_query( $query ) {
@@ -81,7 +83,7 @@ if ( ! function_exists( 'amazing_walls_enqued' ) )
     wp_enqueue_style('phone-style', get_template_directory_uri().'/css/phone.css', array(), '1.0.0', 'all and (max-width: 300px)');
 		wp_enqueue_script('customjs', get_template_directory_uri().'/js/amazing.js', array(), '1.0.0', true);
 
-		$style = get_option('aw_style');
+		$style = get_option('aw_theme');
 
 		if($style === 'Light')
 			wp_enqueue_style('colorstyle', get_template_directory_uri().'/css/light.css', array(), '1.0.0', 'all');
@@ -102,11 +104,8 @@ if ( ! function_exists( 'amazing_walls_setup' ) )
 	function amazing_walls_setup()
    	{
 
-
    		//adds featuered image support
-   		add_theme_support( 'post-thumbnail' );
-   		set_post_thumbnail_size( 300, 169, true );
-   		/*add_image_size("post-thumbnail", 300, 169, true);*/
+      set_post_thumbnail_size( 300, 169, get_option('aw_pt_crop') );
 
    		//add support for coment rss feed
    		add_theme_support( 'automatic-feed-links' );

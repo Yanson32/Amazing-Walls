@@ -1,13 +1,16 @@
-<?php   	
+<?php
 	require('Custom Type Lables.php');
+	$parernt_page = 'aw_theme_options';
+	$page_slug = 'aw_custom_types';
+	$optoins_group = 'aw-custom-type-settings-group';
 	
 	/************************************************************************************************
 	*	Purpose:	Create custom type menu page
 	*************************************************************************************************/
 	function aw_create_custom_type_menu_page()
-   	{
+  {
 
-		
+
 		//Generate amazing walls admin page
    		add_submenu_page("aw_theme_options",								//parent slug
 						"Amazing Walls Custom Types",						//page title
@@ -16,13 +19,13 @@
 						"aw_custom_types", 									//page slug
 						"aw_theme_custom_type_menu_template"				//callback for page templat
 					);
-	
-	
+
+
 		//call register settings function
 		add_action('admin_init', 'aw_register_custom_type_lables');
-    	add_action( 'admin_init', 'aw_register_custom_type_page_settings' );
-		
-	
+    add_action( 'admin_init', 'aw_register_custom_type_page_settings' );
+
+
    	}
  	add_action("admin_menu", "aw_create_custom_type_menu_page");
 
@@ -37,7 +40,7 @@
 								'aw_custom_type_features',					//Callback
 								'aw_custom_types'							//Parent page slug
 							);
-		
+
 		register_setting(	'aw-custom-type-settings-group', 				//Setting id
 							'custom_type_name'								//Setting name
 						);
@@ -45,14 +48,14 @@
 		register_setting(	'aw-custom-type-settings-group', 				//Setting id
 							'custom_type_dropdown'							//Setting name
 						);
-		
+
 		//Custom type options
 		add_settings_section(	'aw-create-custom-types', 					//Section id
 								'Create custom types', 						//Section title
 								'aw_custom_type_options',					//Callback
 								'aw_custom_types'							//Parent page slug
 							);
-		
+
 		register_setting(	'aw-custom-type-settings-group', 				//Setting id
 							'custom_type_name'								//Setting name
 						);
@@ -67,7 +70,7 @@
 							'aw_custom_types', 								//Page
 							'aw-create-custom-types'						//Section
 							);
-		
+
 		register_setting(	'aw-custom-type-settings-group', 				//Setting id
 							'custom_type_slug'								//Setting name
 						);
@@ -95,7 +98,7 @@
 							'aw_custom_types', 								//Page
 							'aw-activate-custom-types'						//Section
 							);
-		
+
 		register_setting( 	'aw-custom-type-settings-group',				//Setting id
 							'create_photo_gallery_type');					//Setting name
 
@@ -117,14 +120,13 @@
 							);
 	}
 
-	
+
 	/****************************************************************************************************
 	*	Purpose Amazing Walls menu page template
 	****************************************************************************************************/
     function aw_theme_custom_type_menu_template()
-   	{ 
-		require_once(get_template_directory().
-		'/includes/Amazing Walls Menu/templates/aw_theme_custom_type_menu_template.php');
+   	{
+		require_once('Custum Type Template.php');
 
    	}
 
@@ -133,12 +135,12 @@
 	****************************************************************************************************/
 	function aw_custom_type_options()
 	{
-		
+
 	}
 
 
 	/************************************************************************************************
-	*	Purpose:	
+	*	Purpose:
 	*************************************************************************************************/
 	function aw_add_custom_type()
 	{
@@ -161,7 +163,7 @@
   			echo '<option value="Photo Album"'.$photoalbum.'>Photo Album</option>';
 			echo '<option value="Video"'.$video.'>Video</option>';
 			echo '<option value="Video Gallery"'.$videogallery.'>Video Gallery</option>';
-		echo '</select>'; 
+		echo '</select>';
 	}
 
 	function aw_custom_type_slug_callback()

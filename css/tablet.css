@@ -23,11 +23,23 @@
 }
 .MainMenu li
 {
-	display:block;
+	display:inline-block;
+	width:47%;
+	margin:0px;
+	padding:0px;
+
+}
+.MainMenu
+{
+	margin:0px;
+	padding:0px;
+	width:100%;
 }
 .MainMenu a:link
 {
 	display:block;
+
+	text-align:center;
 }
 .HeaderSearch
 {
@@ -92,4 +104,9 @@ div.HeaderSearch input
 {
 	width:100%;
 	margin:0px;
+}
+.FooterMenu li
+{
+	display:inline-block;
+	width:47%;
 }

@@ -65,18 +65,17 @@ function aw_gallery_callback($post)
     echo '<label for="aw_gallery_field">User Gallery</label>';
     echo '<input type="email" id="aw_gallery_field" name="aw_gallery_field" value="' .esc_attr($value). '" size="25" />';
     echo '<div class="uploader">';
-	echo '<input id="_unique_name" name="settings[_unique_name]" type="text" />';
-	echo '<input id="_unique_name_button" class="button" name="_unique_name_button" type="text" value="Upload" />';
+		echo '<input id="_unique_name" name="settings[_unique_name]" type="text" />';
+		echo '<input id="_unique_name_button" class="button" name="_unique_name_button" type="text" value="Upload" />';
     echo '</div>';
 }
 add_action( 'add_meta_boxes', 'aw_gallery_meta_box' );
 
 
 //set default attributes for image galleries
-function aw_gallery_defaults( $settings ) {
+function aw_gallery_defaults( $settings )
+{
     $settings['galleryDefaults']['link'] = 'file';
     return $settings;
 }
 add_filter( 'media_view_settings', 'aw_gallery_defaults');
-
-?>

@@ -4,48 +4,35 @@
    */
 ?>
 
-<!-- Function Definition -->
-<?php
-
-   function print_post()
-   {
-   	if( has_post_thumbnail() ) :
-		//the_post_thumbnail();
-		$the_title = the_title();
-		$alt_text = the_title();
-   		$thumb_link =  get_attachment_link( get_post_thumbnail_id() );
-   		echo "<a href=$thumb_link alt=$the_title title=$alt_text>";
-		echo the_post_thumbnail();
-		echo "</a>";
-   	endif;
-   }
-?>
-<!-- Start the loop -->
 <?php get_header(); ?>
 <?php get_sidebar( 'primary' ); ?>
-<p>Home Template</p>
-<div id="index_all_posts" class="archive_all_posts">
-	<?php 	if(have_posts()): 
-			while(have_posts()): the_post();?>
-	
-				<!-- style the post -->
-				<div id="index_single_post" class="archive_single_post"><?php print_post();?></div>
-   	
-				<!-- End the loop -->
-   			<?php 	endwhile; 
-      
-      		 else: ?>
-      			<p>No content found</p>
-      		<?php endif; ?>
 
+
+<!-- print the name of the page when in debug mode -->
+<?php aw_print_name('Home.php Page Template'); ?>
+
+
+<!-- The Loop -->
+<div id="index-content" class="group">
+ <?php if ( have_posts() ) : ?>
+   <?php while ( have_posts() ) : ?>
+     <?php the_post(); ?>
+    <?php get_template_part('/Templates/Parts/post'); ?>
+   <?php endwhile; ?>
+ <?php endif; ?>
 </div>
 
 
+<!-- Add comments to template -->
+ <?php if ( comments_open() || get_comments_number() ) : ?>
+   <?php comments_template(); ?>
+ <?php endif; ?>
+
+
 <!-- Create post navigation menu -->
-<div style="clear:left"></div>
-<nav class="post_navigation_menu">
-   <?php amazing_walls_numeric_posts_nav(); ?>
+<nav class="post_navigation_menu post_navigation_menu_color">
+  <?php global $wp_query; amazing_walls_numeric_posts_nav($wp_query, "Previous", "Next"); ?>
 </nav>
-</br>
-</br>
+
+<!-- Create page footer -->
 <?php get_footer(); ?>

@@ -22,19 +22,18 @@
 					<?php bloginfo('description'); ?>
 				</div>
 				<div class="HeaderSearch">
-					<?php get_search_form(); ?>		
+					<?php get_search_form(); ?>
 				</div>
 			</div>
 		</div>
 
-		<!-- <?php esc_attr(get_option('header_font')); ?> -->
 	</header>
 
-			<?php 
+			<?php
 				$args = array(	'theme_location' => 'main-menu',
 								'container' => 'div',
 								'container_class' => 'main_nav',
 								'menu_class' => 'MainMenu MainMenuColor',
 							);
-				wp_nav_menu($args); 
+				wp_nav_menu($args);
 			?>
