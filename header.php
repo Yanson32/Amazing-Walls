@@ -21,19 +21,21 @@
 				<div id="header-subtext" class="HeaderDescritionText">
 					<?php bloginfo('description'); ?>
 				</div>
-				<div class="HeaderSearch">
+				<!-- <div class="HeaderSearch">
 					<?php get_search_form(); ?>
-				</div>
+				</div> -->
 			</div>
+
+
+		<?php
+			$args = array(	'theme_location' => 'main-menu',
+							'container' => 'div',
+							'container_class' => 'main_nav',
+							'menu_class' => 'MainMenu',
+						);
+			wp_nav_menu($args);
+		?>
 		</div>
-
 	</header>
-
-			<?php
-				$args = array(	'theme_location' => 'main-menu',
-								'container' => 'div',
-								'container_class' => 'main_nav',
-								'menu_class' => 'MainMenu MainMenuColor',
-							);
-				wp_nav_menu($args);
-			?>
+	<br>
+	<br>

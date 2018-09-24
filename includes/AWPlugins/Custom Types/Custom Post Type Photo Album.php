@@ -6,49 +6,49 @@ if ( ! function_exists( 'amazing_walls_custom_posttype_photo_album' ) )
 {
 	function amazing_walls_custom_posttype_photo_album()
 	{
-    		//Custom type labels
-		$labels = array(
-		'name' => __('Photo Album'),
-		'singular_name' => __('Album'),
-		'add_new' => __('Add New Album'),
-		'add_new_item' => __('Add New Album'),
-		'edit_item' => __('Edit Album'),
-		'new_item' => __('New Album'),
-		'all_items' => __('All Albums'),
-		'view_item' => __('View Albums'),
-		'search_items' => __('Search Albums'),
-		'not_found' => __('No Albums Found'),
-		'not_found_in_trash' => __('No albums found in trash'),
-		'parent_item_colon' => '',
-		'menu_name' => __('Photo Album')
-		);
+    	//Custom type labels
+			$labels = array(
+			'name' => __('Photo Album'),
+			'singular_name' => __('Album'),
+			'add_new' => __('Add New Album'),
+			'add_new_item' => __('Add New Album'),
+			'edit_item' => __('Edit Album'),
+			'new_item' => __('New Album'),
+			'all_items' => __('All Albums'),
+			'view_item' => __('View Albums'),
+			'search_items' => __('Search Albums'),
+			'not_found' => __('No Albums Found'),
+			'not_found_in_trash' => __('No albums found in trash'),
+			'parent_item_colon' => '',
+			'menu_name' => __('Photo Album')
+			);
 
-		//supported
-		$supports = array(
-		'title',
-		'editor',
-		'excerpt',
-		'author',
-		'thumbnail',
-		'comments',
-		'revisions',
-		'custom-fields',
-		'tag',
-		);
+			//supported
+			$supports = array(
+			'title',
+			'editor',
+			'excerpt',
+			'author',
+			'thumbnail',
+			'comments',
+			'revisions',
+			'custom-fields',
+			'tag',
+			);
 
-		$args = array(
-		'labels' => $labels,
-		'public' => true,
-		'has_archive' => true,
-		'rewrite' => array('slug' => 'album'),
-		'supports' => $supports,
-		'taxonomies' => array('post_tag', 'category'),
-		'show_in_menu' => true,
-		'menu_position' => 5,
-		);
+			$args = array(
+			'labels' => $labels,
+			'public' => true,
+			'has_archive' => true,
+			'rewrite' => array('slug' => 'album'),
+			'supports' => $supports,
+			'taxonomies' => array('post_tag', 'category'),
+			'show_in_menu' => true,
+			'menu_position' => 5,
+			);
 
 
-       		register_post_type( 'Photo Album', $args);
+      register_post_type( 'Photo Album', $args);
    	}
    	add_action( 'init', 'amazing_walls_custom_posttype_photo_album' );
 }

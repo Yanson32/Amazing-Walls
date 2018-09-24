@@ -1,9 +1,16 @@
 <?php
-	require_once('general.php');
 
+	error_reporting(E_ALL);
+
+	//Exit if accessed directly
+	if(!defined('ABSPATH'))
+	{
+	  exit;
+	}
+	require_once('general.php');
 	require_once('theme_section.php');
 	require_once('post_thumbnail_section.php');
-	$options_group = 'aw-main-menu-page-settings-group';
+	require(get_template_directory().'/includes/config.php');
 	$page_slug = 'aw_theme_options';
 
 	/************************************************************************************************

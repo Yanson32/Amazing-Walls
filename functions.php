@@ -2,9 +2,11 @@
 
     require_once('Admin/Admin.php');
    	require_once('widgets/Resolution.php');
+    require_once('widgets/People.php');
     require_once('widgets/TagFilter.php');
    	require_once('includes/helpers.php');
     require_once('includes/AWPlugins/AWPlugins.php');
+    require('includes/config.php');
     add_theme_support( 'post-thumbnails' );
 
     // 3. Make Courses posts show up in archive pages
@@ -195,6 +197,104 @@ function the_featured_image_url($id)
 
   return $featured_image_url;
 }
+
+function test_customizer_callback($wp_customize)
+{
+  $wp_customize->add_setting('header_bg_color', array(
+    'default'   => '#4285f4',
+    'transport' => 'refresh'
+  ));
+
+  $wp_customize->add_section('ju_color_theme_section', array(
+    'title' => __('color', 'udemy'),
+    'priority' => 30
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'theme_colors', array(
+    'label' => __('Header Color', 'udemy'),
+    'section' => 'ju_color_theme_section',
+    'settings'   => 'header_bg_color',
+  )));
+}
+add_action('customize_register', 'test_customizer_callback');
+
+function aw_createZipFile($filename)
+{
+	if(extension_loaded('zip'))
+	{
+		$server_root = 'http://';
+		if(isset($_SERVER['HTTPS']))
+			$server_root = 'https://';
+
+		$server_root = $server_root.$_SERVER['HTTP_HOST'];
+		$tempZip = new ZipArchive();
+		if($tempZip->open($filename, ZipArchive::CREATE|ZipArchive::OVERWRITE) == True)
+		{
+			foreach(aw_get_images() as $image)
+			{
+					//$image = substr($image, strlen($server_root));
+					//$image = $_SERVER['DOCUMENT_ROOT'].$image;
+					$tempZip->addFile($image, basename(($image)));
+				}
+			}
+
+			$tempZip->close();
+	}
+}
+
+function aw_download_enabled()
+{
+  return true;
+}
+
+function aw_get_images()
+{
+  $images =& get_children( array (
+    'post_parent' => get_the_ID(),
+    'post_type' => 'attachment',
+    'post_mime_type' => 'image'
+  ));
+
+  $array = [];
+  if ( !empty($images) )
+  {
+    foreach ( $images as $attachment_id => $attachment )
+    {
+      $url = wp_get_attachment_image_src( $attachment_id, 'full' )[0];
+      array_push($array, aw_to_path($url));
+    }
+
+  }
+  return $array;
+}
+
+function aw_to_path($url)
+{
+  $server_root = 'http://';
+  if(isset($_SERVER['HTTPS']))
+    $server_root = 'https://';
+
+  $server_root = $server_root.$_SERVER['HTTP_HOST'];
+
+  $url = substr($url, strlen($server_root));
+  $url = $_SERVER['DOCUMENT_ROOT'].$url;
+
+  return $url;
+}
+
+function my_secondary_menu_classes( $classes, $item, $args )
+{
+    // Only affect the menu placed in the 'secondary' wp_nav_bar() theme location
+    if ( 'main-menu' === $args->theme_location )
+    {
+        // Make these items 3-columns wide in Bootstrap
+        $classes[] = 'Button ButtonColor';
+    }
+
+    return $classes;
+}
+
+add_filter( 'nav_menu_css_class', 'my_secondary_menu_classes', 10, 3 );
 
 @ini_set('upload_max_size', '64M');
 @ini_set('post_max_size', '256M');

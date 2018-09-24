@@ -70,16 +70,16 @@
 	}
 
 	add_action('widgets_init', function(){register_widget('Resolution');});
-	//add_filter('posts_where', 'aw_post_where');
-    function aw_post_where()
-    {
-
-    }
-    add_action( 'pre_get_posts', 'aw_post_resolution_filter' );
-    function aw_post_resolution_filter($query)
-    {
-        echo $query->have_posts();
-    }
+	// //add_filter('posts_where', 'aw_post_where');
+  //   function aw_post_where()
+  //   {
+	//
+  //   }
+  //   add_action( 'pre_get_posts', 'aw_post_resolution_filter' );
+  //   function aw_post_resolution_filter($query)
+  //   {
+  //       echo $query->have_posts();
+  //   }
 
 
 ?>

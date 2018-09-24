@@ -119,7 +119,7 @@ if ( ! function_exists( 'amazing_walls_custom_posttype_photo' ) )
    		'show_ui' => true,
    		'show_admin_column' => true,
    		'query_var' => true,
-   		'rewrite' => array('slug' => 'resolution'),
+   		'rewrite' => array('slug' => 'people'),
 		'show_tagcloud' => true,
    	);
 
@@ -167,5 +167,3 @@ if ( ! function_exists( 'amazing_walls_custom_posttype_photo' ) )
 
         }
     }
-
-?>

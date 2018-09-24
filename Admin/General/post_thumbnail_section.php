@@ -1,5 +1,13 @@
 <?php
 
+error_reporting(E_ALL);
+
+//Exit if accessed directly
+if(!defined('ABSPATH'))
+{
+  exit;
+}
+
 function post_thumbnail_section($group, $page)
 {
   $section_id = 'aw_post_thumbnail_section';

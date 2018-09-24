@@ -1,9 +1,9 @@
 <?php
 	require('Custom Type Lables.php');
+	require(get_template_directory().'/includes/config.php');
 	$parernt_page = 'aw_theme_options';
 	$page_slug = 'aw_custom_types';
-	$optoins_group = 'aw-custom-type-settings-group';
-	
+
 	/************************************************************************************************
 	*	Purpose:	Create custom type menu page
 	*************************************************************************************************/

@@ -1,4 +1,13 @@
 <?php
+
+error_reporting(E_ALL);
+
+//Exit if accessed directly
+if(!defined('ABSPATH'))
+{
+  exit;
+}
+
 function theme_section($group, $page)
 {
   $section = 'aw_theme_section';

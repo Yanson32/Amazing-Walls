@@ -66,13 +66,13 @@ img
   display: table;
   clear: both;
 }
-ul.tags li
+ul.Tag li
 {
 	display:inline-block;
 	margin-top:5px;
 	margin-right:5px;
 }
-ul.tags li a
+ul.Tag li a
 {
 	display:block;
 	padding:5px;
@@ -105,7 +105,7 @@ html, body
 
 #index-content
 {
-	width:75%;
+
 }
 #single-content
 {
@@ -148,7 +148,7 @@ ul
 .FooterMenu li,
 ul.MainMenu li,
 .attachment_page_table_ul a,
-.tags li,
+.Tags li,
 .Button
 {
 		display:inline-block;
@@ -166,6 +166,7 @@ ul.MainMenu li a,
 {
 	margin:0px;
 	padding:10px;
+	text-decoration:none;
 }
 
 ul.MainMenu
@@ -320,7 +321,7 @@ ul.MainMenu
 }
 #header-subtext
 {
-    text-align: center;
+  text-align: center;
 	text-shadow:none;
 	font-size: 1.5em;
 	flex:1;
