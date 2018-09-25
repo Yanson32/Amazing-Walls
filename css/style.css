@@ -51,15 +51,8 @@ img
 {
 	transform:scale(1.03);
 }
-.flex-container-header-main
-{
-	align-self:end;
-	display:flex;
-}
-#flex-container-header-sub
-{
-	display:flex;
-}
+
+
 
 .group:after {
   content: "";
@@ -310,14 +303,14 @@ ul.MainMenu
 	text-shadow:none;
 }
 
-.header-main
+#primary_header
 {
 
     text-align: left;
     font-style: italic;
     font-size: 4em;
     font-family: "Times New Roman", Times, serif;
-	text-shadow: 3px 2px red;
+		text-shadow: 3px 2px red;
 }
 #header-subtext
 {
@@ -422,7 +415,7 @@ h2
 	margin:auto;
 	width:50%;
 }
-#header-text
+#header_text
 {
 	width:50%;
 }

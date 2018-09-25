@@ -11,6 +11,10 @@
 <?php wp_get_attachment_image(); ?>
 	<div id="single-body" class="group">
     <?php get_search_form(); ?>
+
+		<?php if(aw_queue_enabled()): ?>
+			<?php echo '<a class="Button ButtonColor" style="display:inline-block; float:right; padding:5px" href="">Queue</a>'; ?>
+		<?php endif; ?>
 		<?php if(aw_download_enabled()): ?>
 		<?php $file = "Download.zip"; ?>
 		<?php aw_createZipFile($file); ?>
@@ -26,7 +30,7 @@
 
 						<!-- Don't show the title when password protected -->
 						<?php if(!post_password_required()): ?>
-							<h1><?php the_title(); ?></h1>
+							<h1 class=" PrimaryTitleColor"><?php the_title(); ?></h1>
 						<?php endif; ?>
 
 						<?php if(!is_page(get_the_ID())): ?>

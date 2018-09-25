@@ -9,18 +9,19 @@
 
 		<div class="HeaderContainer HeaderContainerColor">
 
-			<div class="header-main group flex-container-header-main">
+			<div class="group">
 				<div id="site-logo">
 					<?php the_custom_logo(); ?>
 				</div>
-				<div id="header-text" class="group">
-					<?php bloginfo('name'); ?>
+				<div id="header_text">
+					<h1 id="primary_header" class="PrimaryHeaderColor"><?php bloginfo('name'); ?></h1>
 				</div>
-			</div>
-			<div id="flex-container-header-sub">
 				<div id="header-subtext" class="HeaderDescritionText">
 					<?php bloginfo('description'); ?>
 				</div>
+			</div>
+			<div>
+
 				<!-- <div class="HeaderSearch">
 					<?php get_search_form(); ?>
 				</div> -->

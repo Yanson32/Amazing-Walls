@@ -282,7 +282,12 @@ function aw_to_path($url)
   return $url;
 }
 
-function my_secondary_menu_classes( $classes, $item, $args )
+function aw_queue_enabled()
+{
+  return true;
+}
+
+function aw_add_main_menu_class( $classes, $item, $args )
 {
     // Only affect the menu placed in the 'secondary' wp_nav_bar() theme location
     if ( 'main-menu' === $args->theme_location )
@@ -294,7 +299,7 @@ function my_secondary_menu_classes( $classes, $item, $args )
     return $classes;
 }
 
-add_filter( 'nav_menu_css_class', 'my_secondary_menu_classes', 10, 3 );
+add_filter( 'nav_menu_css_class', 'aw_add_main_menu_class', 10, 3 );
 
 @ini_set('upload_max_size', '64M');
 @ini_set('post_max_size', '256M');
