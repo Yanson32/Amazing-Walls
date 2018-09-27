@@ -4,6 +4,10 @@
 <!-- print the name of the page when in debug mode -->
 <?php aw_print_name('Search.php'); ?>
 
+<h1 class="search-title">
+<?php echo $wp_query->found_posts; ?> <?php _e( 'Search Results Found For', 'locale' ); ?>: "<?php the_search_query(); ?>"
+</h1>
+
 <!-- The Loop -->
 <?php if ( have_posts() ) : ?>
 	<?php while ( have_posts() ) : ?>

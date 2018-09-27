@@ -21,7 +21,7 @@ Template Name: Tag Template
       {
         echo '<br>';
         $tag_link = get_tag_link( $tag->term_id );
-        echo '<li><a Class="TagColor" href="'.$tag_link.'">'.$tag->name.'</a></li>';
+        echo '<li><a Class="Button ButtonColor" href="'.$tag_link.'">'.$tag->name.'</a></li>';
       }
     ?>
   </li>

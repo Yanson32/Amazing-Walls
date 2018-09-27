@@ -16,7 +16,7 @@
 				<div id="header_text">
 					<h1 id="primary_header" class="PrimaryHeaderColor"><?php bloginfo('name'); ?></h1>
 				</div>
-				<div id="header-subtext" class="HeaderDescritionText">
+				<div id="header-subtext" style="display:inline-block" class="HeaderDescritionText">
 					<?php bloginfo('description'); ?>
 				</div>
 			</div>

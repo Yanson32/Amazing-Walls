@@ -63,9 +63,9 @@ function aw_gallery_callback($post)
     wp_nonce_field(aw_save_gallery_data, 'aw_gallery_meta_box_nonce');
     $value = get_post_meta($post->ID, '_gallery_value_key', true);
     echo '<label for="aw_gallery_field">User Gallery</label>';
-    echo '<input type="email" id="aw_gallery_field" name="aw_gallery_field" value="' .esc_attr($value). '" size="25" />';
+    echo '<input class="widefat" type="email" id="aw_gallery_field" name="aw_gallery_field" value="' .esc_attr($value). '" size="25" />';
     echo '<div class="uploader">';
-		echo '<input id="_unique_name" name="settings[_unique_name]" type="text" />';
+		echo '<input class="widefat" id="_unique_name" name="settings[_unique_name]" type="text" />';
 		echo '<input id="_unique_name_button" class="button" name="_unique_name_button" type="text" value="Upload" />';
     echo '</div>';
 }

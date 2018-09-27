@@ -4,5 +4,5 @@
     placeholder="<?php echo esc_attr_x( 'Search', 'placeholder' ) ?>"
     value="<?php echo get_search_query() ?>" name="s"
     title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
-    <input type="submit" value="Submit">
+    <input id="searchform_submit" class="Button ButtonColor" type="submit" value="Submit">
   </form>

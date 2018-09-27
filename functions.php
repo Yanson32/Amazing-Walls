@@ -290,7 +290,7 @@ function aw_queue_enabled()
 function aw_add_main_menu_class( $classes, $item, $args )
 {
     // Only affect the menu placed in the 'secondary' wp_nav_bar() theme location
-    if ( 'main-menu' === $args->theme_location )
+    if ( 'main-menu' === $args->theme_location || $args->theme_location === 'footer-menu')
     {
         // Make these items 3-columns wide in Bootstrap
         $classes[] = 'Button ButtonColor';

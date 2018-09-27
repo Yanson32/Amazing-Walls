@@ -151,6 +151,7 @@ ul.MainMenu li,
 		text-decoration:none;
 		padding:0px;
 		margin:0px;
+		cursor:pointer;
 }
 
 .FooterMenu a,
@@ -422,4 +423,29 @@ h2
 textarea
 {
 	max-width:100%;
+}
+#searchform_submit
+{
+	padding:5px;
+}
+
+.SearchFormContainer
+{
+	padding:5px;
+}
+
+.AWLable
+{
+	width: 100px;
+	display:inline-block;
+}
+main
+{
+	max-width:78%;
+}
+
+#aw_upload_form
+{
+	width: 60%;
+	margin:auto;
 }
