@@ -1,5 +1,5 @@
 
-  <form  style="display:inline-block" role="search" method="get" class="searchform group" action="<?php echo home_url( '/' ); ?>">
+  <form  style="display:inline-block; margin:5px; display:5px" role="search" method="get" class="searchform group" action="<?php echo home_url( '/' ); ?>">
     <input type="search" class="search-field"
     placeholder="<?php echo esc_attr_x( 'Search', 'placeholder' ) ?>"
     value="<?php echo get_search_query() ?>" name="s"

@@ -1,10 +1,4 @@
 <?php get_header(); ?>
-
-<div class="SearchFormContainer" style="padding:5px">
-  <?php get_search_form(); ?>
-</div>
-<hr style="width:100%; float:left">
-
 <?php get_sidebar( 'primary' ); ?>
 
 
@@ -12,13 +6,12 @@
 <?php aw_print_name('index.php'); ?>
 
 <!-- The Loop -->
-<div class="Body" style="float:left; width:78%">
+<div class="Body">
+  <?php get_template_part('/Templates/Parts/post header'); ?>
   <main id="index-content" class="group">
-
-
     <?php if(is_search()): ?>
       <h1 class="search-title">
-        <?php echo $wp_query->found_posts; ?> <?php _e( 'Search Results Found For', 'locale' ); ?>: "<?php the_search_query(); ?>"
+        <?php echo $wp_query->found_posts; ?> <?php _e( 'Results For', 'locale' ); ?>: "<?php the_search_query(); ?>"
       </h1>
     <?php endif; ?>
 

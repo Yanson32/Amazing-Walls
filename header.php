@@ -8,7 +8,10 @@
 	<header class="HeaderColor">
 
 		<div class="HeaderContainer HeaderContainerColor">
-
+			<ul>
+				<?php wp_register('<li style="float:right" class="Button ButtonColor">', '</li>'); ?>
+				<li style="float:right" class="Button ButtonColor"><?php wp_loginout(); ?></li>
+			</ul>
 			<div class="group">
 				<div id="site-logo">
 					<?php the_custom_logo(); ?>

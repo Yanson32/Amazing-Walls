@@ -301,6 +301,23 @@ function aw_add_main_menu_class( $classes, $item, $args )
 
 add_filter( 'nav_menu_css_class', 'aw_add_main_menu_class', 10, 3 );
 
+
+function aw_the_download_button()
+{
+  if(aw_download_enabled()):
+    $file = "Download.zip";
+    aw_createZipFile($file);
+    echo '<a href="'.$file.'">Download</a>';
+  endif;
+}
+
+function aw_the_queue_button()
+{
+  if(aw_queue_enabled()):
+    echo '<a href="">Queue</a>';
+  endif;
+}
+
 @ini_set('upload_max_size', '64M');
 @ini_set('post_max_size', '256M');
 @ini_set('max_execution_time', '400');

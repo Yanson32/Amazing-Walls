@@ -76,8 +76,7 @@ ul.Tag li a
 
 #single-body
 {
-	width:75%;
-	margin:10px;
+
 }
 .comments
 {
@@ -441,11 +440,25 @@ textarea
 }
 main
 {
-	max-width:78%;
+	max-width:100%;
 }
 
 #aw_upload_form
 {
 	width: 60%;
 	margin:auto;
+}
+.Body
+{
+	width:75%;
+	margin:10px;
+	float:left;
+}
+ul#aw_post_header li
+{
+	display:inline-block;
+	float:right;
+	padding:5px;
+	margin:5px;
+	font-size:.8em;
 }

@@ -8,23 +8,11 @@
 <?php if ( post_password_required() ): ?>
 	<?php get_the_password_form(); ?>
 <?php endif; ?>
-<?php wp_get_attachment_image(); ?>
-	<div id="single-body" class="group">
-		<div class="SearchFormContainer" style="padding:5px">
-	    <?php get_search_form(); ?>
-
-			<?php if(aw_queue_enabled()): ?>
-				<?php echo '<a class="Button ButtonColor" style="display:inline-block; float:right; padding:5px;" href="">Queue</a>'; ?>
-			<?php endif; ?>
-			<?php if(aw_download_enabled()): ?>
-				<?php $file = "Download.zip"; ?>
-				<?php aw_createZipFile($file); ?>
-				<?php echo '<a class="Button ButtonColor" style="display:inline-block; float:right; padding:5px; margin-right:5px" href="'.$file.'">Download</a>'; ?>
-			<?php endif; ?>
-		</div>
-		<hr style="width:100%; float:left">
+<!-- <?php wp_get_attachment_image(); ?> -->
+	<div id="single-body" class="Body group">
+		<?php get_template_part('/Templates/Parts/post header'); ?>
 	<div id="single-content">
-
+		<main>
 			<!-- The Loop -->
 			<?php if ( have_posts() ) : ?>
 				<?php while ( have_posts() ) : ?>
@@ -49,7 +37,7 @@
 						<?php endif; ?>
 				<?php endwhile; ?>
 			<?php endif; ?>
-
+		</main>
 			</br>
 
 
@@ -68,9 +56,9 @@
 			<?php comments_template(); ?>
 		<?php endif; ?>
 	</div>
-	<div>
+	<!-- <div>
 		<?php get_footer(); ?>
-	</div>
+	</div> -->
 </div>
 
 <?php
