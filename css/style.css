@@ -59,6 +59,10 @@ img
   display: table;
   clear: both;
 }
+.Tag
+{
+	margin:5px;
+}
 ul.Tag li
 {
 	display:inline-block;
@@ -473,5 +477,15 @@ ul#aw_post_header li a
 }
 div h1
 {
-	margin:0px;
+	margin:5px;
+}
+
+#aw_header_login_menu li
+{
+	padding:5px;
+}
+#aw_header_login_menu
+{
+	float:right;
+	margin:5px;
 }

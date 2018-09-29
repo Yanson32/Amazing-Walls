@@ -56,9 +56,8 @@
 			<?php comments_template(); ?>
 		<?php endif; ?>
 	</div>
-	<!-- <div>
+		<div style="clear:both"></div>
 		<?php get_footer(); ?>
-	</div> -->
 </div>
 
 <?php
