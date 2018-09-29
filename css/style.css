@@ -54,7 +54,7 @@ img
 
 
 
-.group:after {
+.aw_group:after {
   content: "";
   display: table;
   clear: both;
@@ -303,7 +303,7 @@ ul.MainMenu
 	text-shadow:none;
 }
 
-#primary_header
+#aw_primary_header
 {
 
     text-align: left;
@@ -312,8 +312,9 @@ ul.MainMenu
     font-family: "Times New Roman", Times, serif;
 		text-shadow: 3px 2px red;
 }
-#header-subtext
+#aw_header_subtext
 {
+	display:block;
   text-align: center;
 	text-shadow:none;
 	font-size: 1.5em;
@@ -415,9 +416,9 @@ h2
 	margin:auto;
 	width:50%;
 }
-#header_text
+#aw_header_text
 {
-	width:50%;
+	display:inline-block;
 }
 textarea
 {
@@ -461,4 +462,8 @@ ul#aw_post_header li
 	padding:5px;
 	margin:5px;
 	font-size:.8em;
+}
+#aw_site_logo
+{
+	display:inline-block;
 }

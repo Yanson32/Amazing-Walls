@@ -12,14 +12,14 @@
 				<?php wp_register('<li style="float:right" class="Button ButtonColor">', '</li>'); ?>
 				<li style="float:right" class="Button ButtonColor"><?php wp_loginout(); ?></li>
 			</ul>
-			<div class="group">
-				<div id="site-logo">
+			<div class="aw_group">
+				<div id="aw_site_logo">
 					<?php the_custom_logo(); ?>
 				</div>
-				<div id="header_text">
-					<h1 id="primary_header" class="PrimaryHeaderColor"><?php bloginfo('name'); ?></h1>
+				<div id="aw_header_text">
+					<h1 id="aw_primary_header" class="PrimaryHeaderColor"><?php bloginfo('name'); ?></h1>
 				</div>
-				<div id="header-subtext" style="display:inline-block" class="HeaderDescritionText">
+				<div id="aw_header_subtext" style="display:inline-block" class="HeaderDescritionText">
 					<?php bloginfo('description'); ?>
 				</div>
 			</div>
