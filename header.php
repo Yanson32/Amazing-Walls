@@ -8,10 +8,12 @@
 	<header class="HeaderColor">
 
 		<div class="HeaderContainer HeaderContainerColor">
-			<ul>
-				<?php wp_register('<li style="float:right" class="Button ButtonColor">', '</li>'); ?>
-				<li style="float:right" class="Button ButtonColor"><?php wp_loginout(); ?></li>
-			</ul>
+			<div>
+				<ul>
+					<?php wp_register('<li style="float:right" class="Button ButtonColor">', '</li>'); ?>
+					<li style="float:right" class="Button ButtonColor"><?php wp_loginout(); ?></li>
+				</ul>
+			</div>
 			<div class="aw_group">
 				<div id="aw_site_logo">
 					<?php the_custom_logo(); ?>
@@ -19,18 +21,10 @@
 				<div id="aw_header_text">
 					<h1 id="aw_primary_header" class="PrimaryHeaderColor"><?php bloginfo('name'); ?></h1>
 				</div>
-				<div id="aw_header_subtext" style="display:inline-block" class="HeaderDescritionText">
-					<?php bloginfo('description'); ?>
-				</div>
 			</div>
-			<div>
-
-				<!-- <div class="HeaderSearch">
-					<?php get_search_form(); ?>
-				</div> -->
+			<div id="aw_header_subtext" class="HeaderDescritionText">
+				<?php bloginfo('description'); ?>
 			</div>
-
-
 		<?php
 			$args = array(	'theme_location' => 'main-menu',
 							'container' => 'div',
