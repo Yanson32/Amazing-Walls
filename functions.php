@@ -307,14 +307,14 @@ function aw_the_download_button()
   if(aw_download_enabled()):
     $file = "Download.zip";
     aw_createZipFile($file);
-    echo '<a href="'.$file.'">Download</a>';
+    echo '<a class="Button ButtonColor" href="'.$file.'">Download</a>';
   endif;
 }
 
 function aw_the_queue_button()
 {
   if(aw_queue_enabled()):
-    echo '<a href="">Queue</a>';
+    echo '<a class="Button ButtonColor" href="">Queue</a>';
   endif;
 }
 

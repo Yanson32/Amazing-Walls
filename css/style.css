@@ -463,6 +463,10 @@ ul#aw_post_header li
 	margin:5px;
 	font-size:.8em;
 }
+ul#aw_post_header li a
+{
+	padding:5px;
+}
 #aw_site_logo
 {
 	display:inline-block;
