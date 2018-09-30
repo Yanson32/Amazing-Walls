@@ -32,7 +32,7 @@
    <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through? If so, show navigation ?>
    <nav role="navigation" id="comment-nav-above" class="site-navigation comment-navigation">
       <h1 class="assistive-text"><?php _e( 'Comment navigation', 'amazing_walls' ); ?></h1>
-      <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'shape' ) ); ?></div>
+      <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', $aw_text_domain) ); ?></div>
       <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'shape' ) ); ?></div>
    </nav>
    <!-- #comment-nav-before .site-navigation .comment-navigation -->
@@ -67,4 +67,3 @@
    <?php comment_form(); ?>
 </div>
 <!-- #comments .comments-area -->
-
