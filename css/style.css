@@ -464,7 +464,6 @@ ul#aw_post_header li
 	display:inline-block;
 	float:right;
 	padding:5px;
-	margin:5px;
 	font-size:.8em;
 }
 ul#aw_post_header li a
@@ -487,5 +486,10 @@ div h1
 #aw_header_login_menu
 {
 	float:right;
+	margin:5px;
+}
+
+footer
+{
 	margin:5px;
 }

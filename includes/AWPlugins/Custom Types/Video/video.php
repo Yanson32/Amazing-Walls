@@ -1,4 +1,6 @@
 <?php
+	require_once(get_template_directory().'/includes/config.php');
+
 /******************************************************************************************************************
 *	Create custom post video
 ******************************************************************************************************************/
@@ -8,19 +10,19 @@ if ( ! function_exists( 'amazing_walls_custom_posttype_photo' ) )
 	{
     	//Custom type labels
 		$labels = array(
-		'name' => __('Video'),
-		'singular_name' => __('Video'),
-		'add_new' => __('Add New Video'),
-		'add_new_item' => __('Add New Video'),
-		'edit_item' => __('Edit Video'),
-		'new_item' => __('New Video'),
-		'all_items' => __('All Video'),
-		'view_item' => __('View Videos'),
-		'search_items' => __('Search Videos'),
-		'not_found' => __('No Videos Found'),
-		'not_found_in_trash' => __('No videos found in trash'),
+		'name' => __('Video', $aw_text_domain),
+		'singular_name' => __('Video', $aw_text_domain),
+		'add_new' => __('Add New Video', $aw_text_domain),
+		'add_new_item' => __('Add New Video', $aw_text_domain),
+		'edit_item' => __('Edit Video', $aw_text_domain),
+		'new_item' => __('New Video', $aw_text_domain),
+		'all_items' => __('All Video', $aw_text_domain),
+		'view_item' => __('View Videos', $aw_text_domain),
+		'search_items' => __('Search Videos', $aw_text_domain),
+		'not_found' => __('No Videos Found', $aw_text_domain),
+		'not_found_in_trash' => __('No videos found in trash', $aw_text_domain),
 		'parent_item_colon' => '',
-		'menu_name' => __('Video'),
+		'menu_name' => __('Video', $aw_text_domain),
 
 		);
 

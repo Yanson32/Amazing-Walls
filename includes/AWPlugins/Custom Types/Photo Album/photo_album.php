@@ -1,4 +1,5 @@
 <?php
+	require_once(get_template_directory().'/includes/config.php');
 /******************************************************************************************************************
 *	Create custom post photo album
 ******************************************************************************************************************/
@@ -8,19 +9,19 @@ if ( ! function_exists( 'amazing_walls_custom_posttype_photo_album' ) )
 	{
     	//Custom type labels
 			$labels = array(
-			'name' => __('Photo Album'),
-			'singular_name' => __('Album'),
-			'add_new' => __('Add New Album'),
-			'add_new_item' => __('Add New Album'),
-			'edit_item' => __('Edit Album'),
-			'new_item' => __('New Album'),
-			'all_items' => __('All Albums'),
-			'view_item' => __('View Albums'),
-			'search_items' => __('Search Albums'),
-			'not_found' => __('No Albums Found'),
-			'not_found_in_trash' => __('No albums found in trash'),
+			'name' => __('Photo Album', $aw_text_domain),
+			'singular_name' => __('Album', $aw_text_domain),
+			'add_new' => __('Add New Album', $aw_text_domain),
+			'add_new_item' => __('Add New Album', $aw_text_domain),
+			'edit_item' => __('Edit Album', $aw_text_domain),
+			'new_item' => __('New Album', $aw_text_domain),
+			'all_items' => __('All Albums', $aw_text_domain),
+			'view_item' => __('View Albums', $aw_text_domain),
+			'search_items' => __('Search Albums', $aw_text_domain),
+			'not_found' => __('No Albums Found', $aw_text_domain),
+			'not_found_in_trash' => __('No albums found in trash', $aw_text_domain),
 			'parent_item_colon' => '',
-			'menu_name' => __('Photo Album')
+			'menu_name' => __('Photo Album', $aw_text_domain)
 			);
 
 			//supported
@@ -40,7 +41,7 @@ if ( ! function_exists( 'amazing_walls_custom_posttype_photo_album' ) )
 			'labels' => $labels,
 			'public' => true,
 			'has_archive' => true,
-			'rewrite' => array('slug' => 'album'),
+			'rewrite' => array('slug' => __('album', $aw_text_domain)),
 			'supports' => $supports,
 			'taxonomies' => array('post_tag', 'category'),
 			'show_in_menu' => true,
@@ -49,7 +50,7 @@ if ( ! function_exists( 'amazing_walls_custom_posttype_photo_album' ) )
 			);
 
 
-      register_post_type( 'Photo Album', $args);
+      register_post_type( __('Photo Album', $aw_text_domain), $args);
    	}
 
 
@@ -60,7 +61,7 @@ if ( ! function_exists( 'amazing_walls_custom_posttype_photo_album' ) )
 function aw_gallery_meta_box()
 {
 
-    add_meta_box( 'gallery-meta-box', __( 'Gallery', 'Amazing_Walls' ), 'aw_gallery_callback', 'photoalbum' );
+    add_meta_box( 'gallery-meta-box', __( 'Gallery', $aw_text_domain), 'aw_gallery_callback', 'photoalbum' );
 }
 
 function aw_gallery_callback($post)

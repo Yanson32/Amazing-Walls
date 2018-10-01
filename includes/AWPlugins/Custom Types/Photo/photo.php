@@ -1,5 +1,7 @@
 <?php
+	require_once(get_template_directory().'/includes/config.php');
 	require_once('location_meta_box.php');
+	require_once('photo_meta_box.php');
   require_once('people_taxonomy.php');
   require_once('resolution_taxonomy.php');
 
@@ -18,19 +20,19 @@
   	// $customtypes[] =
     //Custom type labels
   	$labels = array(
-  	'name' => __('Photo'),
-  	'singular_name' => __('Photo'),
-  	'add_new' => __('Add New Photo'),
-  	'add_new_item' => __('Add New Photo'),
-  	'edit_item' => __('Edit Photo'),
-  	'new_item' => __('New Photo'),
-  	'all_items' => __('All Photos'),
-  	'view_item' => __('View Photos'),
-  	'search_items' => __('Search Photos'),
-  	'not_found' => __('No Photos Found'),
-  	'not_found_in_trash' => __('No photos found in trash'),
+  	'name' => __('Photo', $aw_text_domain),
+  	'singular_name' => __('Photo', $aw_text_domain),
+  	'add_new' => __('Add New Photo', $aw_text_domain),
+  	'add_new_item' => __('Add New Photo', $aw_text_domain),
+  	'edit_item' => __('Edit Photo', $aw_text_domain),
+  	'new_item' => __('New Photo', $aw_text_domain),
+  	'all_items' => __('All Photos', $aw_text_domain),
+  	'view_item' => __('View Photos', $aw_text_domain),
+  	'search_items' => __('Search Photos', $aw_text_domain),
+  	'not_found' => __('No Photos Found', $aw_text_domain),
+  	'not_found_in_trash' => __('No photos found in trash', $aw_text_domain),
   	'parent_item_colon' => '',
-  	'menu_name' => __('Photo'),
+  	'menu_name' => __('Photo', $aw_text_domain),
 
   );
 
@@ -71,4 +73,5 @@
   function aw_photo_meta_box()
   {
   	add_meta_box('aw_location_meta_box', 'Location', 'aw_location_meta_box_markup', 'photo');
+		add_meta_box('aw_photo_meta_box', 'Photo', 'aw_photo_meta_box_markup', 'photo');
   }

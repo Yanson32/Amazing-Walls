@@ -116,8 +116,8 @@ if ( ! function_exists( 'amazing_walls_setup' ) )
 
    		/*add menu support*/
    		register_nav_menus( array(
-       		'main-menu'   => __( 'main-menu', 'amazing_walls'),
-       		'footer-menu' => __( 'footer-menu', 'amazing_walls' )
+       		'main-menu'   => __( 'main-menu', $aw_text_domain),
+       		'footer-menu' => __( 'footer-menu', $aw_text_domain )
    		) );
    	}
    	add_action('after_setup_theme', 'amazing_walls_setup');
@@ -154,8 +154,8 @@ if ( ! function_exists( 'aw_register_sidebars' ) )
 		register_sidebar(
 			array(
                		'id'            => 'primary',
-               		'name'          => __( 'Primary Sidebar' ),
-               		'description'   => __( 'A short description of the sidebar.' ),
+               		'name'          => __( 'Primary Sidebar', $aw_text_domain),
+               		'description'   => __( 'A short description of the sidebar.', $aw_text_domain),
                		'before_widget' => '<div id="%1$s" class="widget %2$s">',
                		'after_widget'  => '</div>',
                		'before_title'  => '<h3 class="widget-title">',
@@ -206,12 +206,12 @@ function test_customizer_callback($wp_customize)
   ));
 
   $wp_customize->add_section('ju_color_theme_section', array(
-    'title' => __('color', 'udemy'),
+    'title' => __('color', $aw_text_domain),
     'priority' => 30
   ));
 
   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'theme_colors', array(
-    'label' => __('Header Color', 'udemy'),
+    'label' => __('Header Color', $aw_text_domain),
     'section' => 'ju_color_theme_section',
     'settings'   => 'header_bg_color',
   )));
