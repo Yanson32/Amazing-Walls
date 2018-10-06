@@ -1,12 +1,6 @@
 <?php
 
-	error_reporting(E_ALL);
 
-	//Exit if accessed directly
-	if(!defined('ABSPATH'))
-	{
-	  exit;
-	}
 	require_once('general.php');
 	require_once('theme_section.php');
 	require_once('post_thumbnail_section.php');

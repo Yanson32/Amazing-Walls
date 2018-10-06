@@ -114,31 +114,31 @@ function register_foo_widget()
     register_widget( 'People' );
 }
 add_action( 'widgets_init', 'register_foo_widget' );
-add_filter( 'posts_where' , 'posts_where' );
-
-function posts_where( $where )
-{
-  // $checked = array();
-  //
-  // $terms = get_terms('People');
-  // foreach($terms as $object)
-  // {
-  //   if(is_checked($object->name))
-  //   {
-  //     echo 'checked';
-  //   }
-  // }
-  //
-  // $where .= " AND wp_posts.ID = '4864'";
-  // echo $where;
-  if(!is_admin() )
-  {
-    global $wpdb;
-    //$where .= " AND wp_posts.ID = '4864'";
-  }
-//}
-	return $where;
-}
+// add_filter( 'posts_where' , 'posts_where' );
+//
+// function posts_where( $where )
+// {
+//   // $checked = array();
+//   //
+//   // $terms = get_terms('People');
+//   // foreach($terms as $object)
+//   // {
+//   //   if(is_checked($object->name))
+//   //   {
+//   //     echo 'checked';
+//   //   }
+//   // }
+//   //
+//   // $where .= " AND wp_posts.ID = '4864'";
+//   // echo $where;
+//   if(!is_admin() )
+//   {
+//     global $wpdb;
+//     //$where .= " AND wp_posts.ID = '4864'";
+//   }
+// //}
+// 	return $where;
+// }
 
 function is_checked($name)
 {
