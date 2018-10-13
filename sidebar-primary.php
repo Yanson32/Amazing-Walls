@@ -15,5 +15,11 @@
         <li><?php wp_tag_cloud( 'smallest=8&largest=22' ); ?></li>
       </ul>
     </aside>
+    <aside id="people" class="widget">
+      <h1 class="widget-title"><?php _e( 'Tags', 'shape' ); ?></h1>
+      <ul>
+        <li><?php wp_tag_cloud( 'smallest=8&largest=22', array('taxonomy' => array('People'))); ?></li>
+      </ul>
+    </aside>
   <?php endif; ?>
 </div>

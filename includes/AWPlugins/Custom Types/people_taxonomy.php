@@ -27,7 +27,18 @@
 			'show_tagcloud' => true,
     );
 
-    register_taxonomy('People', array('photo'), $args);
+    $taxonomies[] = array();
+
+    if(get_option('create_photo_type'))
+      $taxonomies[] = 'photo';
+
+    if(get_option('create_photo_gallery_type'))
+      $taxonomies[] = 'photoalbum';
+
+    if(get_option('create_video_type'))
+      $taxonomies[] = 'video';
+      
+    register_taxonomy('People', $taxonomies, $args);
   }
 
   add_action( 'init', 'amazing_walls_people_init' );

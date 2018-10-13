@@ -11,7 +11,7 @@
 		require('Photo/photo.php');
 		require('Photo Album/photo_album.php');
 		require('Video/video.php');
-
+  	require_once('people_taxonomy.php');
 
 	// function aw_custom_type_callback()
 	// {

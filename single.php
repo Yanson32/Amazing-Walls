@@ -11,24 +11,28 @@
 <!-- <?php wp_get_attachment_image(); ?> -->
 	<div id="single-body" class="Body group">
 		<?php get_template_part('/Templates/Parts/post header'); ?>
-	<div id="single-content">
+
 		<main>
 			<!-- The Loop -->
 			<?php if ( have_posts() ) : ?>
 				<?php while ( have_posts() ) : ?>
 						<?php the_post(); ?>
 
+						<div id="single-content">
 						<!-- Don't show the title when password protected -->
 						<?php if(!post_password_required()): ?>
 							<h1 class=" PrimaryTitleColor"><?php the_title(); ?></h1>
 						<?php endif; ?>
 
 						<?php if(!is_page(get_the_ID())): ?>
-							<div class="Tag TagColor">
-								<?php the_tags('<ul><li class="Button ButtonColor Tag">', '</li> <li class="Button ButtonColor Tag">', '</li></ul>'); ?>
+							<!-- <div class="Tag TagColor"> -->
+								<?php show_taxonomy('post_tag', 'Tags'); ?>
+								<?php show_taxonomy('category', 'Category');?>
+								<?php show_taxonomy('Resolution', 'Resolution'); ?>
+								<?php show_taxonomy('People', 'People'); ?>
 							</div>
-						<?php endif; ?>
-
+						<!-- <?php endif; ?> -->
+						<div style="clear:both"></div>
 						<!-- The main content of the post -->
 						<?php the_content(); ?>
 
@@ -70,4 +74,16 @@
 	}
 
 	print_r(get_images());
+?>
+<?php
+function show_taxonomy($taxonomy, $lable)
+{
+	$taxonomyList = get_the_term_list(get_the_ID(), $taxonomy, '<ul><li class="Button ButtonColor Tag">', '</li> <li class="Button ButtonColor Tag">', '</li></ul>');
+	if(!empty($taxonomyList)):
+		echo '<div style="margin:10px">';
+		echo '<h3>'.$lable.'</h3>';
+		echo get_the_term_list(get_the_ID(), $taxonomy, '<ul><li class="Button ButtonColor Tag">', '</li> <li class="Button ButtonColor Tag">', '</li></ul>');
+		echo '</div>';
+	endif;
+}
 ?>
