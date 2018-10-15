@@ -1,9 +1,7 @@
 <?php
 
     require_once('Admin/Admin.php');
-   	require_once('widgets/Resolution.php');
-    require_once('widgets/People.php');
-    require_once('widgets/TagFilter.php');
+    require_once('widgets/widgets.php');
    	require_once('includes/helpers.php');
     require_once('includes/AWPlugins/AWPlugins.php');
     require('includes/config.php');

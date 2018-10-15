@@ -37,7 +37,7 @@
 
     if(get_option('create_video_type'))
       $taxonomies[] = 'video';
-      
+
     register_taxonomy('People', $taxonomies, $args);
   }
 
