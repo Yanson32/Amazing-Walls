@@ -11,7 +11,8 @@ class TaxonomyFilter extends WP_Widget
   public $title        = 'Taxonomy Filter';
   public $base_id      = 'taxonomy_filter_id';
   public $checkbox     = true;
-  public $taxonomy     = 'People';
+  public $taxonomy     = 'tag';
+  public $terms         = array();
   /*********************************************************************************//**
   * Register widget with WordPress.
   ************************************************************************************/
@@ -22,6 +23,8 @@ class TaxonomyFilter extends WP_Widget
   		esc_html__( $this->title, $this->text_domain), // Name
   		array( 'description' => esc_html__( $this->description, $this->text_domain), ) // Args
   	);
+
+    add_action( 'pre_get_posts', array( $this, 'taxonomy_filter_callback' ));
   }
 
 
@@ -42,17 +45,22 @@ class TaxonomyFilter extends WP_Widget
   	}
 
     $terms = get_terms($taxonomy);
-    print_r($instance);
-    print_r($args);
-    foreach($terms as $object)
+    // print_r($instance);
+    // print_r($args);
+    // foreach($terms as $object)
+    // {
+    //   echo $instance[$object->name];
+    //
+    //   echo '<input class="sidebar_checkbox" id="'.$object->name.'" type="checkbox" name="'.$object->name.'">';
+    //   echo '<lable for="'.$object->name.'">'.$object->name.'</lable>';
+    //   echo '<br>';
+    // }
+    foreach($this->terms as $tempterm)
     {
-      echo $instance[$object->name];
-
-      echo '<input class="sidebar_checkbox" id="'.$object->name.'" type="checkbox" name="'.$object->name.'">';
-      echo '<lable for="'.$object->name.'">'.$object->name.'</lable>';
+      echo '<input class="sidebar_checkbox" id="'.$tempterm.'" type="checkbox" name="'.$tempterm.'" checked>';
+      echo '<lable for="'.$tempterm.'">'.$tempterm.'</lable>';
       echo '<br>';
     }
-
   	echo $args['after_widget'];
   }
 
@@ -157,7 +165,8 @@ class TaxonomyFilter extends WP_Widget
 	 * @param array $instance Current settings.
 	 * @return string Name of the current taxonomy if set, otherwise 'post_tag'.
 	 */
-	public function _get_current_taxonomy($instance) {
+	public function _get_current_taxonomy($instance)
+  {
 		if ( !empty($instance['taxonomy']) && taxonomy_exists($instance['taxonomy']) )
 			return $instance['taxonomy'];
 
@@ -175,49 +184,18 @@ class TaxonomyFilter extends WP_Widget
   //     endif;
   //   }
   // }
+
+  function taxonomy_filter_callback($query)
+  {
+    if($query->is_main_query())
+      $query->set( $this->taxonomy, $this->terms );
+  }
 } // class Foo_Widget
 
 
 // register Foo_Widget widget
-function register_Taxonomy_Filter()
+function aw_register_Taxonomy_Filter()
 {
     register_widget( 'TaxonomyFilter' );
 }
-add_action( 'widgets_init', 'register_Taxonomy_Filter' );
-// add_filter( 'posts_where' , 'posts_where' );
-//
-// function posts_where( $where )
-// {
-//   // $checked = array();
-//   //
-//   // $terms = get_terms($taxonomy);
-//   // foreach($terms as $object)
-//   // {
-//   //   if(is_checked($object->name))
-//   //   {
-//   //     echo 'checked';
-//   //   }
-//   // }
-//   //
-//   // $where .= " AND wp_posts.ID = '4864'";
-//   // echo $where;
-//   if(!is_admin() )
-//   {
-//     global $wpdb;
-//     //$where .= " AND wp_posts.ID = '4864'";
-//   }
-// //}
-// 	return $where;
-// }
-
-// function is_checked($name)
-// {
-//   echo 'test = '.$_POST[$name];
-//
-//     if(isset($_POST[$name]))
-//     {
-//       return true;
-//     }
-//
-//     return false;
-// }
+add_action( 'widgets_init', 'aw_register_Taxonomy_Filter' );

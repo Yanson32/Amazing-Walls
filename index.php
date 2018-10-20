@@ -33,6 +33,7 @@
   <nav class="post_navigation_menu post_navigation_menu_color">
     <?php global $wp_query; amazing_walls_numeric_posts_nav($wp_query, "Previous", "Next"); ?>
   </nav>
+
+  <!-- Create page footer -->
+  <?php get_footer(); ?>
 </div>
-<!-- Create page footer -->
-<?php get_footer(); ?>

@@ -30,6 +30,7 @@
 								<?php show_taxonomy('category', 'Category');?>
 								<?php show_taxonomy('Resolution', 'Resolution'); ?>
 								<?php show_taxonomy('People', 'People'); ?>
+								<?php $post_meta = get_post_meta(get_the_ID()) ?>
 							</div>
 						<!-- <?php endif; ?> -->
 						<div style="clear:both"></div>
@@ -52,18 +53,18 @@
 		<div class="nav-links Button ButtonColor" style="float:right">
 			<?php next_post_link('%link', 'Next'); ?>
 		</div>
-	</div>
-	<!-- Add comments to template -->
-	<div class="comments group">
-		<hr style="width:100%">
-		<?php if ( comments_open() || get_comments_number() ) : ?>
-			<?php comments_template(); ?>
-		<?php endif; ?>
-	</div>
-		<div style="clear:both"></div>
-		<?php get_footer(); ?>
-</div>
 
+		<!-- Add comments to template -->
+		<div class="comments group">
+			<hr style="width:100%">
+			<?php if ( comments_open() || get_comments_number() ) : ?>
+				<?php comments_template(); ?>
+			<?php endif; ?>
+		</div>
+			<div style="clear:both"></div>
+			<?php get_footer(); ?>
+	</div>
+</div>
 <?php
 	$arr = (get_images());
 

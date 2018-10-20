@@ -9,20 +9,16 @@
 
     // 3. Make Courses posts show up in archive pages
     add_filter( 'pre_get_posts', 'wpshout_add_custom_post_types_to_query' );
-    function wpshout_add_custom_post_types_to_query( $query ) {
-    	if(
-
-        is_search() ||
-        is_category() ||
-    		is_tag() &&
-    		$query->is_main_query() &&
-    		empty( $query->query_vars['suppress_filters'] )
-    	) {
+    function aw_add_custom_post_types_to_query( $query )
+    {
+    	if(is_search() || is_category() || is_tag() && $query->is_main_query() && empty( $query->query_vars['suppress_filters'] ))
+      {
     		$query->set( 'post_type', array(
     			'post',
     			'photo',
           'photoalbum',
-          'video'
+          'video',
+          'mobile'
     		) );
     	}
     }
@@ -49,7 +45,7 @@
 	{
 
 		if ( $query->is_search ) {
-		$query->set( 'post_type', array( 'post', 'photo', 'photoalbum', 'video' ) );
+		$query->set( 'post_type', array( 'post', 'photo', 'photoalbum', 'video', 'mobile' ) );
 		}
 
 		return $query;
@@ -186,6 +182,10 @@ function the_featured_image_url($id)
   //If has a thumbnail
   if(has_post_thumbnail($id)):
     $featured_image_url = get_the_post_thumbnail_url($id);
+  endif;
+
+  if(has_post_thumbnail($id) && get_post_type() == 'mobile'):
+    $featured_image_url = get_the_post_thumbnail_url($id, 'mobile-thumb');
   endif;
 
   //If post is Locked

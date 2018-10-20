@@ -396,18 +396,9 @@ h2
 }
 
 
-.photoalbum
-{
-	outline-width:5px;
-	outline-style:solid
-}
-
-.video
-{
-	outline-width:5px;
-	outline-style:solid
-}
-
+.photoalbum,
+.mobile,
+.video,
 .photo
 {
 	outline-width:5px;

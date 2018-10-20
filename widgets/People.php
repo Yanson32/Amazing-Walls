@@ -139,15 +139,3 @@ add_action( 'widgets_init', 'register_foo_widget' );
 // //}
 // 	return $where;
 // }
-
-function is_checked($name)
-{
-  echo 'test = '.$_POST[$name];
-
-    if(isset($_POST[$name]))
-    {
-      return true;
-    }
-
-    return false;
-}
