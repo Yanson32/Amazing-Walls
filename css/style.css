@@ -484,3 +484,8 @@ footer
 {
 	margin:5px;
 }
+
+.aw_post_upload_form
+{
+	display:none;
+}
