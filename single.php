@@ -24,7 +24,7 @@
 							<h1 class=" PrimaryTitleColor"><?php the_title(); ?></h1>
 						<?php endif; ?>
 
-						<?php if(!is_page(get_the_ID())): ?>
+						<?php if(!is_page(get_the_ID()) && !post_password_required()): ?>
 							<!-- <div class="Tag TagColor"> -->
 								<?php show_taxonomy('post_tag', 'Tags'); ?>
 								<?php show_taxonomy('category', 'Category');?>
@@ -34,12 +34,12 @@
 							</div>
 						<!-- <?php endif; ?> -->
 						<div style="clear:both"></div>
+						<?php if(get_post_type() == 'photo' || get_post_type() == 'mobile'): ?>
+							<?php the_post_thumbnail('full'); ?>
+						<?php endif; ?>
 						<!-- The main content of the post -->
 						<?php the_content(); ?>
 
-						<!-- Don't show tags when password protected -->
-						<?php if(!post_password_required()): ?>
-						<?php endif; ?>
 				<?php endwhile; ?>
 			<?php endif; ?>
 		</main>
