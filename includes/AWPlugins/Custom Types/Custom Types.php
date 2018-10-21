@@ -14,7 +14,7 @@
 		require('Video/video.php');
   		require_once('people_taxonomy.php');
   		require_once('resolution_taxonomy.php');
-
+		require_once('aspect_ratio_taxonomy.php');
 
 
 	// function aw_custom_type_callback()
