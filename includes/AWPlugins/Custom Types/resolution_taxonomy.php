@@ -20,7 +20,7 @@ function amazing_walls_resolution_init()
 );
 
   $args = array(
-   'hierarchical' => true,
+   'hierarchical' => false,
    'labels' => $lables,
    'show_ui' => true,
    'show_admin_column' => true,
@@ -29,7 +29,7 @@ function amazing_walls_resolution_init()
 	'show_tagcloud' => true,
   );
 
-  register_taxonomy('Resolution', array('photo'), $args);
+  register_taxonomy('Resolution', array('photo', 'mobile'), $args);
 }
 add_action( 'init', 'amazing_walls_resolution_init' );
 
@@ -46,7 +46,7 @@ add_action( 'init', 'amazing_walls_resolution_init' );
 //         //get the image resolution
 //         $image_url = get_the_post_thumbnail_url($post_id);
 //         list($width, $height) = getimagesize($image_url);
-// 
+//
 //         if($width  == null)
 //             $width = 0;
 //
@@ -63,3 +63,27 @@ add_action( 'init', 'amazing_walls_resolution_init' );
 //     }
 // }
 // add_action( 'save_post', 'aw_add_resolition' );
+
+/*************************************************************************************//**
+* @brief: This function saves the resolution of the post thumbnail to the resolution
+*         taxonomy.
+*****************************************************************************************/
+function aw_save_resolution()
+{
+	global $post;
+
+		//Make sure the post type is photo or mobile
+		if(get_post_type() == 'photo' || get_post_type() == 'mobile'):
+
+			//Make sure the post has a thumbnail
+			//if($post->has_post_thumbnail):
+				$thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id( $post ), 'full');
+				$width = $thumbnail[1];
+				$height = $thumbnail[2];
+
+				//Set the resolution of the post thumbnail. We erase any previous entries resolution entries
+				wp_set_object_terms( get_the_ID(), $width.'x'.$height, 'Resolution', false);
+			//endif;
+		endif;
+}
+add_action( 'save_post', 'aw_save_resolution' );
