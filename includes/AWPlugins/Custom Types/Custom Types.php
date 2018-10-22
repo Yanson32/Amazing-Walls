@@ -12,8 +12,8 @@
 		require_once('Mobile/mobile.php');
 		require('Photo Album/photo_album.php');
 		require('Video/video.php');
-  		require_once('people_taxonomy.php');
-  		require_once('resolution_taxonomy.php');
+  	require_once('people_taxonomy.php');
+  	require_once('resolution_taxonomy.php');
 		require_once('aspect_ratio_taxonomy.php');
 
 

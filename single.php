@@ -35,7 +35,7 @@
 						<!-- <?php endif; ?> -->
 						<div style="clear:both"></div>
 						<?php if(get_post_type() == 'photo' || get_post_type() == 'mobile'): ?>
-							<?php the_post_thumbnail('full'); ?>
+							<a href=<?php the_post_thumbnail_url( 'full' ); ?> alt="<?php echo get_the_title(get_the_ID()); ?>"><?php the_post_thumbnail('full'); ?></a>
 						<?php endif; ?>
 						<!-- The main content of the post -->
 						<?php the_content(); ?>
