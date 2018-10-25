@@ -72,17 +72,20 @@ function aw_save_resolution()
 {
 	global $post;
 
-		//Make sure the post type is photo or mobile
-		if(get_post_type() == 'photo' || get_post_type() == 'mobile'):
+		//Make sure the post type has a photo custom field
+		if(!empty(get_post_custom_values('Photo'))):
+      $image_id_array = get_post_custom_values('Photo');
 
-			//Make sure the post has a thumbnail
-			//if($post->has_post_thumbnail):
-				$thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id( $post ), 'full');
-				$width = $thumbnail[1];
-				$height = $thumbnail[2];
+      foreach($image_id_array as $id)
+      {
+        $image = wp_get_attachment_image_src($id, 'full');
+        $width = $image[1];
+        $height = $image[2];
 
-				//Set the resolution of the post thumbnail. We erase any previous entries resolution entries
-				wp_set_object_terms( get_the_ID(), $width.'x'.$height, 'Resolution', false);
+        //Set the resolution of the post thumbnail. We erase any previous entries resolution entries
+        wp_set_object_terms( get_the_ID(), $width.'x'.$height, 'Resolution', false);
+      }
+
 			//endif;
 		endif;
 }

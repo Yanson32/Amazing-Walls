@@ -71,4 +71,13 @@
   {
   	add_meta_box('aw_location_meta_box', 'Location', 'aw_location_meta_box_markup', 'photo');
 		add_meta_box('aw_photo_meta_box', 'Photo', 'aw_photo_meta_box_markup', 'photo');
+		//add_meta_box( 'blah', 'test', 'custom_post_thumbnail_meta_box', 'photo', 'side', 'low' );
   }
+
+
+// 	function custom_post_thumbnail_meta_box( $post )
+// 	{
+// 		$thumbnail_id = get_post_meta( $post->ID, 8626, true );
+// 		echo _wp_post_thumbnail_html( $thumbnail_id, $post->ID );
+// 		echo '<a class="upload_image_button">upload</a>';
+// }

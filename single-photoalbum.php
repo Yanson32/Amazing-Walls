@@ -2,7 +2,7 @@
 <?php get_sidebar( 'primary' ); ?>
 
 <!-- print the name of the page when in debug mode -->
-<?php aw_print_name('Single.php'); ?>
+<?php aw_print_name('Single-photoalbum.php'); ?>
 
 <!-- get password if post is locked -->
 <?php if ( post_password_required() ): ?>
@@ -40,14 +40,16 @@
 						<!-- The main content of the post -->
 
 						<?php $custom_fields = get_post_custom_values('Photo'); ?>
-						<?php foreach($custom_fields as $value)
-						{
-							$url = wp_get_attachment_url($value);
-
-							echo '<a href="'.$url.'"><img src="'.$url.'"></a>';
-						}
-							?>
-
+						<?php
+							foreach($custom_fields as $value)
+							{
+								$url = wp_get_attachment_url($value);
+								echo '<div class="gallery-item" style="margin:5px; float:left; width:300px; height:169;">';
+								echo '<a href="'.$url.'"><img src="'.$url.'"></a>';
+								echo '</div>';
+							}
+						?>
+						<div style="clear:both"></div>
 						<?php the_content(); ?>
 
 				<?php endwhile; ?>
