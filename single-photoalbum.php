@@ -28,23 +28,19 @@
 							<!-- <div class="Tag TagColor"> -->
 								<?php show_taxonomy('post_tag', 'Tags'); ?>
 								<?php show_taxonomy('category', 'Category');?>
-								<?php show_taxonomy('Resolution', 'Resolution'); ?>
 								<?php show_taxonomy('People', 'People'); ?>
+								<?php show_taxonomy('Resolution', 'Resolution'); ?>
 								<?php $post_meta = get_post_meta(get_the_ID()) ?>
 							</div>
 						<!-- <?php endif; ?> -->
 						<div style="clear:both"></div>
-						<!-- <?php if(get_post_type() == 'photo' || get_post_type() == 'mobile'): ?>
-							<a href=<?php the_post_thumbnail_url( 'full' ); ?> alt="<?php echo get_the_title(get_the_ID()); ?>"><?php the_post_thumbnail('full'); ?></a>
-						<?php endif; ?> -->
-						<!-- The main content of the post -->
 
 						<?php $custom_fields = get_post_custom_values('Photo'); ?>
 						<?php
 							foreach($custom_fields as $value)
 							{
 								$url = wp_get_attachment_url($value);
-								echo '<div class="gallery-item" style="margin:5px; float:left; width:300px; height:169;">';
+								echo '<div class="gallery-item" style="margin:5px; float:left; width:300px">';
 								echo '<a href="'.$url.'"><img src="'.$url.'"></a>';
 								echo '</div>';
 							}
@@ -77,26 +73,3 @@
 			<?php get_footer(); ?>
 	</div>
 </div>
-<?php
-	$arr = (get_images());
-
-	foreach($arr as $path)
-	{
-		echo $path;
-		echo '<br>';
-	}
-
-	print_r(get_images());
-?>
-<?php
-function show_taxonomy($taxonomy, $lable)
-{
-	$taxonomyList = get_the_term_list(get_the_ID(), $taxonomy, '<ul><li class="Button ButtonColor Tag">', '</li> <li class="Button ButtonColor Tag">', '</li></ul>');
-	if(!empty($taxonomyList)):
-		echo '<div style="margin:10px">';
-		echo '<h3>'.$lable.'</h3>';
-		echo get_the_term_list(get_the_ID(), $taxonomy, '<ul><li class="Button ButtonColor Tag">', '</li> <li class="Button ButtonColor Tag">', '</li></ul>');
-		echo '</div>';
-	endif;
-}
-?>

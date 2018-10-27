@@ -2,6 +2,15 @@
 	padding:0px;
 	margin:0px;
 }
+.header_nav
+{
+	float:right;
+}
+
+.header_nav ul li
+{
+		margin:5px;
+}
 
 div.gallery
 {
@@ -140,7 +149,7 @@ ul
 /*-------------------------------------------------------General-------------------------------------------------------*/
 /*Button Styling*/
 
-
+.HeaderMenu li,
 .FooterMenu li,
 ul.MainMenu li,
 .attachment_page_table_ul a,
@@ -157,6 +166,7 @@ ul.MainMenu li,
 		cursor:pointer;
 }
 
+.HeaderMenu a,
 .FooterMenu a,
 ul.MainMenu li a,
 .Button a
@@ -488,4 +498,10 @@ footer
 .aw_post_upload_form
 {
 	display:none;
+}
+
+.TagLable
+{
+		display:inline-block;
+		width:125px;
 }

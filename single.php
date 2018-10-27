@@ -26,11 +26,14 @@
 
 						<?php if(!is_page(get_the_ID()) && !post_password_required()): ?>
 							<!-- <div class="Tag TagColor"> -->
-								<?php show_taxonomy('post_tag', 'Tags'); ?>
-								<?php show_taxonomy('category', 'Category');?>
-								<?php show_taxonomy('Resolution', 'Resolution'); ?>
-								<?php show_taxonomy('People', 'People'); ?>
-								<?php $post_meta = get_post_meta(get_the_ID()) ?>
+								<div style="">
+									<?php show_taxonomy('post_tag', 'Tags'); ?>
+									<?php show_taxonomy('category', 'Category');?>
+									<?php show_taxonomy('People', 'People'); ?>
+									<?php show_taxonomy('Resolution', 'Resolution'); ?>
+									<?php show_taxonomy('Aspect Ratio', 'Aspect Ratio'); ?>
+									<?php $post_meta = get_post_meta(get_the_ID()) ?>
+								</div>
 							</div>
 						<!-- <?php endif; ?> -->
 						<div style="clear:both"></div>
@@ -75,26 +78,3 @@
 			<?php get_footer(); ?>
 	</div>
 </div>
-<?php
-	$arr = (get_images());
-
-	foreach($arr as $path)
-	{
-		echo $path;
-		echo '<br>';
-	}
-
-	print_r(get_images());
-?>
-<?php
-function show_taxonomy($taxonomy, $lable)
-{
-	$taxonomyList = get_the_term_list(get_the_ID(), $taxonomy, '<ul><li class="Button ButtonColor Tag">', '</li> <li class="Button ButtonColor Tag">', '</li></ul>');
-	if(!empty($taxonomyList)):
-		echo '<div style="margin:10px">';
-		echo '<h3>'.$lable.'</h3>';
-		echo get_the_term_list(get_the_ID(), $taxonomy, '<ul><li class="Button ButtonColor Tag">', '</li> <li class="Button ButtonColor Tag">', '</li></ul>');
-		echo '</div>';
-	endif;
-}
-?>

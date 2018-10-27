@@ -41,18 +41,21 @@ h2
 	background-color:grey;
 }
 
+.HeaderMenuColor li,
 .FooterMenuColor li,
 .MainMenuColor li
 {
 	border-color:red;
 }
 
+.HeaderMenuColor a:hover,
 .FooterMenuColor a:hover,
 .MainMenuColor a:hover
 {
 	color:red;
 }
 
+.HeaderMenuColor a,
 .FooterMenuColor a,
 .MainMenuColor a
 {

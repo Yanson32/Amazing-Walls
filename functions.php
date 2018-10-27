@@ -7,6 +7,43 @@
     require('includes/config.php');
     add_theme_support( 'post-thumbnails' );
 
+    function show_taxonomy($taxonomy, $lable)
+    {
+    	$terms = get_the_terms(get_the_ID(), $taxonomy);
+
+      if(!empty($terms)):
+      	echo '<ul class="Tag" style="inline-block; text-align:left">';
+      	echo '<li class="TagLable">'.$lable.'</li>';
+      	foreach($terms as $term)
+      	{
+      		$link = get_term_link($term, $taxonomy);
+      		echo '<li class="Button ButtonColor Tag"><a href="'.$link.'">'.$term->name.'</a></li>';
+      	}
+
+      	echo '</ul>';
+      endif;
+    }
+
+    function add_login_logout_register_menu( $items, $args )
+    {
+     if ( $args->theme_location != 'header-menu' )
+      return $items;
+
+     if ( is_user_logged_in() )
+     {
+       $items .= '<li Class="Button ButtonColor"><a href="' . wp_logout_url() . '">' . __( 'Log Out' ) . '</a></li>';
+     }
+     else
+     {
+       $items .= '<li Class="Button ButtonColor"><a href="' . wp_login_url() . '">' . __( 'Login In' ) . '</a></li>';
+       $items .= '<li Class="Button ButtonColor"><a href="' . wp_registration_url() . '">' . __( 'Sign Up' ) . '</a></li>';
+     }
+
+     return $items;
+    }
+
+    add_filter( 'wp_nav_menu_items', 'add_login_logout_register_menu', 199, 2 );
+
     // 3. Make Courses posts show up in archive pages
     add_filter( 'pre_get_posts', 'wpshout_add_custom_post_types_to_query' );
     function aw_add_custom_post_types_to_query( $query )
@@ -111,6 +148,7 @@ if ( ! function_exists( 'amazing_walls_setup' ) )
    		/*add menu support*/
    		register_nav_menus( array(
        		'main-menu'   => __( 'main-menu', $aw_text_domain),
+          'header-menu'   => __( 'header-menu', $aw_text_domain),
        		'footer-menu' => __( 'footer-menu', $aw_text_domain )
    		) );
    	}

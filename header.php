@@ -11,10 +11,15 @@
 	<header class="HeaderColor">
 
 		<div class="HeaderContainer HeaderContainerColor">
-				<ul id="aw_header_login_menu">
-					<?php wp_register('<li class="Button ButtonColor">', '</li>'); ?>
-					<li class="Button ButtonColor"><?php wp_loginout(); ?></li>
-				</ul>
+			<?php
+				$argss = array(	'theme_location' => 'header-menu',
+								'container' => 'div',
+								'container_class' => 'header_nav',
+								'menu_class' => 'HeaderMenu HeaderMenuColor',
+							);
+				wp_nav_menu($argss);
+			?>
+
 			<div class="aw_group">
 				<div id="aw_site_logo">
 					<?php the_custom_logo(); ?>
