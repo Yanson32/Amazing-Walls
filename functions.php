@@ -7,6 +7,38 @@
     require('includes/config.php');
     add_theme_support( 'post-thumbnails' );
 
+
+    function aw_post_serchform_filter_options()
+    {
+      if(empty(get_option('aw_default_post_types')))
+      {
+        update_option('aw_default_post_types', array('post', 'photo', 'photoalbum', 'mobile', 'video'));
+      }
+    }
+    add_action('after_setup_theme', 'aw_post_serchform_filter_options');
+
+
+    function aw_serchform_filter($query)
+    {
+      //if ( $query->is_main_query )
+      {
+        if ($query->is_search)
+        {
+          $post_type = $_GET['aw_post_search_filter'];
+
+          if($post_type == 'All' || empty($post_type))
+            return $query;
+
+          $query->is_search = false;
+          $query->set('post_type', $post_type);
+        }
+      }
+
+      return $query;
+    }
+
+    add_action('pre_get_posts','aw_serchform_filter');
+
     function show_taxonomy($taxonomy, $lable)
     {
     	$terms = get_the_terms(get_the_ID(), $taxonomy);
