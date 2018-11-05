@@ -373,7 +373,8 @@ add_filter( 'nav_menu_css_class', 'aw_add_main_menu_class', 10, 3 );
 function aw_the_download_button()
 {
   if(aw_download_enabled()):
-    $file = "Download.zip";
+
+    $file = get_the_ID().".zip";
     aw_createZipFile($file);
     echo '<a class="Button ButtonColor" href="'.$file.'">Download</a>';
   endif;
