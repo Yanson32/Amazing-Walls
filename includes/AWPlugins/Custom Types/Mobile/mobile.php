@@ -74,3 +74,25 @@
   	//add_meta_box('aw_location_meta_box', 'Location', 'aw_location_meta_box_markup', 'photo');
 		//add_meta_box('aw_photo_meta_box', 'Photo', 'aw_photo_meta_box_markup', 'photo');
   }
+
+	/************************************************************//**
+	*	@brief	When a photo is saved we set the custum field 'photo'
+	*					to the featured image id.
+	***************************************************************/
+	function aw_save_mobile()
+	{
+		//get custom field photo
+		$custom_fields = get_post_custom_values('Photo');
+
+		//if custom field photo is empty, post type equals
+		//mobile, and a featured image has been set. We set custom
+		//field Photo to featured image id
+		if(empty($custom_fields) && get_post_type(get_the_ID()) == 'mobile'):
+			$thumbnail_id = get_post_thumbnail_id(get_the_ID());
+
+			//Add thumbnail id as post meta photo if there is a thumbnail
+			if(!empty($thumbnail_id))
+				add_post_meta(get_the_ID(), 'Mobile', $thumbnail_id);
+		endif;
+	}
+	add_action( 'save_post', 'aw_save_mobile' );

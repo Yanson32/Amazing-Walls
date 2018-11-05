@@ -94,7 +94,7 @@ function aw_save_photo()
 	//if custom field photo is empty, post type equals
 	//photo, and a featured image has been set. We set custom
 	//field photo to featured image id
-	if(empty($custom_fields) && get_post_type(get_the_ID()) == 'photo'):
+	if(empty($custom_fields) && get_post_type(get_the_ID()) == 'mobile'):
 		$thumbnail_id = get_post_thumbnail_id(get_the_ID());
 
 		//Add thumbnail id as post meta photo if there is a thumbnail
