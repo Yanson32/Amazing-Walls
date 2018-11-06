@@ -92,7 +92,7 @@
 
 			//Add thumbnail id as post meta photo if there is a thumbnail
 			if(!empty($thumbnail_id))
-				add_post_meta(get_the_ID(), 'Mobile', $thumbnail_id);
+				add_post_meta(get_the_ID(), 'Photo', $thumbnail_id);
 		endif;
 	}
 	add_action( 'save_post', 'aw_save_mobile' );
