@@ -5,14 +5,13 @@
 	require_once('theme_section.php');
 	require_once('post_thumbnail_section.php');
 	require(get_template_directory().'/includes/config.php');
-	$page_slug = 'aw_theme_options';
 
 	/************************************************************************************************
 	*	Purpose:	Create menu page
 	*************************************************************************************************/
 	function aw_create_main_menu_page()
    	{
-      global $page_slug;
+			$page_slug = 'aw_theme_options';
       $page_title = "Amazing Walls Options";
       $menu_title = "Amazing Walls";
       $capability = "manage_options";
@@ -41,14 +40,12 @@
 	*************************************************************************************************/
 	function aw_register_menu_page_settings()
 	{
-		global $options_group;
-		global $page_slug;
 
 		//Create theme Options
-		theme_section($options_group, $page_slug);
+		theme_section($options_group, 'aw_theme_options');
 
 		//Create post thumbnail section
-		post_thumbnail_section($options_group, $page_slug);
+		post_thumbnail_section($options_group, 'aw_theme_options');
 
 
 	}
