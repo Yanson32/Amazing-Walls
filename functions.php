@@ -352,7 +352,7 @@ function aw_to_path($url)
 
 function aw_queue_enabled()
 {
-  return true;
+  return get_option('aw_ct_queue');
 }
 
 function aw_add_main_menu_class( $classes, $item, $args )
