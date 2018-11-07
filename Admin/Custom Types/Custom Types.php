@@ -1,5 +1,4 @@
 <?php
-	require('Custom Type Lables.php');
 	require_once('custom_type_general_section.php');
 	require_once('custom_types_activation_section.php');
 	require(get_template_directory().'/includes/config.php');
@@ -34,54 +33,6 @@
 	*************************************************************************************************/
 	function aw_register_custom_type_page_settings()
 	{
-
-		add_settings_section(	'aw-create-custom-type-features', 			//Section id
-								'Supported Features', 						//Section title
-								'aw_custom_type_features',					//Callback
-								'aw_custom_types'							//Parent page slug
-							);
-
-		register_setting(	'aw-custom-type-settings-group', 				//Setting id
-							'custom_type_name'								//Setting name
-						);
-
-		register_setting(	'aw-custom-type-settings-group', 				//Setting id
-							'custom_type_dropdown'							//Setting name
-						);
-
-		//Custom type options
-		add_settings_section(	'aw-create-custom-types', 					//Section id
-								'Create custom types', 						//Section title
-								'aw_custom_type_options',					//Callback
-								'aw_custom_types'							//Parent page slug
-							);
-
-		register_setting(	'aw-custom-type-settings-group', 				//Setting id
-							'custom_type_name'								//Setting name
-						);
-
-		register_setting(	'aw-custom-type-settings-group', 				//Setting id
-							'custom_type_dropdown'							//Setting name
-						);
-
-		add_settings_field(	'aw-add-custom-type', 							//Id
-							'Add custom type', 								//Title
-							'aw_add_custom_type', 							//Callback
-							'aw_custom_types', 								//Page
-							'aw-create-custom-types'						//Section
-							);
-
-		register_setting(	'aw-custom-type-settings-group', 				//Setting id
-							'custom_type_slug'								//Setting name
-						);
-
-		add_settings_field(	'aw-custom-type-slug', 							//Id
-							'Custom Type Slug', 							//Title
-							'aw_custom_type_slug_callback', 				//Callback
-							'aw_custom_types', 								//Page
-							'aw-create-custom-types'						//Section
-							);
-
 		aw_custom_type_general_section();
 		aw_custom_type_activation();
 	}
