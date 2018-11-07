@@ -6,7 +6,7 @@
 
 
   //only create the post type if the admin allows
-  //if(get_option('create_photo_type'))
+  if(get_option('create_mobile_type'))
     add_action( 'init', 'aw_custom_posttype_mobile' );
 
 

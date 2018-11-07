@@ -38,7 +38,9 @@
     if(get_option('create_video_type'))
       $taxonomies[] = 'video';
 
-    $taxonomies[] = 'mobile';
+    if(get_option('create_mobile_type'))
+      $taxonomies[] = 'mobile';
+
     register_taxonomy('People', $taxonomies, $args);
   }
 
