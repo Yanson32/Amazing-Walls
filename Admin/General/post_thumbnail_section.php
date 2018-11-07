@@ -48,21 +48,14 @@ function aw_post_thumbnail_callback()
 
 function aw_crop_callback()
 {
-  $checked = '';
-
-  if(get_option('aw_pt_crop'))
-    $checked = 'checked';
-
-  echo '<input id="aw_pt_crop_input" name="aw_pt_crop" type="radio" value="1" placeholder="false" '.$checked.'>';
+  $name = 'aw_pt_crop';
+  $checked = (get_option($name))? 'checked': '';
+  echo '<input id="aw_pt_crop_input" name="'.$name.'" type="radio" value="1" placeholder="false" '.$checked.'>';
 }
 
 function aw_resize_callback()
 {
-  $checked = '';
-
-  if(!get_option('aw_pt_crop'))
-    $checked = 'checked';
-
-
-  echo '<input id="aw_pt_resize_input" name="aw_pt_crop" type="radio" value="0" placeholder="false"'.$checked.'>';
+  $name = 'aw_pt_crop';
+  $checked = (get_option($name))? 'checked': '';
+  echo '<input id="aw_pt_resize_input" name="'.$name.'" type="radio" value="0" placeholder="false"'.$checked.'>';
 }

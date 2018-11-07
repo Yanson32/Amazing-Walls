@@ -54,39 +54,30 @@
 	*******************************************************************************************************/
 	function aw_activate_photo_type()
 	{
-		$createphoto = get_option('create_photo_type');
-		if(!$createphoto)
-			echo '<input type="checkbox" name="create_photo_type"/>';
-		else
-			echo '<input type="checkbox" name="create_photo_type" checked/>';
+    $name = 'create_photo_type';
+    $checked = (get_option($name))? "checked" : "";
+		echo '<input type="checkbox" name="'.$name.'" '.$checked.'/>';
 	}
 
   function aw_activate_photo_gallery_type()
   {
-    $createphotogallery = get_option('create_photo_gallery_type');
-    if(!$createphotogallery)
-      echo '<input type="checkbox" name="create_photo_gallery_type"/>';
-    else
-      echo '<input type="checkbox" name="create_photo_gallery_type" checked/>';
+    $name = 'create_photo_gallery_type';
+    $checked = (get_option($name))? 'checked': '';
+    echo '<input type="checkbox" name="'.$name.'" '.$checked.'/>';
   }
 
   function aw_activate_mobile_type()
   {
     $name = 'create_mobile_type';
-    $option = get_option($name);
-
-    $checked = ($option)? 'checked': '';
+    $checked = (get_option($name))? 'checked': '';
     echo '<input type="checkbox" name="'.$name.'" '.$checked.'/>';
-
   }
 
   function aw_activate_video_type()
   {
-    $createvideo = get_option('create_video_type');
-    if(!$createvideo)
-      echo '<input type="checkbox" name="create_video_type"/>';
-    else
-      echo '<input type="checkbox" name="create_video_type" checked/>';
+      $name = 'create_video_type';
+      $checked = (get_option($name))? 'checked': '';
+      echo '<input type="checkbox" name="'.$name.'" '.$checked.'/>';
   }
 
 function aw_activate_custom_types()

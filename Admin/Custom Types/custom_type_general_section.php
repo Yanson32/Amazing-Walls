@@ -26,8 +26,7 @@
 
   function aw_ct_allow_download_field()
   {
-    $option = get_option('aw_ct_download');
-    $checked = ($option)? "checked" : "";
-
-    echo '<input name="aw_ct_download" type="checkbox" '.$checked.' >';
+    $name = 'aw_ct_download';
+    $checked = (get_option($name))? "checked" : "";
+    echo '<input name="'.$name.'" type="checkbox" '.$checked.' >';
   }
