@@ -1,6 +1,4 @@
 <?php
-
-
 	require_once('general.php');
 	require_once('theme_section.php');
 	require_once('post_thumbnail_section.php');
@@ -50,9 +48,6 @@
 
 	}
 
-
-
-
 	/****************************************************************************************************
 	*	Purpose Amazing Walls menu page template
 	****************************************************************************************************/
@@ -60,6 +55,3 @@
    	{
 			require_once('general_template.php');
    	}
-
-
-?>

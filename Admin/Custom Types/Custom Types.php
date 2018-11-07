@@ -76,8 +76,8 @@
 			$videogallery = 'selected';
 
  		echo '<select name=custom_type_dropdown>';
-  			echo '<option value="Photo"'.$photo.'>Photo</option>';
-  			echo '<option value="Photo Album"'.$photoalbum.'>Photo Album</option>';
+  		echo '<option value="Photo"'.$photo.'>Photo</option>';
+  		echo '<option value="Photo Album"'.$photoalbum.'>Photo Album</option>';
 			echo '<option value="Video"'.$video.'>Video</option>';
 			echo '<option value="Video Gallery"'.$videogallery.'>Video Gallery</option>';
 		echo '</select>';
