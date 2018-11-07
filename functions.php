@@ -312,7 +312,7 @@ function aw_createZipFile($filename)
 
 function aw_download_enabled()
 {
-  return true;
+  return get_option('aw_ct_download');
 }
 
 function aw_get_images()
