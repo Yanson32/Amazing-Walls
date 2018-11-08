@@ -38,12 +38,13 @@
 	*************************************************************************************************/
 	function aw_register_menu_page_settings()
 	{
-
+		$options_group = 'aw-main-menu-page-settings-group';
+		$parent = 'aw_theme_options';
 		//Create theme Options
-		theme_section($options_group, 'aw_theme_options');
+		theme_section($options_group, $parent);
 
 		//Create post thumbnail section
-		post_thumbnail_section($options_group, 'aw_theme_options');
+		post_thumbnail_section($options_group, $parent);
 
 
 	}
