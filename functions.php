@@ -394,24 +394,34 @@ add_filter( 'nav_menu_css_class', 'aw_add_main_menu_class', 10, 3 );
 ***************************************************************************/
 function aw_the_download_button()
 {
+
   //Only create the download button if the appropriate
   //setting in the theme's settings page is set
   if(aw_download_enabled()):
 
     //When downloading an album we need to create a zip file
-    if(get_post_type() == 'photoalbum'):
-      $file = get_the_ID().".zip";
-      aw_createZipFile($file);
-      echo '<a class="Button ButtonColor" href="'.$file.'">Download</a>';
+    if(get_post_type() == 'photoalbum' && is_single()):
+      $permissions = 0744;
+      $downloads_folder = ABSPATH."Downloads/";
+
+      $title = sanitize_title(get_the_title(get_the_ID()));
+      $file = (($title)? $title: get_the_ID()).".zip";
+      $server_path = $downloads_folder.$file;
+      $url = get_site_url()."/Downloads/".$file;
+
+      mkdir($downloads_folder);
+      chmod($downloads_folder, $permissions);
+      aw_createZipFile($server_path);
+      chmod($server_path, $permissions);
 
     //When downloading a non album type we just need to download the file itself.
     else:
       $custom_fields = get_post_custom_values('Photo');
       if($custom_fields):
         $url = wp_get_attachment_url($custom_fields[0]);
-        echo '<a class="Button ButtonColor" href="'.$url.'" download>Download</a>';
       endif;
     endif;
+    echo '<a class="Button ButtonColor" href="'.$url.'" download>Download</a>';
   endif;
 }
 
