@@ -369,14 +369,35 @@ function aw_add_main_menu_class( $classes, $item, $args )
 
 add_filter( 'nav_menu_css_class', 'aw_add_main_menu_class', 10, 3 );
 
-
+/******************************************************************//**
+* @brief  This function creates a button for downloading files and
+*         galleries. The button will only be displayed if the option
+*         in the themes settings page is checked. When downloading
+*         a gallery an appropriate zip file will be created.
+* @pre    The download button uses the custom field 'Photo' to
+*         determine what should be downloaded. Make sure this value is
+*         set in the post.
+**********************************************************************/
 function aw_the_download_button()
 {
+  //Only create the download button if the appropriate
+  //setting in the theme's settings page is set
   if(aw_download_enabled()):
 
-    $file = get_the_ID().".zip";
-    aw_createZipFile($file);
-    echo '<a class="Button ButtonColor" href="'.$file.'">Download</a>';
+    //When downloading an album we need to create a zip file
+    if(get_post_type() == 'photoalbum'):
+      $file = get_the_ID().".zip";
+      aw_createZipFile($file);
+      echo '<a class="Button ButtonColor" href="'.$file.'">Download</a>';
+
+    //When downloading a non album type we just need to download the file itself.
+    else:
+      $custom_fields = get_post_custom_values('Photo');
+      if($custom_fields):
+        $url = wp_get_attachment_url($custom_fields[0]);
+        echo '<a class="Button ButtonColor" href="'.$url.'" download>Download</a>';
+      endif;
+    endif;
   endif;
 }
 
