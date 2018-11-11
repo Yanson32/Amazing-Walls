@@ -336,6 +336,10 @@ function aw_get_images()
   return $array;
 }
 
+
+/***********************************************************************//**
+* @brief  Convert a url to a full path
+***************************************************************************/
 function aw_to_path($url)
 {
   $server_root = 'http://';
@@ -350,11 +354,21 @@ function aw_to_path($url)
   return $url;
 }
 
+
+/***********************************************************************//**
+* @brief  Check the theme's options to see if the queue button should
+*         be allowed.
+***************************************************************************/
 function aw_queue_enabled()
 {
   return get_option('aw_ct_queue');
 }
 
+
+/***********************************************************************//**
+* @brief  Use 'nav_menu_css_class' filter to add css class to
+*         the main menu.
+***************************************************************************/
 function aw_add_main_menu_class( $classes, $item, $args )
 {
     // Only affect the menu placed in the 'secondary' wp_nav_bar() theme location
@@ -366,10 +380,10 @@ function aw_add_main_menu_class( $classes, $item, $args )
 
     return $classes;
 }
-
 add_filter( 'nav_menu_css_class', 'aw_add_main_menu_class', 10, 3 );
 
-/******************************************************************//**
+
+/***********************************************************************//**
 * @brief  This function creates a button for downloading files and
 *         galleries. The button will only be displayed if the option
 *         in the themes settings page is checked. When downloading
@@ -377,7 +391,7 @@ add_filter( 'nav_menu_css_class', 'aw_add_main_menu_class', 10, 3 );
 * @pre    The download button uses the custom field 'Photo' to
 *         determine what should be downloaded. Make sure this value is
 *         set in the post.
-**********************************************************************/
+***************************************************************************/
 function aw_the_download_button()
 {
   //Only create the download button if the appropriate
@@ -401,13 +415,14 @@ function aw_the_download_button()
   endif;
 }
 
+
+/***********************************************************************//**
+* @brief  Create a Queue button. If the appropriate settings in the
+*         theme's admin settings page is set.
+***************************************************************************/
 function aw_the_queue_button()
 {
   if(aw_queue_enabled()):
     echo '<a class="Button ButtonColor" href="">Queue</a>';
   endif;
 }
-
-@ini_set('upload_max_size', '64M');
-@ini_set('post_max_size', '256M');
-@ini_set('max_execution_time', '400');
