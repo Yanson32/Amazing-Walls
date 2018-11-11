@@ -290,11 +290,7 @@ function aw_createZipFile($filename)
 {
 	if(extension_loaded('zip'))
 	{
-		$server_root = 'http://';
-		if(isset($_SERVER['HTTPS']))
-			$server_root = 'https://';
-
-		$server_root = $server_root.$_SERVER['HTTP_HOST'];
+		$server_root = get_site_url();
 		$tempZip = new ZipArchive();
 		if($tempZip->open($filename, ZipArchive::CREATE|ZipArchive::OVERWRITE) == True)
 		{
