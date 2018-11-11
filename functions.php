@@ -436,3 +436,13 @@ function aw_the_queue_button()
     echo '<a class="Button ButtonColor" href="">Queue</a>';
   endif;
 }
+
+
+/***********************************************************************//**
+* @brief  This hook removes "Private:" from private post titles.
+***************************************************************************/
+function aw_post_title_filter($title)
+{
+  return str_replace("Private:","",$title);
+}
+add_filter('the_title', aw_post_title_filter);
