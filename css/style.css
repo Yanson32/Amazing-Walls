@@ -2,6 +2,13 @@
 	padding:0px;
 	margin:0px;
 }
+
+.aw_single_post_image
+{
+	display:block;
+	margin:auto;
+}
+
 .header_nav
 {
 	float:right;
