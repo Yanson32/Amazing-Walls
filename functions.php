@@ -473,3 +473,19 @@ function aw_posts_section($args)
     endif;
   echo '</div>';
 }
+
+
+/******************************************************************//**
+* @Brief  Create an admin panel to display additional content
+*         when the admin views a single post. The capabilities
+*         needed to view the admin panel can be changed in the
+*         themes admin menu.
+**********************************************************************/
+function aw_admin_panel()
+{
+  if(current_user_can(get_option('aw_admin_panel_permissions'))):
+    echo '<div id="aw_admin_panel">';
+      echo 'Post ID '.get_the_ID();
+    echo '</div>';
+  endif;
+}

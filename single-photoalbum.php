@@ -23,6 +23,10 @@
 						<?php if(!post_password_required()): ?>
 							<h1 class=" PrimaryTitleColor"><?php the_title(); ?></h1>
 						<?php endif; ?>
+
+						<!-- Display info for admin only-->
+						<?php aw_admin_panel(); ?>
+
 						<?php if(!is_page(get_the_ID()) && !post_password_required()): ?>
 							<!-- <div class="Tag TagColor"> -->
 								<?php show_taxonomy('post_tag', 'Tags'); ?>

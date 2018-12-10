@@ -2,6 +2,7 @@
 	require_once('general.php');
 	require_once('theme_section.php');
 	require_once('post_thumbnail_section.php');
+	require_once('single_post_section.php');
 	require(get_template_directory().'/includes/config.php');
 
 	/************************************************************************************************
@@ -46,7 +47,8 @@
 		//Create post thumbnail section
 		post_thumbnail_section($options_group, $parent);
 
-
+		//Create single post sections
+		single_post_section($options_group, $parent);
 	}
 
 	/****************************************************************************************************

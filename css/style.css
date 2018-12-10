@@ -521,3 +521,9 @@ footer
    height: 0;
    clear: both;
 }
+
+#aw_admin_panel
+{
+	text-align:left;
+	margin:5px;
+}
