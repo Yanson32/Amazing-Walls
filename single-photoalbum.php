@@ -23,7 +23,6 @@
 						<?php if(!post_password_required()): ?>
 							<h1 class=" PrimaryTitleColor"><?php the_title(); ?></h1>
 						<?php endif; ?>
-
 						<?php if(!is_page(get_the_ID()) && !post_password_required()): ?>
 							<!-- <div class="Tag TagColor"> -->
 								<?php show_taxonomy('post_tag', 'Tags'); ?>
@@ -47,7 +46,7 @@
 						?>
 						<div style="clear:both"></div>
 						<?php the_content(); ?>
-
+						<?php aw_posts_section(); ?>
 				<?php endwhile; ?>
 			<?php endif; ?>
 		</main>

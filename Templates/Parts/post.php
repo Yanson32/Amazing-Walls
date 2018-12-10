@@ -1,4 +1,4 @@
-<div id="post-<?php the_ID(); ?>" <?php post_class('archive_single_post'); ?> >
+<div id="post-<?php the_ID(); ?>" <?php post_class('archive_single_post clearfix'); ?> >
 
 	<!-- Permalink of post -->
 	<?php $thumb_link =  get_permalink(); ?>

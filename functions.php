@@ -442,3 +442,34 @@ function aw_post_title_filter($title)
   return str_replace("Private:","",$title);
 }
 add_filter('the_title', aw_post_title_filter);
+
+
+/***********************************************************************//**
+* @Brief  This function adds a section of posts associated with a custom
+*         field.
+* @param $args An array of values to customize post section
+***************************************************************************/
+function aw_posts_section($args)
+{
+  $title = (!empty($args['title']))? $args['title']: 'Related';
+  $custom_field = (!empty($args['custom_field']))? $args['custom_field']: 'Related';
+
+  //Get  the custom field "Related"
+	$custom_fields = get_post_custom_values($custom_field);
+
+  //If there are no custom fields for the Related custom field we exit the function.
+  if(empty($custom_fields)):
+    return;
+  endif;
+
+  echo '<h2>'.$title.'</h2>';
+  echo '<div class="clearfix">';
+    $query = new WP_Query( array('post_type' => 'any', 'post__in' => $custom_fields));
+    if ( $query->have_posts() ) :
+      while ( $query->have_posts() ) :
+        $query->the_post();
+        get_template_part('/Templates/Parts/post');
+      endwhile;
+    endif;
+  echo '</div>';
+}

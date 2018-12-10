@@ -34,7 +34,7 @@
 									<?php show_taxonomy('Aspect Ratio', 'Aspect Ratio'); ?>
 									<?php $post_meta = get_post_meta(get_the_ID()) ?>
 								</div>
-							</div>
+						</div>
 						<!-- <?php endif; ?> -->
 						<div style="clear:both"></div>
 						<!-- <?php if(get_post_type() == 'photo' || get_post_type() == 'mobile'): ?>
@@ -50,9 +50,10 @@
 							echo '<a href="'.$url.'"><img class="aw_single_post_image" src="'.$url.'"></a>';
 						}
 							?>
-
+							<div style="clear:both"></div>
 						<?php the_content(); ?>
-
+						<?php aw_posts_section(); ?>
+						<div style="clear:both"></div>
 				<?php endwhile; ?>
 			<?php endif; ?>
 		</main>
