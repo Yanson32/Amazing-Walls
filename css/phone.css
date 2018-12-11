@@ -76,3 +76,41 @@ div.gallery
 	display:block;
 	width:100%;
 }
+
+
+ul.Tag li
+{
+	display:block;
+	margin-top:5px;
+	margin-right:5px;
+}
+
+ul.Tag li a
+{
+	text-align:center;
+}
+ul li.TagLable
+{
+	display:block;
+	width:100%;
+	text-align:center;
+}
+
+.searchform
+{
+	width:100%;
+}
+.searchform input,
+.searchform select,
+.searchform ul,
+.searchform ul li,
+.searchform ul li a,
+#aw_post_header li,
+#aw_post_header li a
+{
+	display:block;
+	width:100%;
+	text-align:center;
+	clear:both;
+	margin:0px;
+}
