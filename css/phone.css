@@ -127,6 +127,7 @@ ul li.TagLable
 }
 .HeaderMenu
 {
+	text-align:center;
 	display:block;
 	margin:0px;
 }
@@ -136,4 +137,16 @@ ul li.TagLable
 		width:100%;
 		text-align:center;
 		margin:0px;
+}
+
+div.widget h3
+{
+	display:block;
+	width:100%;
+	text-align:center;
+}
+.tagcloud a
+{
+	display:block;
+	width:100%;
 }
