@@ -114,3 +114,26 @@ ul li.TagLable
 	clear:both;
 	margin:0px;
 }
+
+.header_nav
+{
+	width:100%;
+	margin:0px;
+}
+.Body
+{
+	width:100%;
+	margin:0px;
+}
+.HeaderMenu
+{
+	display:block;
+	margin:0px;
+}
+.HeaderMenu li
+{
+		display:block;
+		width:100%;
+		text-align:center;
+		margin:0px;
+}
