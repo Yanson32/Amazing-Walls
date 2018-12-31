@@ -20,6 +20,11 @@
 		<?php $image_width = $_wp_additional_image_sizes['mobile-thumb']['width']; ?>
 		<?php $image_height = $_wp_additional_image_sizes['mobile-thumb']['height']; ?>
 	<?php endif; ?>
+
+	<?php if(is_home() || is_search()):?>
+		<?php $image_width = 200; ?>
+		<?php $image_height = 200; ?>
+	<?php endif; ?>
 	<?php if(has_post_thumbnail()):?>
 		<a href="<?php echo $thumb_link; ?>"><img class="post-thumbnail" src="<?php echo $image; ?>" style="width:<?php echo $image_width; ?>; height:<?php echo $image_height; ?>" alt="<?php echo $alt_text; ?>"></a>
 	<?php else: ?>

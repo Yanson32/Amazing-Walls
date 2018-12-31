@@ -145,7 +145,7 @@ if ( ! function_exists( 'amazing_walls_enqued' ) )
 		wp_enqueue_style('desktop-style', get_template_directory_uri().'/css/style.css', array(), '1.0.0', 'all');
 		wp_enqueue_style('format-style', get_template_directory_uri().'/css/format.css', array(), '1.0.0', 'all');
 		wp_enqueue_style('tablet-style', get_template_directory_uri().'/css/tablet.css', array(), '1.0.0', 'all and (max-width: 640px)');
-    wp_enqueue_style('phone-style', get_template_directory_uri().'/css/phone.css', array(), '1.0.0', 'all and (max-width: 300px)');
+    wp_enqueue_style('phone-style', get_template_directory_uri().'/css/phone.css', array(), '1.0.0', 'all and (max-width: 320px)');
 		wp_enqueue_script('customjs', get_template_directory_uri().'/js/amazing.js', array(), '1.0.0', true);
 
 		$style = get_option('aw_theme');
@@ -248,14 +248,19 @@ function the_featured_image_url($id)
   //Set the default featured image
   $featured_image_url = get_template_directory_uri()."/assets/images/default-featured-image.jpg";
 
+  $image_size = 'post-thumbnail';
+
+  if(get_post_type() == 'mobile' ):
+    $image_size = 'mobile-thumb';
+  endif;
+
+  if(is_home() || is_search()):
+    $image_size = 'thumbnail';
+  endif;
 
   //If has a thumbnail
   if(has_post_thumbnail($id)):
-    $featured_image_url = get_the_post_thumbnail_url($id);
-  endif;
-
-  if(has_post_thumbnail($id) && get_post_type() == 'mobile'):
-    $featured_image_url = get_the_post_thumbnail_url($id, 'mobile-thumb');
+    $featured_image_url = get_the_post_thumbnail_url($id, $image_size);
   endif;
 
   //If post is Locked
