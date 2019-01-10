@@ -2,7 +2,7 @@
 <?php get_sidebar( 'primary' ); ?>
 
 <!-- print the name of the page when in debug mode -->
-<?php aw_print_name('index.php'); ?>
+<?php aw_print_name('front-page.php'); ?>
 
 <!-- The Loop -->
 <div class="Body">

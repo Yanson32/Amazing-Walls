@@ -254,7 +254,7 @@ function the_featured_image_url($id)
     $image_size = 'mobile-thumb';
   endif;
 
-  if(is_home() || is_search()):
+  if(is_search() || is_tax() || is_singular()):
     $image_size = 'thumbnail';
   endif;
 

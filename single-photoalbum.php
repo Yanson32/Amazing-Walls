@@ -42,9 +42,10 @@
 						<?php
 							foreach($custom_fields as $value)
 							{
-								$url = wp_get_attachment_url($value);
-								echo '<div class="gallery-item" style="margin:5px; float:left; width:300px">';
-								echo '<a href="'.$url.'"><img src="'.$url.'"></a>';
+								$link = wp_get_attachment_url($value);
+								$image = wp_get_attachment_image_url($value);
+								echo '<div class="gallery-item" style="margin:5px; float:left;">';
+								echo '<a href="'.$link.'"><img src="'.$image.'"></a>';
 								echo '</div>';
 							}
 						?>
