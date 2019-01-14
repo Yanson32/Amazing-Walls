@@ -13,7 +13,7 @@
 	<?php $image_width = wp_get_additional_image_sizes()['post-thumbnail']['width']; ?>
 	<?php $image_height = wp_get_additional_image_sizes()['post-thumbnail']['height']; ?>
 
-	<?php if(is_home() || is_search() || is_tax() || is_singular() || is_tag()):?>
+	<?php if(is_home() || is_search() || is_tax() || is_singular() || is_tag() || is_category()):?>
 		<?php $image_width = 150; ?>
 		<?php $image_height = 150; ?>
 	<?php elseif(get_post_type() == 'mobile'): ?>
