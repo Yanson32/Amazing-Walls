@@ -7,7 +7,7 @@
 	<?php $alt_text = get_the_title(); ?>
 
 	<!-- Get the featured image url -->
-	<?php $image = the_featured_image_url(get_the_ID()); ?>
+	<?php $image = aw_the_featured_image_url(get_the_ID()); ?>
 
 	<!-- get the defined width and height of the post featured image -->
 	<?php $image_width = wp_get_additional_image_sizes()['post-thumbnail']['width']; ?>

@@ -95,32 +95,32 @@
 
    add_filter( 'widget_meta_poweredby', '__return_empty_string' );
 
-   // // Deactivate default MediaElement.js styles by WordPress
-   // function remove_mediaelement_styles() {
-   //
-   //         wp_dequeue_style('wp-mediaelement');
-   //         wp_deregister_style('wp-mediaelement');
-   // }
-   // add_action( 'wp_print_styles', 'remove_mediaelement_styles' );
-
-	add_filter( 'pre_get_posts', 'tgm_io_cpt_search' );
-	/**
-	 * This function modifies the main WordPress query to include an array of
-	 * post types instead of the default 'post' post type.
-	 *
-	 * @param object $query  The original query.
-	 * @return object $query The amended query.
-	 */
-	function tgm_io_cpt_search( $query )
-	{
-
-		if ( $query->is_search ) {
-		$query->set( 'post_type', array( 'post', 'photo', 'photoalbum', 'video', 'mobile' ) );
-		}
-
-		return $query;
-
-	}
+  //  // // Deactivate default MediaElement.js styles by WordPress
+  //  // function remove_mediaelement_styles() {
+  //  //
+  //  //         wp_dequeue_style('wp-mediaelement');
+  //  //         wp_deregister_style('wp-mediaelement');
+  //  // }
+  //  // add_action( 'wp_print_styles', 'remove_mediaelement_styles' );
+  //
+	// add_filter( 'pre_get_posts', 'tgm_io_cpt_search' );
+	// /**
+	//  * This function modifies the main WordPress query to include an array of
+	//  * post types instead of the default 'post' post type.
+	//  *
+	//  * @param object $query  The original query.
+	//  * @return object $query The amended query.
+	//  */
+	// function tgm_io_cpt_search( $query )
+	// {
+  //
+	// 	if ( $query->is_search ) {
+	// 	$query->set( 'post_type', array( 'post', 'photo', 'photoalbum', 'video', 'mobile' ) );
+	// 	}
+  //
+	// 	return $query;
+  //
+	// }
 
    function get_featured_image_url($size)
    {
@@ -165,12 +165,12 @@ if ( ! function_exists( 'amazing_walls_enqued' ) )
 /******************************************************************************************************************
 *	Basic theme setup
 ******************************************************************************************************************/
-if ( ! function_exists( 'amazing_walls_setup' ) )
+if ( ! function_exists( 'aw_setup' ) )
 {
-	function amazing_walls_setup()
-   	{
+  function aw_setup()
+  {
 
-   		//adds featuered image support
+      //adds featuered image support
       set_post_thumbnail_size( 300, 169, get_option('aw_pt_crop') );
 
    		//add support for coment rss feed
@@ -185,7 +185,7 @@ if ( ! function_exists( 'amazing_walls_setup' ) )
        		'footer-menu' => __( 'footer-menu', $aw_text_domain )
    		) );
    	}
-   	add_action('after_setup_theme', 'amazing_walls_setup');
+   	add_action('after_setup_theme', 'aw_setup');
 }
 
 
@@ -243,7 +243,10 @@ $wp_customize->add_setting( 'header_textcolor' , array(
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
 
-function the_featured_image_url($id)
+/*****************************************************************************//**
+* @Brief  Get the featured image url
+*********************************************************************************/
+function aw_the_featured_image_url($id)
 {
 
   //Set the default featured image
@@ -272,26 +275,10 @@ function the_featured_image_url($id)
   return $featured_image_url;
 }
 
-function test_customizer_callback($wp_customize)
-{
-  $wp_customize->add_setting('header_bg_color', array(
-    'default'   => '#4285f4',
-    'transport' => 'refresh'
-  ));
 
-  $wp_customize->add_section('ju_color_theme_section', array(
-    'title' => __('color', $aw_text_domain),
-    'priority' => 30
-  ));
-
-  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'theme_colors', array(
-    'label' => __('Header Color', $aw_text_domain),
-    'section' => 'ju_color_theme_section',
-    'settings'   => 'header_bg_color',
-  )));
-}
-add_action('customize_register', 'test_customizer_callback');
-
+/*****************************************************************************//**
+* @Brief Create a zip file of images
+*********************************************************************************/
 function aw_createZipFile($filename)
 {
 	if(extension_loaded('zip'))
@@ -302,21 +289,28 @@ function aw_createZipFile($filename)
 		{
 			foreach(aw_get_images() as $image)
 			{
-					//$image = substr($image, strlen($server_root));
-					//$image = $_SERVER['DOCUMENT_ROOT'].$image;
 					$tempZip->addFile($image, basename(($image)));
-				}
 			}
+		}
 
-			$tempZip->close();
+		$tempZip->close();
 	}
 }
 
+/*****************************************************************************//**
+* @Brief  Determine if the download button is enabled.
+* @return true when the download button is enabled.
+*********************************************************************************/
 function aw_download_enabled()
 {
   return get_option('aw_ct_download');
 }
 
+
+/*****************************************************************************//**
+* @Brief  Get all attached images.
+* @return array of attached images.
+*********************************************************************************/
 function aw_get_images()
 {
   $images =& get_children( array (
