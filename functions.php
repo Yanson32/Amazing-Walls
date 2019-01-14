@@ -76,21 +76,22 @@
 
     add_filter( 'wp_nav_menu_items', 'add_login_logout_register_menu', 199, 2 );
 
-    // 3. Make Courses posts show up in archive pages
-    add_filter( 'pre_get_posts', 'wpshout_add_custom_post_types_to_query' );
-    function aw_add_custom_post_types_to_query( $query )
+
+    /*************************************************************************************//**
+    * @brief Add custom post types to tag and category results
+    *****************************************************************************************/
+    function aw_add_custom_types_to_tax( $query )
     {
-    	if(is_search() || is_category() || is_tag() && $query->is_main_query() && empty( $query->query_vars['suppress_filters'] ))
+      if( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) )
       {
-    		$query->set( 'post_type', array(
-    			'post',
-    			'photo',
-          'photoalbum',
-          'video',
-          'mobile'
-    		) );
-    	}
+        // Get all your post types
+        $post_types = get_post_types();
+
+        $query->set( 'post_type', $post_types );
+        return $query;
+      }
     }
+    add_filter( 'pre_get_posts', 'aw_add_custom_types_to_tax' );
 
    add_filter( 'widget_meta_poweredby', '__return_empty_string' );
 
