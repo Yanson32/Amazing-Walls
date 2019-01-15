@@ -16,6 +16,6 @@
 </div>
 
 <nav class="post_navigation_menu">
-	<?php global $wp_query; amazing_walls_numeric_posts_nav($wp_query, "Previous Video", "Next Video"); ?>
+	<?php global $wp_query; aw_numeric_posts_nav($wp_query, "Previous Video", "Next Video"); ?>
 </nav>
 <?php get_footer(); ?>

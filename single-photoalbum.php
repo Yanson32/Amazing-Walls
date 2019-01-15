@@ -29,10 +29,10 @@
 
 						<?php if(!is_page(get_the_ID()) && !post_password_required()): ?>
 							<!-- <div class="Tag TagColor"> -->
-								<?php show_taxonomy('post_tag', 'Tags'); ?>
-								<?php show_taxonomy('category', 'Category');?>
-								<?php show_taxonomy('People', 'People'); ?>
-								<?php show_taxonomy('Resolution', 'Resolution'); ?>
+								<?php aw_show_taxonomy('post_tag', 'Tags'); ?>
+								<?php aw_show_taxonomy('category', 'Category');?>
+								<?php aw_show_taxonomy('People', 'People'); ?>
+								<?php aw_show_taxonomy('Resolution', 'Resolution'); ?>
 								<?php $post_meta = get_post_meta(get_the_ID()) ?>
 							</div>
 						<!-- <?php endif; ?> -->

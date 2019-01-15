@@ -18,9 +18,12 @@
     add_action('after_setup_theme', 'aw_post_serchform_filter_options');
 
 
+    /********************************************************************************************//**
+    * @brief  Add selected post types to search query
+    ************************************************************************************************/
     function aw_serchform_filter($query)
     {
-      //if ( $query->is_main_query )
+      if ( $query->is_main_query )
       {
         if ($query->is_search)
         {
@@ -39,7 +42,11 @@
 
     add_action('pre_get_posts','aw_serchform_filter');
 
-    function show_taxonomy($taxonomy, $lable)
+
+    /********************************************************************************************//**
+    * @brief  Display taxonomy in wordpress template page
+    ************************************************************************************************/
+    function aw_show_taxonomy($taxonomy, $lable)
     {
     	$terms = get_the_terms(get_the_ID(), $taxonomy);
 
@@ -56,20 +63,24 @@
       endif;
     }
 
+
+    /********************************************************************************************//**
+    * @brief  Add login and logout buttons to header menu
+    ************************************************************************************************/
     function add_login_logout_register_menu( $items, $args )
     {
-     if ( $args->theme_location != 'header-menu' )
-      return $items;
+      if ( $args->theme_location != 'header-menu' )
+        return $items;
 
-     if ( is_user_logged_in() )
-     {
-       $items .= '<li Class="Button ButtonColor"><a href="' . wp_logout_url() . '">' . __( 'Log Out' ) . '</a></li>';
-     }
-     else
-     {
-       $items .= '<li Class="Button ButtonColor"><a href="' . wp_login_url() . '">' . __( 'Login In' ) . '</a></li>';
-       $items .= '<li Class="Button ButtonColor"><a href="' . wp_registration_url() . '">' . __( 'Sign Up' ) . '</a></li>';
-     }
+      if ( is_user_logged_in() )
+      {
+        $items .= '<li Class="Button ButtonColor"><a href="' . wp_logout_url() . '">' . __( 'Log Out' ) . '</a></li>';
+      }
+      else
+      {
+        $items .= '<li Class="Button ButtonColor"><a href="' . wp_login_url() . '">' . __( 'Login In' ) . '</a></li>';
+        $items .= '<li Class="Button ButtonColor"><a href="' . wp_registration_url() . '">' . __( 'Sign Up' ) . '</a></li>';
+      }
 
      return $items;
     }
@@ -93,7 +104,7 @@
     }
     add_filter( 'pre_get_posts', 'aw_add_custom_types_to_tax' );
 
-   add_filter( 'widget_meta_poweredby', '__return_empty_string' );
+   //add_filter( 'widget_meta_poweredby', '__return_empty_string' );
 
   //  // // Deactivate default MediaElement.js styles by WordPress
   //  // function remove_mediaelement_styles() {

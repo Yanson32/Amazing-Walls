@@ -24,7 +24,7 @@
 <!-- Create post navigation menu -->
 <div style="clear:left"></div>
 <nav class="post_navigation_menu">
-	<?php global $wp_query; amazing_walls_numeric_posts_nav($wp_query, "Previous Album", "Next Album"); ?>
+	<?php global $wp_query; aw_numeric_posts_nav($wp_query, "Previous Album", "Next Album"); ?>
 </nav>
 </br>
 </br>

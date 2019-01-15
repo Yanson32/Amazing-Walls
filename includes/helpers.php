@@ -1,8 +1,8 @@
 <?php
 
 	/******************************************************************************************************************
-	*	Purpose:	Display the name of the file for debugging purposes
-	*	Input:		string $name the name of the file to be printed.
+	*	@brief	Display the name of the file for debugging purposes
+	*	@param		string $name the name of the file to be printed.
 	*	Other:		Defining AW_DEBUG and setting it to true will cause the file name to be printed.
 	*				Otherwise the name will not be printed.
 	******************************************************************************************************************/
@@ -21,7 +21,7 @@
 	******************************************************************************************************************/
 	function aw_has_field(string $key)
 	{
-		return !empty(amazing_walls_get_custom_field($key));
+		return !empty(aw_get_custom_field($key));
 	}
 
 	/******************************************************************************************************************
@@ -29,7 +29,7 @@
 	*	Input:		string $key the custom field to be retrieved.
 	*	Return:		Meta data related to the custom field
 	******************************************************************************************************************/
-	function amazing_walls_get_custom_field(string $key)
+	function aw_get_custom_field(string $key)
 	{
 		$id = get_the_ID();
 		return get_post_meta($id, $key, true);
@@ -39,9 +39,9 @@
 	/******************************************************************************************************************
 	*	Add custom logo
 	******************************************************************************************************************/
-	if ( ! function_exists( 'amazing_walls_custom_logo' ) )
+	if ( ! function_exists( 'aw_custom_logo' ) )
 	{
-		function amazing_walls_custom_logo()
+		function aw_custom_logo()
 		{
 
    			if ( function_exists( 'the_custom_logo' ) )
@@ -51,13 +51,13 @@
 
    		}
 	}
-	
+
 
    /******************************************************************************************************************
    *	Add numeric pagination to page
    ******************************************************************************************************************/
-   if ( ! function_exists( 'amazing_walls_numeric_posts_nav' ) ) :
-   	function amazing_walls_numeric_posts_nav($query_param, string $previous = "Previous Page", string $next = "Next Page") {
+   if ( ! function_exists( 'aw_numeric_posts_nav' ) ) :
+   	function aw_numeric_posts_nav($query_param, string $previous = "Previous Page", string $next = "Next Page") {
 
        		if( is_singular() )
            	return;

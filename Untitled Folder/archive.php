@@ -27,7 +27,7 @@
 
 <!-- Create post navigation menu -->
 <nav class="post_navigation_menu post_navigation_menu_color">
-	<?php amazing_walls_numeric_posts_nav($the_query); ?>
+	<?php aw_numeric_posts_nav($the_query); ?>
 </nav>
 </br>
 </br>

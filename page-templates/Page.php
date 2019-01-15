@@ -16,7 +16,7 @@ Template Name: Page Template
 <!-- Create post navigation menu -->
 <div style="clear:left"></div>
 <nav class="post_navigation_menu">
-   <?php amazing_walls_numeric_posts_nav(); ?>
+   <?php aw_numeric_posts_nav(); ?>
 </nav>
 </br>
 </br>

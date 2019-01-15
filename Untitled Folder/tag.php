@@ -21,7 +21,7 @@
 
 <!-- Create post navigation menu -->
 <nav class="post_navigation_menu post_navigation_menu_color">
-  <?php global $wp_query; amazing_walls_numeric_posts_nav($wp_query, "Previous", "Next"); ?>
+  <?php global $wp_query; aw_numeric_posts_nav($wp_query, "Previous", "Next"); ?>
 </nav>
 
 </br>
