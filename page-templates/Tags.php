@@ -17,10 +17,10 @@ Template Name: Tag Template
 <!-- The Loop -->
 <main id="index-content" class="group">
   <div class="clearfix" style="float:left; width:70%;">
-    <ul id="aw_tag_list_alphabetical" onclick="aw_letter_selected(event, 'A');">
+    <ul id="aw_tag_list_alphabetical" >
       <?php foreach($alphabet as $letter)
       {
-        echo '<li class="Button ButtonColor">'.$letter.'</li>';
+        echo '<li id="aw_tags_button_'.$letter.'" class="Button ButtonColor" onclick="aw_letter_selected(event, &quot;'.$letter.'&quot;);">'.$letter.'</li>';
       }
       ?>
     </ul>
@@ -60,8 +60,31 @@ Template Name: Tag Template
 </nav>
 
 <script>
+/**********************************************************************************//**
+* @Brief  Event handler for userer selected letter
+**************************************************************************************/
 function aw_letter_selected(event, letter)
 {
+  //Hide all tags
+  let arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+  for(let i = 0; i < arr.length; ++i)
+  {
+    var element = document.getElementById("aw_tags_" + arr[i]);
+    element.style.display = "none";
+  }
+
+  //Remove highlight from all buttons
+  for(let i = 0; i < arr.length; ++i)
+  {
+    let button = document.getElementById("aw_tags_button_" + arr[i]);
+    button.classList.remove("current-menu-item");
+  }
+  //Hilight selected button
+  let button = document.getElementById("aw_tags_button_" + letter);
+  button.classList.add("current-menu-item");
+
+  //Show the selected tags
   var element = document.getElementById("aw_tags_" + letter);
   if (element.style.display === "none")
   {
