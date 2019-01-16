@@ -23,26 +23,39 @@
     ************************************************************************************************/
     function aw_serchform_filter($query)
     {
-      if ( $query->is_main_query )
+      //Make sure filters are not being suppressed
+      if ( empty( $query->query_vars['suppress_filters'] ))
       {
-        if ($query->is_search)
+
+        //Make sure this is a search query and the aw_post_search_filter option is set
+        if ($query->is_search && isset($_GET['aw_post_search_filter']))
         {
           $post_type = $_GET['aw_post_search_filter'];
 
-          if($post_type == 'All' || empty($post_type))
+          //Exit if the ALL option is selected
+          if(strtoupper($post_type) == 'ALL')
             return $query;
 
-          $query->is_search = false;
+          //Otherwise set post_type query variable
           $query->set('post_type', $post_type);
         }
       }
 
       return $query;
     }
-
-    add_action('pre_get_posts','aw_serchform_filter');
-
-
+    add_filter('pre_get_posts', 'aw_serchform_filter');
+    // function aw_serchform_filter( $query )
+    // {
+    //    if ( $query->is_search ):
+    //            $post_type = $_GET['aw_post_search_filter'];
+    //            if(strtoupper($post_type) == 'ALL')
+    //              return $query;
+    //       $query->set( 'post_type', $post_type  );
+    //    endif;
+    //
+    //    return $query;
+    // }
+    // add_filter( 'pre_get_posts', 'aw_serchform_filter' );
     /********************************************************************************************//**
     * @brief  Display taxonomy in wordpress template page
     ************************************************************************************************/
