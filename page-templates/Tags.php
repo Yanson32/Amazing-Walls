@@ -45,6 +45,11 @@ Template Name: Tag Template
       echo '</div>';
     }
 ?>
+
+<?php
+  foreach(aw_get_all_custom_post_types() as $type)
+    echo 'post type = '.$type.'<br>';
+?>
 </main>
 
 

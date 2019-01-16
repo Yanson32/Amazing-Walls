@@ -104,34 +104,7 @@
     }
     add_filter( 'pre_get_posts', 'aw_add_custom_types_to_tax' );
 
-   //add_filter( 'widget_meta_poweredby', '__return_empty_string' );
 
-  //  // // Deactivate default MediaElement.js styles by WordPress
-  //  // function remove_mediaelement_styles() {
-  //  //
-  //  //         wp_dequeue_style('wp-mediaelement');
-  //  //         wp_deregister_style('wp-mediaelement');
-  //  // }
-  //  // add_action( 'wp_print_styles', 'remove_mediaelement_styles' );
-  //
-	// add_filter( 'pre_get_posts', 'tgm_io_cpt_search' );
-	// /**
-	//  * This function modifies the main WordPress query to include an array of
-	//  * post types instead of the default 'post' post type.
-	//  *
-	//  * @param object $query  The original query.
-	//  * @return object $query The amended query.
-	//  */
-	// function tgm_io_cpt_search( $query )
-	// {
-  //
-	// 	if ( $query->is_search ) {
-	// 	$query->set( 'post_type', array( 'post', 'photo', 'photoalbum', 'video', 'mobile' ) );
-	// 	}
-  //
-	// 	return $query;
-  //
-	// }
 
    function get_featured_image_url($size)
    {
@@ -139,11 +112,11 @@
    	$thumb_url_array = wp_get_attachment_image_src($thumb_id, $size, true);
    	return $thumb_url_array[0];
    }
-   function print_featured_image()
-   {
-   	$featured_image_full = get_featured_image_url('full');
-   	echo "<a href=\"$featured_image_full\"><img src=\"$featured_image_full\" class=\"attachment_page_image\"></a>";
-   }
+   // function print_featured_image()
+   // {
+   // 	$featured_image_full = get_featured_image_url('full');
+   // 	echo "<a href=\"$featured_image_full\"><img src=\"$featured_image_full\" class=\"attachment_page_image\"></a>";
+   // }
 
 
 
@@ -499,4 +472,21 @@ function aw_admin_panel()
       echo 'Post ID '.get_the_ID();
     echo '</div>';
   endif;
+}
+
+/****************************************************//**
+* @Brief  get all public post types
+********************************************************/
+function aw_get_all_custom_post_types()
+{
+
+  $args = array(
+     'public'   => true,
+     '_builtin' => false
+  );
+
+  $output = 'names'; // names or objects, note names is the default
+  $operator = 'and'; // 'and' or 'or'
+
+  return get_post_types( $args, $output, $operator );
 }
