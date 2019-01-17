@@ -3,6 +3,19 @@
 	margin:0px;
 }
 
+.aw_tag_list li
+{
+	display:inline-block;
+	float:left;
+	width:46%;
+	margin:5px;
+}
+
+.aw_tag_list li a
+{
+	padding:2px;
+
+}
 #aw_tag_list_alphabetical
 {
 	display:inline-block;

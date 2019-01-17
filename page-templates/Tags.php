@@ -13,40 +13,45 @@ Template Name: Tag Template
 <?php aw_print_name('tag.php'); ?>
 
 <?php $alphabet = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); ?>
+<div class="Body">
 
-<!-- The Loop -->
-<main id="index-content" class="group">
-  <div class="clearfix" style="float:left; width:70%;">
-    <ul id="aw_tag_list_alphabetical" >
-      <?php foreach($alphabet as $letter)
-      {
-        echo '<li id="aw_tags_button_'.$letter.'" class="Button ButtonColor" onclick="aw_letter_selected(event, &quot;'.$letter.'&quot;);">'.$letter.'</li>';
-      }
-      ?>
-    </ul>
-  </div>
+  <main id="index-content" class="group">
 
-  <?php
-    foreach($alphabet as $letter)
-    {
-      echo '<div id="aw_tags_'.$letter.'" style="display:none">';
-        foreach(get_tags() as $tag)
+    <!-- Create a bunch of links for each letter of the alphabet -->
+    <div class="clearfix">
+      <ul id="aw_tag_list_alphabetical" >
+        <?php foreach($alphabet as $letter)
         {
-          if(empty($tag->name))
-            return;
-
-          if(strtoupper($tag->name[0]) == $letter)
-          {
-            echo '<br>';
-            $tag_link = get_tag_link( $tag->term_id );
-            echo '<li><a Class="Button ButtonColor" href="'.$tag_link.'">'.$tag->name.'</a></li>';
-          }
+          echo '<li id="aw_tags_button_'.$letter.'" class="Button ButtonColor" onclick="aw_letter_selected(event, &quot;'.$letter.'&quot;);">'.$letter.'</li>';
         }
-      echo '</div>';
-    }
-?>
-</main>
+        ?>
+      </ul>
+    </div>
 
+    <?php
+      foreach($alphabet as $letter)
+      {
+        echo '<div id="aw_tags_'.$letter.'" style="display:none;">';
+          echo '<ul class="aw_tag_list">';
+            foreach(get_tags() as $tag)
+            {
+              if(empty($tag->name))
+                return;
+
+
+              if(strtoupper($tag->name[0]) == $letter)
+              {
+                $tag_link = get_tag_link( $tag->term_id );
+                echo '<li><a Class="Button ButtonColor" href="'.$tag_link.'">'.$tag->name.'</a></li>';
+              }
+
+            }
+          echo '</ul>';
+        echo '</div>';
+      }
+  ?>
+  </main>
+</div>
 
 <!-- Add comments to template -->
  <?php if ( comments_open() || get_comments_number() ) : ?>
@@ -88,7 +93,7 @@ function aw_letter_selected(event, letter)
   var element = document.getElementById("aw_tags_" + letter);
   if (element.style.display === "none")
   {
-    element.style.display = "inline-block";
+    element.style.display = "block";
   }
   else
   {
