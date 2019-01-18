@@ -44,7 +44,7 @@ class TaxonomyFilter extends WP_Widget
   		echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
   	}
 
-    $terms = get_terms($taxonomy);
+
     // print_r($instance);
     // print_r($args);
     // foreach($terms as $object)
@@ -55,10 +55,13 @@ class TaxonomyFilter extends WP_Widget
     //   echo '<lable for="'.$object->name.'">'.$object->name.'</lable>';
     //   echo '<br>';
     // }
-    foreach($this->terms as $tempterm)
+
+    echo "Taxonomy = ".$taxonomy;
+    echo '<br>';
+    foreach(get_terms($taxonomy) as $tempterm)
     {
-      echo '<input class="sidebar_checkbox" id="'.$tempterm.'" type="checkbox" name="'.$tempterm.'" checked>';
-      echo '<lable for="'.$tempterm.'">'.$tempterm.'</lable>';
+      echo '<input class="sidebar_checkbox" id="'.$tempterm->name.'" type="checkbox" name="'.$tempterm->name.'" checked>';
+      echo '<lable for="'.$tempterm->name.'">'.$tempterm->name.'</lable>';
       echo '<br>';
     }
   	echo $args['after_widget'];
@@ -74,66 +77,73 @@ class TaxonomyFilter extends WP_Widget
 	************************************************************************************/
 	public function form( $instance )
   {
-    $current_taxonomy = $this->_get_current_taxonomy($instance);
-		$title_id = $this->get_field_id( 'title' );
-		$count = isset( $instance['count'] ) ? (bool) $instance['count'] : false;
+
+    //Sanitize title
 		$instance['title'] = ! empty( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 
-		echo '<p><label for="' . $title_id .'">' . __( 'Title:' ) . '</label>
+    //Create title text field
+    echo '<p><label for="' . $title_id .'">' . __( 'Title:' ) . '</label>
 			<input type="text" class="widefat" id="' . $title_id .'" name="' . $this->get_field_name( 'title' ) .'" value="' . $instance['title'] .'" />
 		</p>';
 
-		$taxonomies = get_taxonomies( array( 'show_tagcloud' => true ), 'object' );
-		$id = $this->get_field_id( 'taxonomy' );
-		$name = $this->get_field_name( 'taxonomy' );
-		$input = '<input type="hidden" id="' . $id . '" name="' . $name . '" value="%s" />';
 
-		$count_checkbox = sprintf(
-			'<p><input type="checkbox" class="checkbox" id="%1$s" name="%2$s"%3$s /> <label for="%1$s">%4$s</label></p>',
-			$this->get_field_id( 'count' ),
-			$this->get_field_name( 'count' ),
-			checked( $count, true, false ),
-			__( 'Show tag counts' )
-		);
-
-    switch ( count( $taxonomies ) )
+    $taxonomies = get_taxonomies( array( 'show_tagcloud' => true ), 'object' );
+    switch (count($taxonomies))
     {
 
-		// No tag cloud supporting taxonomies found, display error message
-		case 0:
-			echo '<p>' . __( 'The tag cloud will not be displayed since there are no taxonomies that support the tag cloud widget.' ) . '</p>';
-			printf( $input, '' );
-			break;
+  		// No tag cloud supporting taxonomies found, display error message
+  		case 0:
+        $id = $this->get_field_id( 'taxonomy' );
+        $name = $this->get_field_name( 'taxonomy' );
+        $input = '<input type="hidden" id="' . $id . '" name="' . $name . '" value="%s" />';
+        echo '<p>' . __( 'The tag cloud will not be displayed since there are no taxonomies that support the tag cloud widget.' ) . '</p>';
+  			printf( $input, '' );
+  			break;
 
-		// Just a single tag cloud supporting taxonomy found, no need to display a select.
-		case 1:
-			$keys = array_keys( $taxonomies );
-			$taxonomy = reset( $keys );
-			printf( $input, esc_attr( $taxonomy ) );
-			echo $count_checkbox;
-			break;
 
-		// More than one tag cloud supporting taxonomy found, display a select.
-		default:
-			printf(
-				'<p><label for="%1$s">%2$s</label>' .
-				'<select class="widefat" id="%1$s" name="%3$s">',
-				$id,
-				__( 'Taxonomy:' ),
-				$name
-			);
+  		// Display texonomy as select tag
+  		default:
+  			printf(
+  				'<p><label for="%1$s">%2$s</label>' .
+  				'<select class="widefat" id="%1$s" name="%3$s">',
+  				$id,
+  				__( 'Taxonomy:' ),
+  				$name
+  			);
 
-			foreach ( $taxonomies as $taxonomy => $tax ) {
-				printf(
-					'<option value="%s"%s>%s</option>',
-					esc_attr( $taxonomy ),
-					selected( $taxonomy, $current_taxonomy, false ),
-					$tax->labels->name
-				);
-			}
+  			foreach ( $taxonomies as $taxonomy => $tax ) {
+  				printf(
+  					'<option value="%s"%s>%s</option>',
+  					esc_attr( $taxonomy ),
+  					selected( $taxonomy, $current_taxonomy, false ),
+  					$tax->labels->name
+  				);
+  			}
 
-			echo '</select></p>' . $count_checkbox;
+  			echo '</select></p>';
+
+        //Create checkbox to display as select statement
+        $aw_tax_display_checkbox_id = $this->get_field_id("aw_tax_display_checkbox");
+        $aw_tax_display_checkbox_name = $this->get_field_name("aw_tax_display_checkbox");
+        echo '<input name="'.$name.'" class="checkbox" type="checkbox" id="'.$aw_tax_display_checkbox_id.'"></input>';
+        echo '<lable for="'.$aw_tax_display_checkbox_id.'">Display as dropdown list </lable>';
+
+
+        //Create show tag count checkbox
+        $count = isset( $instance['count'] ) ? (bool) $instance['count'] : false;
+
+    		$count_checkbox = sprintf(
+    			'<p><input type="checkbox" class="checkbox" id="%1$s" name="%2$s"%3$s /> <label for="%1$s">%4$s</label></p>',
+    			$this->get_field_id( 'count' ),
+    			$this->get_field_name( 'count' ),
+    			checked( $count, true, false ),
+    			__( 'Show tag counts' )
+    		);
+
+        //Display tag count checkbox
+        echo $count_checkbox;
 		}
+
 	}
 
 
