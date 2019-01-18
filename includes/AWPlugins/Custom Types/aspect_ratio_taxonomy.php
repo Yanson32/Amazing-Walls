@@ -54,7 +54,7 @@ function aw_save_aspect_ratio()
       $height /= $cd;
 
 			//Set the aspect ratio of the post thumbnail. We erase any previous aspect ratio entries
-      wp_set_object_terms( get_the_ID(), $width.':'.$height, 'Aspect Ratio', false);
+      wp_set_object_terms( get_the_ID(), $width.'x'.$height, 'Aspect Ratio', false);
 		//endif;
     }
 	endif;
