@@ -58,12 +58,16 @@ class TaxonomyFilter extends WP_Widget
 
     echo "Taxonomy = ".$taxonomy;
     echo '<br>';
-    foreach(get_terms($taxonomy) as $tempterm)
-    {
-      echo '<input class="sidebar_checkbox" id="'.$tempterm->name.'" type="checkbox" name="'.$tempterm->name.'" checked>';
-      echo '<lable for="'.$tempterm->name.'">'.$tempterm->name.'</lable>';
-      echo '<br>';
-    }
+    // foreach(get_terms($taxonomy) as $tempterm)
+    // {
+    //   echo '<input class="sidebar_checkbox" id="'.$tempterm->name.'" type="checkbox" name="'.$tempterm->name.'" checked>';
+    //   echo '<lable for="'.$tempterm->name.'">'.$tempterm->name.'</lable>';
+    //   echo '<br>';
+    // }
+    echo $instance['title'];
+    echo $instance[$this->get_field_name( 'taxonomy' )];
+    echo $instance['count'];
+    echo $instance['aw_tax_display_checkbox'];
   	echo $args['after_widget'];
   }
 
@@ -103,6 +107,8 @@ class TaxonomyFilter extends WP_Widget
 
   		// Display texonomy as select tag
   		default:
+        $id = $this->get_field_id( 'taxonomy' );
+        $name = $this->get_field_name( 'taxonomy' );
   			printf(
   				'<p><label for="%1$s">%2$s</label>' .
   				'<select class="widefat" id="%1$s" name="%3$s">',
@@ -111,11 +117,12 @@ class TaxonomyFilter extends WP_Widget
   				$name
   			);
 
-  			foreach ( $taxonomies as $taxonomy => $tax ) {
+  			foreach ( $taxonomies as $taxonomy => $tax )
+        {
   				printf(
   					'<option value="%s"%s>%s</option>',
   					esc_attr( $taxonomy ),
-  					selected( $taxonomy, $current_taxonomy, false ),
+  					selected( $taxonomy, $this->_get_current_taxonomy($instance), false ),
   					$tax->labels->name
   				);
   			}
@@ -125,7 +132,8 @@ class TaxonomyFilter extends WP_Widget
         //Create checkbox to display as select statement
         $aw_tax_display_checkbox_id = $this->get_field_id("aw_tax_display_checkbox");
         $aw_tax_display_checkbox_name = $this->get_field_name("aw_tax_display_checkbox");
-        echo '<input name="'.$name.'" class="checkbox" type="checkbox" id="'.$aw_tax_display_checkbox_id.'"></input>';
+        $display = isset( $instance['aw_tax_display_checkbox'] ) ? (bool) $instance['aw_tax_display_checkbox'] : false;
+        echo '<input name="'.$aw_tax_display_checkbox_name.'" class="checkbox" type="checkbox" id="'.$aw_tax_display_checkbox_id.'" '.checked( $display, true, false ).'></input>';
         echo '<lable for="'.$aw_tax_display_checkbox_id.'">Display as dropdown list </lable>';
 
 
@@ -161,7 +169,9 @@ class TaxonomyFilter extends WP_Widget
   {
 		$instance = $new_instance;
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
-
+    $instance['taxonomy'] = $new_instance['taxonomy'];
+    $instance['count' ] = $new_instance['count'];
+    $instance["aw_tax_display_checkbox"] = $new_instance["aw_tax_display_checkbox"];
 		return $instance;
 	}
 
