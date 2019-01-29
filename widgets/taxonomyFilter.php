@@ -44,31 +44,12 @@ class TaxonomyFilter extends WP_Widget
   		echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
   	}
 
+    echo '<form onsubmit="taxFilterSubmitEvent(event);">';
+    echo '<input class="widefat" type="text">';
+    echo '<button type="submit">Add</button>';
+    echo '</form>';
+    echo $args['after_widget'];
 
-    // print_r($instance);
-    // print_r($args);
-    // foreach($terms as $object)
-    // {
-    //   echo $instance[$object->name];
-    //
-    //   echo '<input class="sidebar_checkbox" id="'.$object->name.'" type="checkbox" name="'.$object->name.'">';
-    //   echo '<lable for="'.$object->name.'">'.$object->name.'</lable>';
-    //   echo '<br>';
-    // }
-
-    echo "Taxonomy = ".$taxonomy;
-    echo '<br>';
-    // foreach(get_terms($taxonomy) as $tempterm)
-    // {
-    //   echo '<input class="sidebar_checkbox" id="'.$tempterm->name.'" type="checkbox" name="'.$tempterm->name.'" checked>';
-    //   echo '<lable for="'.$tempterm->name.'">'.$tempterm->name.'</lable>';
-    //   echo '<br>';
-    // }
-    echo $instance['title'];
-    echo $instance[$this->get_field_name( 'taxonomy' )];
-    echo $instance['count'];
-    echo $instance['aw_tax_display_checkbox'];
-  	echo $args['after_widget'];
   }
 
 

@@ -65,7 +65,7 @@
     register_post_type( 'Mobile', $args);
   }
 
-  add_image_size( 'mobile-thumb', 169, 300 );
+  add_image_size( 'mobile-thumb', 169, 300);
   /********************************************************************//**
   *	@brief Add meta boxes for the photo post type
   ************************************************************************/

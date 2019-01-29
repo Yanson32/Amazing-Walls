@@ -255,6 +255,10 @@ function aw_the_featured_image_url($id)
     $image_size = 'mobile-thumb';
   endif;
 
+  if(get_post_type() == 'video' ):
+    $image_size = 'video-thumb';
+  endif;
+
   if(is_search() || is_tax() || is_singular() || is_tag() || is_category()):
     $image_size = 'thumbnail';
   endif;

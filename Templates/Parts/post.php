@@ -19,8 +19,10 @@
 	<?php elseif(get_post_type() == 'mobile'): ?>
 		<?php $image_width = wp_get_additional_image_sizes()['mobile-thumb']['width']; ?>
 		<?php $image_height = wp_get_additional_image_sizes()['mobile-thumb']['height']; ?>
+	<?php elseif(get_post_type() == 'video'): ?>
+		<?php $image_width = wp_get_additional_image_sizes()['video-thumb']['width']; ?>
+		<?php $image_height = wp_get_additional_image_sizes()['video-thumb']['height']; ?>
 	<?php endif; ?>
-
 	<a href="<?php echo $thumb_link; ?>"><img class="post-thumbnail" src="<?php echo $image;?>" style="width:<?php echo $image_width; ?>; height:<?php echo $image_height; ?>" alt="<?php echo $alt_text; ?>"></a>
 
 </div>

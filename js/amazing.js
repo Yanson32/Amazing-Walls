@@ -7,3 +7,8 @@ function selectionChangedUploadForm()
   console.log(document.getElementById('upload_post_type').value);
   document.getElementById(document.getElementById('upload_post_type').value).style.display = 'block';
 }
+
+function taxFilterSubmitEvent(event)
+{
+  event.preventDefault();
+}

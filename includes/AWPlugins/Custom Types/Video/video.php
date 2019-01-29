@@ -60,3 +60,5 @@ if ( ! function_exists( 'amazing_walls_custom_posttype_photo' ) )
     if(get_option('create_video_type'))
    	  add_action( 'init', 'aw_custom_posttype_video' );
 }
+
+add_image_size( 'video-thumb', 169, 300);
