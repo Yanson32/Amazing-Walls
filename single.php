@@ -40,9 +40,7 @@
 						</div>
 						<!-- <?php endif; ?> -->
 						<div style="clear:both"></div>
-						<!-- <?php if(get_post_type() == 'photo' || get_post_type() == 'mobile'): ?>
-							<a href=<?php the_post_thumbnail_url( 'full' ); ?> alt="<?php echo get_the_title(get_the_ID()); ?>"><?php the_post_thumbnail('full'); ?></a>
-						<?php endif; ?> -->
+
 						<!-- The main content of the post -->
 
 						<?php $custom_fields = get_post_custom_values('Photo'); ?>

@@ -170,6 +170,8 @@ if ( ! function_exists( 'aw_setup' ) )
       //adds featuered image support
       set_post_thumbnail_size( 300, 169, get_option('aw_pt_crop') );
 
+      add_image_size('aw_thumbnail', 150, 150);
+
    		//add support for coment rss feed
    		add_theme_support( 'automatic-feed-links' );
 
@@ -241,9 +243,11 @@ $wp_customize->add_setting( 'header_textcolor' , array(
 add_action( 'customize_register', 'mytheme_customize_register' );
 
 /*****************************************************************************//**
-* @Brief  Get the featured image url
+* @Brief  Get the featured image url.
+* @param  $width of the featured image .
+* @param  $height of the featured image.
 *********************************************************************************/
-function aw_the_featured_image_url($id)
+function aw_the_featured_image_url($id, $width, $height)
 {
 
   //Set the default featured image

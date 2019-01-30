@@ -44,7 +44,7 @@
 							{
 								$link = wp_get_attachment_url($value);
 								$image = wp_get_attachment_image_url($value);
-								echo '<div class="gallery-item" style="margin:5px; float:left;">';
+								echo '<div class="gallery-item post-thumbnail" style="margin:5px; float:left;">';
 								echo '<a href="'.$link.'"><img src="'.$image.'"></a>';
 								echo '</div>';
 							}
