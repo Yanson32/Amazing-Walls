@@ -19,19 +19,19 @@
   	// $customtypes[] =
     //Custom type labels
   	$labels = array(
-  	'name' => __('Mobile', $aw_text_domain),
-  	'singular_name' => __('Mobile', $aw_text_domain),
-  	'add_new' => __('Add New Mobile', $aw_text_domain),
-  	'add_new_item' => __('Add New Mobile', $aw_text_domain),
-  	'edit_item' => __('Edit Mobile', $aw_text_domain),
-  	'new_item' => __('New Mobile', $aw_text_domain),
-  	'all_items' => __('All Mobile', $aw_text_domain),
-  	'view_item' => __('View Mobile', $aw_text_domain),
-  	'search_items' => __('Search Mobile', $aw_text_domain),
-  	'not_found' => __('No Mobile Found', $aw_text_domain),
-  	'not_found_in_trash' => __('No mobile found in trash', $aw_text_domain),
+  	'name' => __('Mobile', 'Amazing_Walls_Domain'),
+  	'singular_name' => __('Mobile', 'Amazing_Walls_Domain'),
+  	'add_new' => __('Add New Mobile', 'Amazing_Walls_Domain'),
+  	'add_new_item' => __('Add New Mobile', 'Amazing_Walls_Domain'),
+  	'edit_item' => __('Edit Mobile', 'Amazing_Walls_Domain'),
+  	'new_item' => __('New Mobile', 'Amazing_Walls_Domain'),
+  	'all_items' => __('All Mobile', 'Amazing_Walls_Domain'),
+  	'view_item' => __('View Mobile', 'Amazing_Walls_Domain'),
+  	'search_items' => __('Search Mobile', 'Amazing_Walls_Domain'),
+  	'not_found' => __('No Mobile Found', 'Amazing_Walls_Domain'),
+  	'not_found_in_trash' => __('No mobile found in trash', 'Amazing_Walls_Domain'),
   	'parent_item_colon' => '',
-  	'menu_name' => __('Mobile', $aw_text_domain),
+  	'menu_name' => __('Mobile', 'Amazing_Walls_Domain'),
 
   );
 

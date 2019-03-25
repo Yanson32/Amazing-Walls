@@ -21,7 +21,7 @@
 
 
 		//call register settings function
-		add_action('admin_init', 'aw_register_custom_type_lables');
+		//add_action('admin_init', 'aw_register_custom_type_lables');
     add_action( 'admin_init', 'aw_register_custom_type_page_settings' );
 
 

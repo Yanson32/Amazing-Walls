@@ -63,7 +63,7 @@
     {
     	$terms = get_the_terms(get_the_ID(), $taxonomy);
 
-      if(!empty($terms)):
+      if(!empty($terms) && taxonomy_exists($taxonomy)):
       	echo '<ul class="Tag" style="inline-block; text-align:left">';
       	echo '<li class="TagLable">'.$lable.'</li>';
       	foreach($terms as $term)
@@ -179,9 +179,9 @@ if ( ! function_exists( 'aw_setup' ) )
 
    		/*add menu support*/
    		register_nav_menus( array(
-       		'main-menu'   => __( 'main-menu', $aw_text_domain),
-          'header-menu'   => __( 'header-menu', $aw_text_domain),
-       		'footer-menu' => __( 'footer-menu', $aw_text_domain )
+       		'main-menu'   => __( 'main-menu', 'Amazing_Walls_Domain'),
+          'header-menu'   => __( 'header-menu', 'Amazing_Walls_Domain'),
+       		'footer-menu' => __( 'footer-menu', 'Amazing_Walls_Domain' )
    		) );
    	}
    	add_action('after_setup_theme', 'aw_setup');
@@ -218,8 +218,8 @@ if ( ! function_exists( 'aw_register_sidebars' ) )
 		register_sidebar(
 			array(
                		'id'            => 'primary',
-               		'name'          => __( 'Primary Sidebar', $aw_text_domain),
-               		'description'   => __( 'A short description of the sidebar.', $aw_text_domain),
+               		'name'          => __( 'Primary Sidebar', 'Amazing_Walls_Domain'),
+               		'description'   => __( 'A short description of the sidebar.', 'Amazing_Walls_Domain'),
                		'before_widget' => '<div id="%1$s" class="widget %2$s">',
                		'after_widget'  => '</div>',
                		'before_title'  => '<h3 class="widget-title">',
@@ -418,6 +418,8 @@ function aw_the_download_button()
     //When downloading a non album type we just need to download the file itself.
     else:
       $custom_fields = get_post_custom_values('Photo');
+
+      $url = '';
       if($custom_fields):
         $url = wp_get_attachment_url($custom_fields[0]);
       endif;
@@ -446,7 +448,7 @@ function aw_post_title_filter($title)
 {
   return str_replace("Private:","",$title);
 }
-add_filter('the_title', aw_post_title_filter);
+add_filter('the_title', 'aw_post_title_filter');
 
 
 /***********************************************************************//**
@@ -454,9 +456,12 @@ add_filter('the_title', aw_post_title_filter);
 *         field.
 * @param $args An array of values to customize post section
 ***************************************************************************/
-function aw_posts_section($args)
+function aw_posts_section($args = array('title' <= 'none', 'custom_field' <= 'Releated'))
 {
   $title = (!empty($args['title']))? $args['title']: 'Related';
+
+  if(!isset($args['custom_field']) || !isset($args['title']))
+    return;
   $custom_field = (!empty($args['custom_field']))? $args['custom_field']: 'Related';
 
   //Get  the custom field "Related"

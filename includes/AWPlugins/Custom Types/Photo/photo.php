@@ -16,19 +16,19 @@
   	// $customtypes[] =
     //Custom type labels
   	$labels = array(
-  	'name' => __('Photo', $aw_text_domain),
-  	'singular_name' => __('Photo', $aw_text_domain),
-  	'add_new' => __('Add New Photo', $aw_text_domain),
-  	'add_new_item' => __('Add New Photo', $aw_text_domain),
-  	'edit_item' => __('Edit Photo', $aw_text_domain),
-  	'new_item' => __('New Photo', $aw_text_domain),
-  	'all_items' => __('All Photos', $aw_text_domain),
-  	'view_item' => __('View Photos', $aw_text_domain),
-  	'search_items' => __('Search Photos', $aw_text_domain),
-  	'not_found' => __('No Photos Found', $aw_text_domain),
-  	'not_found_in_trash' => __('No photos found in trash', $aw_text_domain),
+  	'name' => __('Photo', 'Amazing_Walls_Domain'),
+  	'singular_name' => __('Photo', 'Amazing_Walls_Domain'),
+  	'add_new' => __('Add New Photo', 'Amazing_Walls_Domain'),
+  	'add_new_item' => __('Add New Photo', 'Amazing_Walls_Domain'),
+  	'edit_item' => __('Edit Photo', 'Amazing_Walls_Domain'),
+  	'new_item' => __('New Photo', 'Amazing_Walls_Domain'),
+  	'all_items' => __('All Photos', 'Amazing_Walls_Domain'),
+  	'view_item' => __('View Photos', 'Amazing_Walls_Domain'),
+  	'search_items' => __('Search Photos', 'Amazing_Walls_Domain'),
+  	'not_found' => __('No Photos Found', 'Amazing_Walls_Domain'),
+  	'not_found_in_trash' => __('No photos found in trash', 'Amazing_Walls_Domain'),
   	'parent_item_colon' => '',
-  	'menu_name' => __('Photo', $aw_text_domain),
+  	'menu_name' => __('Photo', 'Amazing_Walls_Domain'),
 
   );
 

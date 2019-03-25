@@ -8,7 +8,7 @@
 <?php if ( post_password_required() ): ?>
 	<?php get_the_password_form(); ?>
 <?php endif; ?>
-<!-- <?php wp_get_attachment_image(); ?> -->
+
 	<div id="single-body" class="Body group">
 		<?php get_template_part('/Templates/Parts/post header'); ?>
 
@@ -44,13 +44,15 @@
 						<!-- The main content of the post -->
 
 						<?php $custom_fields = get_post_custom_values('Photo'); ?>
-						<?php foreach($custom_fields as $value)
-						{
-							$url = wp_get_attachment_url($value);
+						<?php if(is_array($custom_fields)): ?>
+							<?php foreach($custom_fields as $value)
+							{
+								$url = wp_get_attachment_url($value);
 
-							echo '<a href="'.$url.'"><img class="aw_single_post_image" src="'.$url.'"></a>';
-						}
-							?>
+								echo '<a href="'.$url.'"><img class="aw_single_post_image" src="'.$url.'"></a>';
+							}
+								?>
+						<?php endif; ?>
 							<div style="clear:both"></div>
 						<?php the_content(); ?>
 						<?php aw_posts_section(); ?>

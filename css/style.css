@@ -92,6 +92,12 @@ img
 	height:auto;
 }
 
+.post-thumbnail
+{
+	width:300px;
+	height:169px;
+}
+
 .post-thumbnail:hover
 {
 	transform:scale(1.03);
@@ -233,7 +239,7 @@ ul.MainMenu
 {
 	margin:5px;
   width: auto;
-  float: left;
+  display:inline-block;
 }
 
 
@@ -413,8 +419,8 @@ ul.MainMenu
 
 .thumbnail
 {
-    max-width:300px;
-	max-height:150px;
+	width:100px;
+	height:100px;
 }
 
 .gallery-icon

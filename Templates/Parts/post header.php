@@ -7,7 +7,7 @@
       <li><?php aw_the_download_button();?> </li>
     <?php endif; ?>
   </ul>
-  <?php echo wp_login(); ?>
+  <?php /*echo wp_signon();*/ ?>
 <hr style="width:100%; float:left">
 
 

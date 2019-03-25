@@ -17,7 +17,7 @@
     <?php if ( have_posts() ) : ?>
       <?php while ( have_posts() ) : ?>
         <?php the_post(); ?>
-        <div id="post-<?php the_ID(); ?>" <?php post_class('archive_single_post clearfix'); ?> >
+        <div id="post-<?php the_ID(); ?>" <?php post_class('archive_single_post'); ?> >
 
           <!-- get the defined width and height of the post featured image -->
           <?php $image_width = wp_get_additional_image_sizes()['post-thumbnail']['width']; ?>
@@ -37,9 +37,25 @@
 
         	<!-- Get the featured image url -->
         	<?php $image = aw_the_featured_image_url(get_the_ID(), $image_width, $image_height); ?>
-
-        	<a href="<?php echo $thumb_link; ?>"><img class="post-thumbnail" src="<?php echo $image;?>" style="width:<?php echo $image_width; ?>; height:<?php echo $image_height; ?>; max-height:<?php echo $image_Height;?>" alt="<?php echo $alt_text; ?>"></a>
-
+        	<!-- <a href="<?php echo $thumb_link; ?>">
+            <img class="post-thumbnail"
+            src="<?php echo $image;?>"
+            style="width:<?php echo $image_width; ?>; height:<?php echo $image_height; ?>; max-height:<?php echo $image_height;?>"
+            alt="<?php echo $alt_text; ?>">
+          </a> -->
+          <?php if(is_search()): ?>
+            <a href="<?php echo $thumb_link; ?>">
+              <img class="post-thumbnail thumbnail"
+              src="<?php echo $image;?>"
+              alt="<?php echo $alt_text; ?>">
+            </a>
+          <?php else: ?>
+            <a href="<?php echo $thumb_link; ?>">
+              <img class="post-thumbnail "
+              src="<?php echo $image;?>"
+              alt="<?php echo $alt_text; ?>">
+            </a>
+          <?php endif; ?>
         </div>
       <?php endwhile; ?>
     <?php endif; ?>
@@ -47,9 +63,9 @@
 
 
   <!-- Add comments to template -->
-   <?php if ( comments_open() || get_comments_number() ) : ?>
+   <!-- <?php if ( comments_open() || get_comments_number() ) : ?>
      <?php comments_template(); ?>
-   <?php endif; ?>
+   <?php endif; ?> -->
 
 
   <!-- Create post navigation menu -->
