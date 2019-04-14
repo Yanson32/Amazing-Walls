@@ -43,7 +43,7 @@
             style="width:<?php echo $image_width; ?>; height:<?php echo $image_height; ?>; max-height:<?php echo $image_height;?>"
             alt="<?php echo $alt_text; ?>">
           </a> -->
-          <?php if(is_search()): ?>
+          <?php if(is_search() || is_tag()): ?>
             <a href="<?php echo $thumb_link; ?>">
               <img class="post-thumbnail thumbnail"
               src="<?php echo $image;?>"
