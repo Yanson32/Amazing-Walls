@@ -451,7 +451,8 @@ h2
 .photoalbum,
 .mobile,
 .video,
-.photo
+.photo,
+.photo_album_item
 {
 	outline-width:5px;
 	outline-style:solid

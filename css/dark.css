@@ -107,7 +107,14 @@ h2
 {
 	outline-color:transparent;
 }
-
+.photo_album_item
+{
+	outline-color:transparent;
+}
+.photo_album_item:hover
+{
+	outline-color:red;
+}
 .photoalbum:hover
 {
 	outline-color:blue;
