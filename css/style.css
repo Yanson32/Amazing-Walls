@@ -423,6 +423,17 @@ ul.MainMenu
 	height:150px;
 }
 
+.thumbnail img
+{
+	width:150px;
+	height:150px;
+}
+
+.thumbnail img:hover 
+{
+	transform:scale(1.03);
+}
+
 .gallery-icon
 {
 	width:auto;
