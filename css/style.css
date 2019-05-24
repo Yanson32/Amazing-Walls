@@ -24,10 +24,6 @@
   height: 20px;
   text-align: center; }
 
-.aw_single_post_image {
-  display: block;
-  margin: auto; }
-
 div.gallery {
   max-width: 98%;
   width: 100%;
@@ -101,42 +97,8 @@ html {
         margin: 0px;
         padding: 0px; }
 
-#index-content {
-  display: block;
-  width: 100%; }
-
-#single_header {
-  margin: 5px; }
-
-div#test {
-  max-width: 75%; }
-
 ul {
   list-style-type: none; }
-
-.single_gallery_image_div {
-  max-width: 75%; }
-
-#header_container {
-  margin: auto; }
-
-#header_text {
-  color: white;
-  display: inline-block;
-  font-size: 2em;
-  margin: 5px; }
-
-#header_nav {
-  display: inline-block; }
-
-#header_nav div {
-  padding: 5px; }
-
-#header_description {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  margin: 5px; }
 
 /*-------------------------------------------------------General-------------------------------------------------------*/
 /*Button Styling*/

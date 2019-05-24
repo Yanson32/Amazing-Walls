@@ -32,7 +32,7 @@
         foreach($custom_fields as $value)
         {
           $url = wp_get_attachment_url($value);
-          echo '<a href="'.$url.'"><img class="aw_single_post_image" src="'.$url.'"></a>';
+          echo '<a href="'.$url.'"><img src="'.$url.'"></a>';
         }
 			?>
       <?php endif; ?>
