@@ -59,12 +59,6 @@ h2 {
 .current-menu-item:hover > a:hover {
   color: black; }
 
-.gallery-item:hover {
-  outline-color: red; }
-
-.gallery-item {
-  outline-color: transparent; }
-
 .Mobile:hover {
   outline-color: white; }
 

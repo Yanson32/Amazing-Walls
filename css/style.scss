@@ -35,44 +35,7 @@
 	text-align:center;
 }
 
-div.gallery
-{
-	max-width:98%;
-	width:100%;
-	margin:10px;
-}
-div.gallery .gallery-item
-{
 
-}
-div.gallery .gallery-item img
-{
-	width:95%;
-	margin:10px;
-}
-div.gallery .gallery-item img:hover
-{
-	width:95%;
-	margin:10px;
-	transform:scale(1.03);
-}
-div.gallery
-{
-	float:left;
-}
-.gallery-columns-3
-{
-
-}
-
-.gallery-columns-2
-{
-
-}
-.gallery-columns-1
-{
-
-}
 img
 {
 	max-width:100%;
@@ -388,25 +351,10 @@ ul.MainMenu
     float: left;
 }
 
-.gallery-item
-{
-	float:left;
-	margin:5px;
-	outline-width:5px;
-	outline-style:solid;
-}
-
 .thumbnail
 {
     max-width:300px;
 	max-height:150px;
-}
-
-.gallery-icon
-{
-	width:auto;
-	margin:0px;
-	padding:0px;
 }
 
 .portrait
