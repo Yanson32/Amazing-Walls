@@ -48,16 +48,6 @@ Template Name: Tag Template
     ?>
     </main>
 
-    <!-- Add comments to template -->
-    <?php if ( comments_open() || get_comments_number() ) : ?>
-      <?php comments_template(); ?>
-    <?php endif; ?>
-
-    <!-- Create post navigation menu -->
-    <nav class="post_navigation_menu post_navigation_menu_color">
-      <?php global $wp_query; aw_numeric_posts_nav($wp_query, "Previous", "Next"); ?>
-    </nav>
-
     <!-- Create page footer -->
     <?php get_footer(); ?>
   </div>
