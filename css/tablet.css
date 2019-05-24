@@ -42,18 +42,6 @@
   display: block;
   text-align: center; }
 
-.HeaderSearch {
-  float: none;
-  text-align: center;
-  margin-top: 10px; }
-
-div.HeaderSearch {
-  display: block; }
-
-div.HeaderSearch input {
-  display: block;
-  width: 100%; }
-
 .custom-logo {
   display: block;
   margin: auto;

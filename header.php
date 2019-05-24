@@ -9,7 +9,7 @@
 </head>
 <body <?php body_class('BodyColor'); ?>>
 	<header class="HeaderColor">
-			<div class="aw_group">
+			<div class="clearfix">
 				<div id="aw_site_logo">
 					<?php the_custom_logo(); ?>
 				</div>

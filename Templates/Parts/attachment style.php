@@ -1,4 +1,4 @@
-<div class="attachment_page_image_div">
+<!-- <div class="attachment_page_image_div">
    <table class="attachment_page_table">
       <tr>
          <td><?php print_featured_image(); ?></td>
@@ -14,4 +14,4 @@
       </tr>
    </table>
 </div>
-<div style="clear:left"></div>
+<div style="clear:left"></div> -->

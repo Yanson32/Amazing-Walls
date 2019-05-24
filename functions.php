@@ -101,11 +101,6 @@
    	$thumb_url_array = wp_get_attachment_image_src($thumb_id, $size, true);
    	return $thumb_url_array[0];
    }
-   // function print_featured_image()
-   // {
-   // 	$featured_image_full = get_featured_image_url('full');
-   // 	echo "<a href=\"$featured_image_full\"><img src=\"$featured_image_full\" class=\"attachment_page_image\"></a>";
-   // }
 
 
 
