@@ -112,7 +112,6 @@ html
 			}
 			#row_2_column_2
 			{
-				background-color:yellow;
 				display:inline-block;
 				width:calc(20% - 5px);
 				margin:0px;
@@ -364,6 +363,14 @@ main
 	width:100%;
 	padding:0px;
 	margin:0px;
+}
+
+main img
+{
+		display:inline-block;
+		max-width:100%;
+		margin:auto;
+		height:auto;
 }
 
 #aw_upload_form
