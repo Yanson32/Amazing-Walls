@@ -80,6 +80,13 @@ html
 	margin:5px;
 	body
 	{
+		header
+		{
+			border-color:white;
+			border-style:solid;
+			border-width:1px;
+		}
+
 		margin:0px;
 		padding:0px;
 		#row_2
@@ -101,7 +108,7 @@ html
 				}
 				footer
 				{
-					
+					margin:5px;
 				}
 			}
 			#row_2_column_2

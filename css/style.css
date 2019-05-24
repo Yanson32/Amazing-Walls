@@ -57,6 +57,10 @@ html {
   html body {
     margin: 0px;
     padding: 0px; }
+    html body header {
+      border-color: white;
+      border-style: solid;
+      border-width: 1px; }
     html body #row_2 {
       width: 100%;
       margin: 0px;
@@ -68,6 +72,8 @@ html {
         margin: 0px;
         padding: 0px;
         vertical-align: top; }
+        html body #row_2 #row_2_column_1 footer {
+          margin: 5px; }
       html body #row_2 #row_2_column_2 {
         background-color: yellow;
         display: inline-block;
