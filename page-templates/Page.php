@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 <!-- print the name of the page when in debug mode -->
-<?php aw_print_name('Contact.php Page Template'); ?>
+<?php aw_print_name('Page Template'); ?>
 <?php get_template_part('/Templates/Parts/post header'); ?>
 <div id="row_2">
   <div id="row_2_column_1" class="">
@@ -23,7 +23,7 @@
 		 <?php if ( comments_open() || get_comments_number() ) : ?>
 			 <?php comments_template(); ?>
 		 <?php endif; ?>
-		 
+
     <!-- Create page footer -->
     <?php get_footer(); ?>
   </div>
