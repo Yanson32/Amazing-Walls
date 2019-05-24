@@ -228,6 +228,12 @@ ul.MainMenu {
   max-width: 300px;
   max-height: 150px; }
 
+.thumbnail:hover {
+  transform: scale(1.03);
+  outline-color: red;
+  outline-width: 5px;
+  outline-style: solid; }
+
 h2 {
   text-align: center; }
 
