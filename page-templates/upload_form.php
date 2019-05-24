@@ -5,7 +5,7 @@ Template Name: Upload
 ?>
 <?php get_header(); ?>
 
-<div class="SearchFormContainer" style="padding:5px">
+<div id="SearchFormContainer">
   <?php get_search_form(); ?>
 </div>
 <hr style="width:100%; float:left">
