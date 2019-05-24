@@ -3,21 +3,7 @@
 	margin:0px;
 }
 
-#center_row
-{
-	display:block;
-}
-#sidebar_layout
-{
-	float:left;
-	width:20%;
-}
 
-#main_layout
-{
-	float:left;
-	width:80%;
-}
 
 .aw_tag_list li
 {
@@ -103,7 +89,6 @@ img
 	transform:scale(1.03);
 }
 
-
 .clearfix
 {
   content: "";
@@ -140,10 +125,46 @@ ul.Tag li a
 	margin-top:20px;
 }
 
-html, body
+html
 {
 	min-height:100%;
 	margin:5px;
+	body
+	{
+		margin:0px;
+		padding:0px;
+		#row_2
+		{
+			width:100%;
+			margin:0px;
+			padding:0px;
+			#row_2_column_1
+			{
+				background-color:green;
+				display:inline-block;
+				width:80%;
+				margin:0px;
+				padding:0px;
+				vertical-align:top;
+				#body
+				{
+
+				}
+				footer
+				{
+
+				}
+			}
+			#row_2_column_2
+			{
+				background-color:yellow;
+				display:inline-block;
+				width:calc(20% - 5px);
+				margin:0px;
+				padding:0px;
+			}
+		}
+	}
 }
 
 .Tag a
@@ -277,7 +298,7 @@ ul.MainMenu
 {
 	margin:5px;
 
-  float: left;
+  display:inline-block;
 }
 
 
@@ -540,7 +561,9 @@ textarea
 }
 main
 {
-	max-width:100%;
+	width:100%;
+	padding:0px;
+	margin:0px;
 }
 
 #aw_upload_form

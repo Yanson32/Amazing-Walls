@@ -1,160 +1,102 @@
-h1
-{
-	color:white;
-}
+h1 {
+  color: white; }
 
-h2
-{
-  color:white;
-}
-.TagColor a
-{
-  color:white;
-	border-color: red;
-	background-color:transparent;
-}
-.TagColor a:hover
-{
-	color:red;
-}
+h2 {
+  color: white; }
 
-.BodyColor
-{
-    background-color: black;
-    color: red;
-}
+.TagColor a {
+  color: white;
+  border-color: red;
+  background-color: transparent; }
 
-.ButtonColor
-{
-	color:white;
-	border-color:red;
-	background-color: black;
-}
-.ButtonColor a
-{
-	color: inherit;
-}
-.ButtonColor:hover
-{
-	color:red;
-	border-color:red;
-	background-color:grey;
-}
+.TagColor a:hover {
+  color: red; }
+
+.BodyColor {
+  background-color: black;
+  color: red; }
+
+.ButtonColor {
+  color: white;
+  border-color: red;
+  background-color: black; }
+
+.ButtonColor a {
+  color: inherit; }
+
+.ButtonColor:hover {
+  color: red;
+  border-color: red;
+  background-color: grey; }
 
 .HeaderMenuColor li,
 .FooterMenuColor li,
-.MainMenuColor li
-{
-	border-color:red;
-}
+.MainMenuColor li {
+  border-color: red; }
 
 .HeaderMenuColor a:hover,
 .FooterMenuColor a:hover,
-.MainMenuColor a:hover
-{
-	color:red;
-}
+.MainMenuColor a:hover {
+  color: red; }
 
 .HeaderMenuColor a,
 .FooterMenuColor a,
-.MainMenuColor a
-{
-    color: white;
-}
+.MainMenuColor a {
+  color: white; }
 
+.SidebarColor {
+  background-color: white; }
 
-.SidebarColor
-{
-	background-color: white;
-}
+.SidebarColor a {
+  color: black; }
 
-.SidebarColor a
-{
-    color: black;
-}
-.SidebarColor a:hover
-{
-    color: red;
-}
+.SidebarColor a:hover {
+  color: red; }
 
-.current-menu-item
-{
-	background-color:red;
-}
+.current-menu-item {
+  background-color: red; }
 
-.current-menu-item:hover > a:hover
-{
-	color: black;
-}
+.current-menu-item:hover > a:hover {
+  color: black; }
 
-.gallery-item:hover
-{
-	outline-color:red;
+.gallery-item:hover {
+  outline-color: red; }
 
-}
+.gallery-item {
+  outline-color: transparent; }
 
-.gallery-item
-{
-	outline-color:transparent;
-}
+.Mobile:hover {
+  outline-color: white; }
 
-.Mobile:hover
-{
-	outline-color:white;
-}
+.Mobile {
+  outline-color: transparent; }
 
-.Mobile
-{
-	outline-color:transparent;
-}
+.photoalbum:hover {
+  outline-color: blue; }
 
-.photoalbum:hover
-{
-	outline-color:blue;
-}
+.photoalbum {
+  outline-color: transparent; }
 
-.photoalbum
-{
-	outline-color:transparent;
-}
+.video:hover {
+  outline-color: #58FA58; }
 
-.video:hover
-{
-	outline-color:#58FA58;
-}
+.video {
+  outline-color: transparent; }
 
-.video
-{
-	outline-color:transparent;
-}
+.photo:hover {
+  outline-color: yellow; }
 
-.photo:hover
-{
-	outline-color:yellow;
-}
+.photo {
+  outline-color: transparent; }
 
-.photo
-{
-	outline-color:transparent;
-}
+.HeaderColor {
+  background-color: black; }
 
-.HeaderColor
-{
-	background-color: black;
-}
+.HeaderContainerColor {
+  border-color: grey;
+  color: white; }
 
-.HeaderContainerColor
-{
-	border-color: grey;
-	color:white;
-}
+.PrimaryTitleColor {
+  text-shadow: inherit inherit green; }
 
-.PrimaryTitleColor
-{
-
-}
-
-.PrimaryTitleColor
-{
-	text-shadow: inherit inherit green;
-}
+/*# sourceMappingURL=dark.css.map */

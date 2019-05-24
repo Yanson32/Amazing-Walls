@@ -1,111 +1,71 @@
-.BodyColor 
-{
-    background-color: white;
-    color: blue;
-}
+.BodyColor {
+  background-color: white;
+  color: blue; }
 
-.ButtonColor
-{
-	color:black;
-	border-color:blue;
-}
-.ButtonColor:hover
-{
-	color:blue;
-	border-color:blue;
-}
+.ButtonColor {
+  color: black;
+  border-color: blue; }
+
+.ButtonColor:hover {
+  color: blue;
+  border-color: blue; }
 
 .FooterMenuColor li,
-.MainMenuColor li
-{
-	border-color:blue;
-}
+.MainMenuColor li {
+  border-color: blue; }
 
 .FooterMenuColor a:hover,
-.MainMenuColor a:hover
-{
-	color:blue;
-}
+.MainMenuColor a:hover {
+  color: blue; }
 
 .FooterMenuColor a,
-.MainMenuColor a
-{
-    color: black;
-}
+.MainMenuColor a {
+  color: black; }
 
+.SidebarColor {
+  background-color: black; }
 
-.SidebarColor
-{
-	background-color: black;
-}
+.SidebarColor a {
+  color: white; }
 
-.SidebarColor a 
-{
-    color: white;
-}
-.SidebarColor a:hover 
-{
-    color: blue;
-}
+.SidebarColor a:hover {
+  color: blue; }
 
-.current-menu-item
-{
-	background-color:blue;
-}
+.current-menu-item {
+  background-color: blue; }
 
-.current-menu-item:hover > a:hover
-{
-	color: white;
-}
+.current-menu-item:hover > a:hover {
+  color: white; }
 
-.gallery-item:hover
-{
-	outline-color:blue;
+.gallery-item:hover {
+  outline-color: blue; }
 
-}
+.gallery-item {
+  outline-color: transparent; }
 
-.gallery-item
-{
-	outline-color:transparent;
-}
+.photoalbum:hover {
+  outline-color: blue; }
 
-.photoalbum:hover
-{
-	outline-color:blue;
-}
+.photoalbum {
+  outline-color: transparent; }
 
-.photoalbum
-{
-	outline-color:transparent;
-}
+.video:hover {
+  outline-color: #58FA58; }
 
-.video:hover
-{
-	outline-color:#58FA58;
-}
+.video {
+  outline-color: transparent; }
 
-.video
-{
-	outline-color:transparent;
-}
+.photo:hover {
+  outline-color: yellow; }
 
-.photo:hover
-{
-	outline-color:yellow;
-}
+.photo {
+  outline-color: transparent; }
 
-.photo
-{
-	outline-color:transparent;
-}
+.HeaderColor {
+  background-color: transparent; }
 
-.HeaderColor
-{
-	background-color: transparent;
-}
+.HeaderContainerColor {
+  border-color: grey;
+  color: black; }
 
-.HeaderContainerColor
-{
-	border-color: grey;
-	color:black;
-}
+/*# sourceMappingURL=light.css.map */
