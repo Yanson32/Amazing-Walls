@@ -62,14 +62,12 @@ html {
       margin: 0px;
       padding: 0px; }
       html body #row_2 #row_2_column_1 {
-        background-color: green;
         display: inline-block;
         width: 80%;
         margin: 0px;
         padding: 0px;
         vertical-align: top; }
       html body #row_2 #row_2_column_2 {
-        background-color: yellow;
         display: inline-block;
         width: calc(20% - 5px);
         margin: 0px;
