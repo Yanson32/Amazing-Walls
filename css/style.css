@@ -85,7 +85,6 @@ ul {
 
 /*-------------------------------------------------------General-------------------------------------------------------*/
 /*Button Styling*/
-.HeaderMenu li,
 .FooterMenu li,
 ul.MainMenu li,
 .attachment_page_table_ul a,
@@ -100,7 +99,6 @@ ul.MainMenu li,
   margin: 0px;
   cursor: pointer; }
 
-.HeaderMenu a,
 .FooterMenu a,
 ul.MainMenu li a,
 .Button a {
@@ -230,10 +228,6 @@ ul.MainMenu {
 .HeaderSearch {
   float: right;
   padding: 5px; }
-
-.HeaderContainer {
-  border-style: outset;
-  border-width: 2px; }
 
 /*Attachment page styling*/
 .attachment_page_image {

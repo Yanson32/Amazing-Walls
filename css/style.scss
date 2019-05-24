@@ -135,7 +135,6 @@ ul
 /*-------------------------------------------------------General-------------------------------------------------------*/
 /*Button Styling*/
 
-.HeaderMenu li,
 .FooterMenu li,
 ul.MainMenu li,
 .attachment_page_table_ul a,
@@ -152,7 +151,6 @@ ul.MainMenu li,
 		cursor:pointer;
 }
 
-.HeaderMenu a,
 .FooterMenu a,
 ul.MainMenu li a,
 .Button a
@@ -324,12 +322,6 @@ ul.MainMenu
 {
 	float:right;
 	padding:5px;
-}
-
-.HeaderContainer
-{
-	border-style: outset;
-    border-width: 2px;
 }
 
 /*Attachment page styling*/

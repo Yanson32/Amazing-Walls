@@ -77,30 +77,6 @@
     }
 
 
-    /********************************************************************************************//**
-    * @brief  Add login and logout buttons to header menu
-    ************************************************************************************************/
-    function add_login_logout_register_menu( $items, $args )
-    {
-      if ( $args->theme_location != 'header-menu' )
-        return $items;
-
-      if ( is_user_logged_in() )
-      {
-        $items .= '<li Class="Button ButtonColor"><a href="' . wp_logout_url() . '">' . __( 'Log Out' ) . '</a></li>';
-      }
-      else
-      {
-        $items .= '<li Class="Button ButtonColor"><a href="' . wp_login_url() . '">' . __( 'Login In' ) . '</a></li>';
-        $items .= '<li Class="Button ButtonColor"><a href="' . wp_registration_url() . '">' . __( 'Sign Up' ) . '</a></li>';
-      }
-
-     return $items;
-    }
-
-    add_filter( 'wp_nav_menu_items', 'add_login_logout_register_menu', 199, 2 );
-
-
     /*************************************************************************************//**
     * @brief Add custom post types to tag and category results
     *****************************************************************************************/
@@ -180,7 +156,6 @@ if ( ! function_exists( 'aw_setup' ) )
    		/*add menu support*/
    		register_nav_menus( array(
        		'main-menu'   => __( 'main-menu', 'Amazing_Walls_Domain'),
-          'header-menu'   => __( 'header-menu', 'Amazing_Walls_Domain'),
        		'footer-menu' => __( 'footer-menu', 'Amazing_Walls_Domain' )
    		) );
    	}
