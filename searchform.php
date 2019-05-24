@@ -1,5 +1,5 @@
 
-  <form role="search" method="get" class="searchform group" action="<?php echo home_url( '/' ); ?>">
+  <form role="search" method="get" class="searchform clearfix" action="<?php echo home_url( '/' ); ?>">
 
     <!-- Create a searchable text field -->
     <input type="search" class="search-field"

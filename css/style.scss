@@ -114,10 +114,7 @@ ul.Tag li a
 	margin:0px;
 }
 
-#single-body
-{
-	width:100%;
-}
+
 #comments
 {
 	float:left;
@@ -177,28 +174,13 @@ html
 	display:block;
 	width:100%;
 }
-#single-content
-{
-	width: 100%;
-	margin:auto;
-	text-align:center;
-
-}
 
 #single_header
 {
 	margin:5px;
 }
 
-div.mejs-container
-{
-	clear:none;
-}
 
-div.wp-video
-{
-	margin:auto;
-}
 div#test
 {
 	max-width:75%;
@@ -473,22 +455,6 @@ ul.MainMenu
 	outline-width:5px;
 	outline-style:solid;
 }
-
-
-/* Make vidoe responsive */
-.wp-video, video.wp-video-shortcode, .mejs-container, .mejs-overlay.load {
-	width: 100% !important;
-	height: 100% !important;
-}
-.mejs-container {
-	padding-top: 56.25%;
-}
-.wp-video, video.wp-video-shortcode {
-	max-width: 100% !important;
-}
-
-
-
 
 .thumbnail
 {

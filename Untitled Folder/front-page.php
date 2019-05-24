@@ -5,9 +5,9 @@
 <?php aw_print_name('front-page.php'); ?>
 
 <!-- The Loop -->
-<div class="Body">
+<div>
   <?php get_template_part('/Templates/Parts/post header'); ?>
-  <main id="index-content" class="aw_group">
+  <main class="clearfix">
     <?php if(is_search()): ?>
       <h1 class="search-title">
         <?php echo $wp_query->found_posts; ?> <?php _e( 'Results For', 'locale' ); ?>: "<?php the_search_query(); ?>"

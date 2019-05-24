@@ -13,9 +13,9 @@ Template Name: Tag Template
 <?php aw_print_name('tag.php'); ?>
 
 <?php $alphabet = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); ?>
-<div class="Body">
+<div>
 
-  <main id="index-content" class="group">
+  <main class="clearfix">
 
     <!-- Create a bunch of links for each letter of the alphabet -->
     <div class="clearfix">
