@@ -86,4 +86,11 @@
   display: inline-block;
   width: 47%; }
 
+html body #row_2 #row_2_column_1 {
+  width: 100%; }
+  html body #row_2 #row_2_column_1 main {
+    margin: auto; }
+html body #row_2 #row_2_column_2 {
+  display: none; }
+
 /*# sourceMappingURL=tablet.css.map */

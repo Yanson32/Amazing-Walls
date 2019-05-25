@@ -111,3 +111,24 @@
 	display:inline-block;
 	width:47%;
 }
+html
+{
+	body
+	{
+		#row_2
+		{
+			#row_2_column_1
+			{
+				width:100%;
+				main
+				{
+					margin:auto;
+				}
+			}
+			#row_2_column_2
+			{
+				display:none;
+			}
+		}
+	}
+}
