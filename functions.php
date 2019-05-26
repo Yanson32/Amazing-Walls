@@ -142,6 +142,10 @@ if ( ! function_exists( 'aw_setup' ) )
       set_post_thumbnail_size( 300, 169, get_option('aw_pt_crop') );
 
       add_image_size('aw_thumbnail', 150, 150);
+      add_image_size( 'aw_photo_post_thumbnail', 300, 169);
+      add_image_size( 'aw_mobile_post_thumbnail', 169, 300);
+      add_image_size( 'aw_photoalbum_post_thumbnail', 300, 169);
+      add_image_size( 'aw_video_post_thumbnail', 169, 300);
 
    		//add support for coment rss feed
    		add_theme_support( 'automatic-feed-links' );
