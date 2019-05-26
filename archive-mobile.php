@@ -18,7 +18,7 @@
             <!-- Permalink of post -->
             <?php $thumb_link =  get_permalink(); ?>
             <?php if ( has_post_thumbnail() ): ?>
-              <a href="<?php echo $thumb_link; ?>"><?php the_post_thumbnail('mobile-thumbnail'); ?></a>
+              <a href="<?php echo $thumb_link; ?>"><?php the_post_thumbnail(); ?></a>
             <?php else: ?>
               <a href="<?php echo $thumb_link; ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/images/default-featured-image.jpg" alt="<?php the_title(); ?>" /></a>
             <?php endif; ?>
