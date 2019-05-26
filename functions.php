@@ -5,7 +5,6 @@
    	require_once('includes/helpers.php');
     require_once('includes/AWPlugins/AWPlugins.php');
     require('includes/config.php');
-    add_theme_support( 'post-thumbnails' );
 
 
     function aw_post_serchform_filter_options()
@@ -147,10 +146,19 @@ if ( ! function_exists( 'aw_setup' ) )
       add_image_size( 'photoalbum-thumbnail', 300, 169);
       add_image_size( 'video-thumbnail', 169, 300);
 
+      add_theme_support( 'post-thumbnails' );
+
    		//add support for coment rss feed
    		add_theme_support( 'automatic-feed-links' );
 
    		add_theme_support( 'custom-background' );
+
+      add_theme_support( 'custom-logo',
+       array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-width' => true,
+      ) );
 
    		/*add menu support*/
    		register_nav_menus( array(
@@ -159,25 +167,6 @@ if ( ! function_exists( 'aw_setup' ) )
    		) );
    	}
    	add_action('after_setup_theme', 'aw_setup');
-}
-
-
-/******************************************************************************************************************
-*	Add support for site logo
-******************************************************************************************************************/
-if ( ! function_exists( 'aw_logo_setup' ) )
-{
-	function aw_logo_setup()
-	{
-
-		add_theme_support( 'custom-logo',
-		 array(
-			'height'      => 100,
-			'width'       => 400,
-			'flex-width' => true,
-		) );
-	}
-	add_action( 'after_setup_theme', 'aw_logo_setup' );
 }
 
 
