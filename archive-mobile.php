@@ -17,7 +17,6 @@
 
             <!-- Permalink of post -->
             <?php $thumb_link =  get_permalink(); ?>
-            <?php print_r(get_option('aw_thumbnail')); ?>
             <?php if ( has_post_thumbnail() ): ?>
               <a href="<?php echo $thumb_link; ?>"><?php the_post_thumbnail('mobile-thumbnail'); ?></a>
             <?php else: ?>
