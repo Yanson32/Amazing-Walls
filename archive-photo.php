@@ -15,16 +15,6 @@
           <?php the_post(); ?>
           <div id="post-<?php the_ID(); ?>" <?php post_class('archive_single_post'); ?> >
 
-            <!-- get the defined width and height of the post featured image -->
-            <?php $image_width = wp_get_additional_image_sizes()['aw_photo_post_thumbnail']['width']; ?>
-            <?php $image_height = wp_get_additional_image_sizes()['aw_photo_post_thumbnail']['height']; ?>
-
-
-            <?php if(is_search() || is_tax() || is_singular() || is_tag() || is_category()):?>
-              <?php $image_width = wp_get_additional_image_sizes()['aw_thumbnail']['width']; ?>
-              <?php $image_height = wp_get_additional_image_sizes()['aw_thumbnail']['height']; ?>
-            <?php endif; ?>
-
             <!-- Permalink of post -->
             <?php $thumb_link =  get_permalink(); ?>
             <?php if ( has_post_thumbnail() ): ?>
