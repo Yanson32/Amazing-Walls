@@ -140,25 +140,19 @@ if ( ! function_exists( 'aw_setup' ) )
       //adds featuered image support
       set_post_thumbnail_size( 300, 169, get_option('aw_pt_crop') );
 
-      add_image_size('aw_thumbnail', 150, 150);
-      add_image_size( 'photo-thumbnail', 300, 169);
-      add_image_size( 'mobile-thumbnail', 169, 300);
-      add_image_size( 'photoalbum-thumbnail', 300, 169);
-      add_image_size( 'video-thumbnail', 169, 300);
-
+      //add featured image support
       add_theme_support( 'post-thumbnails' );
+
+      add_image_size('aw_thumbnail', 150, 150, true);
+      add_image_size( 'photo-thumbnail', 300, 169, true);
+      add_image_size( 'mobile-thumbnail', 169, 300, true);
+      add_image_size( 'photoalbum-thumbnail', 300, 169, true);
+      add_image_size( 'video-thumbnail', 169, 300, true);
 
    		//add support for coment rss feed
    		add_theme_support( 'automatic-feed-links' );
 
    		add_theme_support( 'custom-background' );
-
-      add_theme_support( 'custom-logo',
-       array(
-        'height'      => 100,
-        'width'       => 400,
-        'flex-width' => true,
-      ) );
 
    		/*add menu support*/
    		register_nav_menus( array(
@@ -167,6 +161,25 @@ if ( ! function_exists( 'aw_setup' ) )
    		) );
    	}
    	add_action('after_setup_theme', 'aw_setup');
+}
+
+
+/******************************************************************************************************************
+*	Add support for site logo
+******************************************************************************************************************/
+if ( ! function_exists( 'aw_logo_setup' ) )
+{
+	function aw_logo_setup()
+	{
+
+		add_theme_support( 'custom-logo',
+		 array(
+			'height'      => 100,
+			'width'       => 400,
+			'flex-width' => true,
+		) );
+	}
+	add_action( 'after_setup_theme', 'aw_logo_setup' );
 }
 
 
