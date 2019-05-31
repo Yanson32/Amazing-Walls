@@ -18,9 +18,9 @@
              <!-- Permalink of post -->
             <?php $thumb_link =  get_permalink(); ?>
             <?php if ( has_post_thumbnail() ): ?>
-              <a href="<?php echo $thumb_link; ?>"><?php the_post_thumbnail(); ?></a>
+              <a href="<?php echo $thumb_link; ?>"><?php the_post_thumbnail('video-thumbnail'); ?></a>
             <?php else: ?>
-              <a href="<?php echo $thumb_link; ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/images/default-featured-image.jpg" alt="<?php the_title(); ?>" /></a>
+              <a href="<?php echo $thumb_link; ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/images/default image 169x300.png" alt="<?php the_title(); ?>" /></a>
             <?php endif; ?>
 
           </div>
