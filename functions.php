@@ -184,6 +184,21 @@ if ( ! function_exists( 'aw_logo_setup' ) )
 
 
 /******************************************************************************************************************
+* @brief  Custom image size filter
+******************************************************************************************************************/
+function aw_custom_sizes( $sizes )
+{
+    return array_merge( $sizes, array(
+      'photo-thumbnail' => __( 'Photo Thumbnail' ),
+      'photoalbum-thumbnail' => __( 'Album Thumbnail' ),
+      'mobile-thumbnail' => __( 'Mobile Thumbnail' ),
+      'video-thumbnail' => __( 'Video Thumbnail' ),
+    ) );
+}
+add_filter( 'image_size_names_choose', 'aw_custom_sizes' );
+
+
+/******************************************************************************************************************
 *	Register sidebars
 ******************************************************************************************************************/
 if ( ! function_exists( 'aw_register_sidebars' ) )
