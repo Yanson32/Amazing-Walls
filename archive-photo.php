@@ -20,7 +20,7 @@
             <?php if ( has_post_thumbnail() ): ?>
               <a href="<?php echo $thumb_link; ?>"><?php the_post_thumbnail(); ?></a>
             <?php else: ?>
-              <a href="<?php echo $thumb_link; ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/images/default-featured-image.jpg" alt="<?php the_title(); ?>" /></a>
+              <a href="<?php echo $thumb_link; ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/images/default image 300x169.png" alt="<?php the_title(); ?>" /></a>
             <?php endif; ?>
 
           </div>
