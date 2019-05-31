@@ -116,10 +116,17 @@ ul.MainMenu {
 .archive_all_posts {
   max-width: 80%; }
 
-.archive_single_post {
+.photo,
+.photoalbum {
   margin: 5px;
   display: inline-block;
-  width: calc(100% / 3 - 15px); }
+  width: calc((100% / 3) - 15px); }
+
+.mobile,
+.video {
+  margin: 5px;
+  display: inline-block;
+  width: calc((100% / 5) - 15px); }
 
 /*Archive Page Main Content*/
 /*-------------------------------------------------------Sidebar styling-------------------------------------------------------*/

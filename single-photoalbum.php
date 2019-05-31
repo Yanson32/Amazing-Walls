@@ -32,7 +32,7 @@
 				 foreach($custom_fields as $value)
 				 {
 					 $link = wp_get_attachment_url($value);
-					 $image = wp_get_attachment_image_url($value);
+					 $image = wp_get_attachment_image_url($value, 'aw_thumbnail');
 					 echo '<div class="thumbnail" style="margin:5px; display:inline-block;">';
 					 echo '<a href="'.$link.'"><img src="'.$image.'"></a>';
 					 echo '</div>';

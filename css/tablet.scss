@@ -32,6 +32,18 @@
 	width:100%;
 }
 
+.photo,
+.photoalbum
+{
+	width:calc((100% / 2) - 15px);
+}
+
+.mobile,
+.video
+{
+	width:calc(100% / 3 - 15px);
+}
+
 .menu-item
 {
 	display:block;

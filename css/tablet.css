@@ -1,10 +1,3 @@
-.archive_single_post
-{
-	margin:5px;
-  display:inline-block;
-	width:calc(100% / 2 - 15px);
-}
-
 .flex-container-header-main {
   display: flex;
   flex-direction: column; }
@@ -30,6 +23,14 @@
 #main_layout {
   display: block;
   width: 100%; }
+
+.photo,
+.photoalbum {
+  width: calc((100% / 2) - 15px); }
+
+.mobile,
+.video {
+  width: calc(100% / 3 - 15px); }
 
 .menu-item {
   display: block; }
