@@ -1,3 +1,6 @@
+.thumbnail {
+  width: calc((100% / 3) - 15px); }
+
 .taxonomy_list {
   display: none; }
 
@@ -8,12 +11,12 @@
   width: 100%;
   padding: 10px; }
 
-.photo,
-.photoalbum {
+.archive_photo,
+.archive_photoalbum {
   width: calc((100% / 2) - 15px); }
 
-.mobile,
-.video {
+.archive_mobile,
+.archive_video {
   width: calc(100% / 3 - 15px); }
 
 .MainMenu li {

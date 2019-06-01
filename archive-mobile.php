@@ -13,7 +13,7 @@
       <?php if ( have_posts() ) : ?>
         <?php while ( have_posts() ) : ?>
           <?php the_post(); ?>
-          <div id="post-<?php the_ID(); ?>" <?php post_class('archive_single_post'); ?> >
+          <div id="post-<?php the_ID(); ?>" <?php post_class('archive_single_post archive_mobile'); ?> >
 
             <!-- Permalink of post -->
             <?php $thumb_link =  get_permalink(); ?>

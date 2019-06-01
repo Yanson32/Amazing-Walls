@@ -116,14 +116,14 @@ ul.MainMenu {
 .archive_all_posts {
   max-width: 80%; }
 
-.photo,
-.photoalbum {
+.archive_photo,
+.archive_photoalbum {
   margin: 5px;
   display: inline-block;
   width: calc((100% / 3) - 15px); }
 
-.mobile,
-.video {
+.archive_mobile,
+.archive_video {
   margin: 5px;
   display: inline-block;
   width: calc((100% / 5) - 15px); }
@@ -233,8 +233,10 @@ ul.MainMenu {
 
 /*Attachment page styling*/
 .thumbnail {
-  max-width: 300px;
-  max-height: 150px; }
+  width: calc((100% / 5) - 15px);
+  display: inline-block;
+  vertical-align: top;
+  margin: 5px; }
 
 .thumbnail:hover {
   transform: scale(1.03);
