@@ -3,10 +3,6 @@
   display: inline-block;
   width: calc(100% - 10px); }
 
-#sidebar_layout {
-  display: none;
-  width: 100%; }
-
 .MainMenu li {
   display: inline-block;
   width: 100%; }
@@ -47,9 +43,6 @@ ul li.TagLable {
   text-align: center;
   clear: both;
   margin: 0px; }
-
-#header_rule {
-  display: none; }
 
 .taxonomy_list {
   display: none; }

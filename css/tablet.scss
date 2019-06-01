@@ -1,14 +1,3 @@
-.flex-container-header-main
-{
-	display:flex;
-	flex-direction:column;
-}
-#flex-container-header-sub
-{
-	display:flex;
-	flex-direction:column;
-}
-
 .taxonomy_list
 {
 	display:none;
@@ -20,16 +9,6 @@
 	height: auto;
 	width: 100%;
 	padding: 10px;
-}
-#sidebar_layout
-{
-	display:none;
-	width:100%;
-}
-#main_layout
-{
-	display:block;
-	width:100%;
 }
 
 .photo,
@@ -44,10 +23,6 @@
 	width:calc(100% / 3 - 15px);
 }
 
-.menu-item
-{
-	display:block;
-}
 .MainMenu li
 {
 	display:inline-block;
@@ -76,29 +51,7 @@
 	width:300px;
 	height:300px;
 }
-#header-text
-{
-	width:100%;
-	display:block;
-	text-align:center;
-	font-size:1em;
-}
-#header-subtext
-{
-	font-size: 1em;
-}
-#menu-main-menu
-{
-	width:100%;
-	margin:0px;
-	padding:0px;
-}
-#menu-footer-menu
-{
-	width:100%;
-	margin:0px;
-	padding:0px;
-}
+
 .FooterMenu li
 {
 	padding:0px;
