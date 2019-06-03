@@ -19,6 +19,12 @@
 	<li>aw_after_tax</li>
 </ul>
 
+<h2>Custom Fields</h2>
+<ul>
+	<li>Photo</li>
+	<li>Related</li>
+</ul>
+
 allow the user to change the size of the post featured images form settings panel.
 allow the user to upload an image to be displayed when a featured image is not available.
 allow the user to upload an image to be displayed when a post is password protected.
