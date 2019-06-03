@@ -13,9 +13,13 @@
 	<li>Login Widget</li>
 </ul>
 
+<h2>Custom Action Hooks </h2>
+<ul>
+	<li>aw_before_tax</li>
+	<li>aw_after_tax</li>
+</ul>
 
 allow the user to change the size of the post featured images form settings panel.
 allow the user to upload an image to be displayed when a featured image is not available.
 allow the user to upload an image to be displayed when a post is password protected.
 add options to admin panel for the user to specify if the title of the post should be shown on password protected posts.
-
