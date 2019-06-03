@@ -16,11 +16,14 @@
 		<?php if(!is_page(get_the_ID()) && !post_password_required()): ?>
 			<!-- <div class="Tag TagColor"> -->
 			<div id="taxonomies">
-				<?php aw_show_taxonomy('post_tag', 'Tags'); ?>
-				<?php aw_show_taxonomy('category', 'Category');?>
-				<?php aw_show_taxonomy('People', 'People'); ?>
-				<?php aw_show_taxonomy('Resolution', 'Resolution'); ?>
-				<?php aw_show_taxonomy('Aspect Ratio', 'Aspect Ratio'); ?>
+
+        <?php do_action("aw_before_tax"); ?>
+        <?php aw_show_taxonomy('post_tag', 'Tags'); ?>
+        <?php aw_show_taxonomy('category', 'Category'); ?>
+        <?php aw_show_taxonomy('People', 'People'); ?>
+        <?php aw_show_taxonomy('Resolution', 'Resolution'); ?>
+        <?php aw_show_taxonomy('Aspect Ratio', 'Aspect Ratio'); ?>
+        <?php do_action("aw_after_tax"); ?>
 				<?php $post_meta = get_post_meta(get_the_ID()) ?>
 			</div>
 
