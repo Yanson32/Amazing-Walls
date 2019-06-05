@@ -1,48 +1,35 @@
-<h1>Amazing Wallpapers</h1>
+# Amazing Wallpapers
 
-<p>
-	Amazing Wallpapers is a wordpress theme. Designed for image based social media websites.
-</p>
 
-<h2>Features</h2>
-<ul>
-	<li>Photos</li>
-	<li>Mobile Photos</li>
-	<li>Photo Album</li>
-	<li>Video</li>
-	<li>Login Widget</li>
-</ul>
+Amazing Wallpapers is a wordpress theme. Designed for image based social media websites.
 
-<h2>Custom Action Hooks </h2>
-<ul>
-	<li>aw_before_tax</li>
-	<li>aw_after_tax</li>
-</ul>
-1.Blah
-2.Silly
-3.Fuck
+## Features
+* Photos
+* Mobile Photos
+* Photo Album
+* Video
+* Login Widget
 
-<h2>Custom Filters</h2>
-<p>
-	<strong>aw_post_search_filter: </strong>This filter allows for the modification of
-	post type selection in the searchform.php file.
-</p>
+## Custom Action Hooks
+* aw_before_tax
+* aw_after_tax
 
-<p>
-	<strong>aw_photo_filter:</strong> This filter allows for the modification of the photo custom field
-	in the singl.php file.
-</p>
+## Custom Filters
 
-<p>
-	<strong>aw_photoalbum_filter:</strong> This filter allows for the modification of the photoalbum array of pictures.
-	In the single-photoalbum.php file
-</p>
 
-<h2>Custom Fields</h2>
-<ul>
-	<li>Photo</li>
-	<li>Related</li>
-</ul>
+**aw_post_search_filter:** This filter allows for the modification of post type selection in the searchform.php file.
+
+
+**aw_photo_filter:** This filter allows for the modification of the photo custom field in the singl.php file.
+
+
+**aw_photoalbum_filter:** This filter allows for the modification of the photoalbum array of pictures.In the single-photoalbum.php file
+
+
+## Custom Fields
+* Photo
+* Related
+
 
 allow the user to change the size of the post featured images form settings panel.
 allow the user to upload an image to be displayed when a featured image is not available.
