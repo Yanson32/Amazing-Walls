@@ -20,13 +20,10 @@
 </ul>
 
 <h2>Custom Filters</h2>
-<ul>
-	<li>aw_photo_filter</h2>
-	<li>
-
-	</li>
-</ul>
-
+<p>
+	<strong>aw_photo_filter:</strong> This filter allows for the modification of the photo custom field
+	in the singl-photo.php file.
+</p>
 
 <p>
 	<strong>aw_photoalbum_filter:</strong> This filter allows for the modification of the photoalbum array of pictures.
