@@ -23,13 +23,15 @@
 <ul>
 	<li>aw_photo_filter</h2>
 	<li>
-		<h3>aw_photoalbum_filter</h2>
-		<p>
-			This filter allows for the modification of the photoalbum array of pictures.
-			In the single-photoalbum.php file
-		</p>
+
 	</li>
 </ul>
+
+
+<p>
+	<strong>aw_photoalbum_filter:</strong> This filter allows for the modification of the photoalbum array of pictures.
+	In the single-photoalbum.php file
+</p>
 
 <h2>Custom Fields</h2>
 <ul>
