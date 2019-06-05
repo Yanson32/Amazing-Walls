@@ -18,6 +18,9 @@
 	<li>aw_before_tax</li>
 	<li>aw_after_tax</li>
 </ul>
+1.Blah
+2.Silly
+3.Fuck
 
 <h2>Custom Filters</h2>
 <p>
