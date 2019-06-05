@@ -14,7 +14,7 @@ Amazing Wallpapers is a wordpress theme. Designed for image based social media w
 * aw_before_tax
 * aw_after_tax
 
-## Custom Filters
+## Custom Filter Hooks
 
 
 **aw_post_search_filter:** This filter allows for the modification of post type selection in the searchform.php file.
