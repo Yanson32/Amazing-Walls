@@ -29,6 +29,7 @@
 		<main>
 
 			<?php $custom_fields = get_post_custom_values('Photo'); ?>
+      <?php $custom_fields = apply_filters('aw_photo_filter', $custom_fields); ?>
 			<?php if(is_array($custom_fields)): ?>
 					<?php
 					foreach($custom_fields as $value)
