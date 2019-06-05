@@ -22,7 +22,7 @@
 <h2>Custom Filters</h2>
 <p>
 	<strong>aw_photo_filter:</strong> This filter allows for the modification of the photo custom field
-	in the singl-photo.php file.
+	in the singl.php file.
 </p>
 
 <p>
