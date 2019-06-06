@@ -439,8 +439,7 @@ function aw_posts_section($args = array('title' <= 'none', 'custom_field' <= 'Re
 {
   $title = (!empty($args['title']))? $args['title']: 'Related';
 
-  if(!isset($args['custom_field']) || !isset($args['title']))
-    return;
+
   $custom_field = (!empty($args['custom_field']))? $args['custom_field']: 'Related';
 
   //Get  the custom field "Related"
@@ -457,7 +456,18 @@ function aw_posts_section($args = array('title' <= 'none', 'custom_field' <= 'Re
     if ( $query->have_posts() ) :
       while ( $query->have_posts() ) :
         $query->the_post();
-        get_template_part('/Templates/Parts/post');
+        //get_template_part('/Templates/Parts/post');
+        $permalink = get_permalink();
+        if(has_post_thumbnail()):
+        echo '<a href="'.$permalink.'" >';
+          the_post_thumbnail("aw_thumbnail");
+        echo '</a>';
+        else:
+          $image = get_bloginfo('template_directory').'/assets/images/default image thumbnail.png';
+          echo '<a href="'.$permalink.'" >';
+            echo '<img src="'.$image.'">';
+          echo '</a>';
+        endif;
       endwhile;
     endif;
   echo '</div>';
