@@ -458,6 +458,7 @@ function aw_posts_section($args = array('title' <= 'none', 'custom_field' <= 'Re
         $query->the_post();
         //get_template_part('/Templates/Parts/post');
         $permalink = get_permalink();
+        echo '<div class="thumbnail">';
         if(has_post_thumbnail()):
         echo '<a href="'.$permalink.'" >';
           the_post_thumbnail("aw_thumbnail");
@@ -468,6 +469,7 @@ function aw_posts_section($args = array('title' <= 'none', 'custom_field' <= 'Re
             echo '<img src="'.$image.'">';
           echo '</a>';
         endif;
+        echo '</div>';
       endwhile;
     endif;
   echo '</div>';
