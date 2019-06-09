@@ -76,4 +76,9 @@ ul.MainMenu li,
   margin: 0px;
   cursor: pointer; }
 
+html body #row_2 #row_2_column_1 main#single .Thumbnail {
+  width: calc(100% - 10px); }
+html body #row_2 #row_2_column_1 div.related_posts {
+  width: calc((100%) - 10px); }
+
 /*# sourceMappingURL=phone.css.map */

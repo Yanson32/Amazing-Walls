@@ -26,7 +26,7 @@
           <?php $post_meta = get_post_meta(get_the_ID()) ?>
         </div>
         <?php endif; ?>
-		<main>
+		<main id="single">
 
     <?php $custom_fields = get_post_custom_values('Photo'); ?>
     <?php $custom_fields = apply_filters('aw_photoalbum_filter', $custom_fields); ?>

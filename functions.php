@@ -458,7 +458,7 @@ function aw_posts_section($args = array('title' <= 'none', 'custom_field' <= 'Re
         $query->the_post();
         //get_template_part('/Templates/Parts/post');
         $permalink = get_permalink();
-        echo '<div class="thumbnail">';
+        echo '<div id="'.$title.'" class="thumbnail related_posts">';
         if(has_post_thumbnail()):
         echo '<a href="'.$permalink.'" >';
           the_post_thumbnail("aw_thumbnail");

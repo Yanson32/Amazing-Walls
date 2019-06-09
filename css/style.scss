@@ -101,6 +101,14 @@ html
 				margin:0px;
 				padding:0px;
 				vertical-align:top;
+				main#single .Thumbnail
+				{
+					width:calc((100% / 5) - 10px);
+				}
+				div.related_posts
+				{
+					width:calc((100% / 5) - 10px);
+				}
 				#body
 				{
 

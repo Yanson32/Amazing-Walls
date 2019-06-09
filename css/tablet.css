@@ -63,6 +63,10 @@ html body #row_2 #row_2_column_1 {
   width: 100%; }
   html body #row_2 #row_2_column_1 main {
     margin: auto; }
+  html body #row_2 #row_2_column_1 main#single .Thumbnail {
+    width: calc((100% / 3) - 10px); }
+  html body #row_2 #row_2_column_1 div.related_posts {
+    width: calc((100% / 3) - 10px); }
 html body #row_2 #row_2_column_2 {
   display: none; }
 

@@ -94,6 +94,14 @@ html
 				{
 					margin:auto;
 				}
+				main#single .Thumbnail
+				{
+					width:calc((100% / 3) - 10px);
+				}
+				div.related_posts
+				{
+					width:calc((100% / 3) - 10px);
+				}
 			}
 			#row_2_column_2
 			{

@@ -26,7 +26,7 @@
 
 		<?php endif; ?>
 
-		<main>
+		<main id="single">
 
 			<?php $custom_fields = get_post_custom_values('Photo'); ?>
       <?php $custom_fields = apply_filters('aw_photo_filter', $custom_fields); ?>
