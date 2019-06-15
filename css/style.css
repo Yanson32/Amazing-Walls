@@ -120,6 +120,10 @@ ul.MainMenu {
   display: inline-block;
   width: calc((100% / 3) - 5px); }
 
+.archive_photo:hover,
+.archive_photoalbum:hover {
+  transform: scale(1.03); }
+
 .archive_mobile,
 .archive_video {
   margin-top: 5px;
@@ -127,6 +131,10 @@ ul.MainMenu {
   margin-bottom: 5px;
   display: inline-block;
   width: calc((100% / 5) - 5px); }
+
+.archive_mobile:hover,
+.archive_video:hover {
+  transform: scale(1.03); }
 
 /*Archive Page Main Content*/
 /*-------------------------------------------------------Sidebar styling-------------------------------------------------------*/

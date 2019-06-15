@@ -1,3 +1,4 @@
+$scale: 1.03;
 *{
 	padding:0px;
 	margin:0px;
@@ -44,7 +45,7 @@ img
 
 .post-thumbnail:hover
 {
-	transform:scale(1.03);
+	transform:scale($scale);
 }
 
 .Tag
@@ -182,6 +183,11 @@ ul.MainMenu
 	display:inline-block;
 	width:calc((100% / 3) - 5px);
 }
+.archive_photo:hover,
+.archive_photoalbum:hover
+{
+	transform:scale($scale);
+}
 .archive_mobile,
 .archive_video
 {
@@ -191,7 +197,11 @@ ul.MainMenu
   display:inline-block;
 	width:calc((100% / 5) - 5px);
 }
-
+.archive_mobile:hover,
+.archive_video:hover
+{
+	transform:scale($scale);
+}
 /*Archive Page Main Content*/
 
 
@@ -339,7 +349,7 @@ ul.MainMenu
 }
 .thumbnail:hover
 {
-	transform:scale(1.03);
+	transform:scale($scale);
 	outline-color:red;
 	outline-width:5px;
 	outline-style:solid;
