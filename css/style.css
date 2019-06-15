@@ -111,15 +111,6 @@ ul.MainMenu li a,
 ul.MainMenu {
   margin: 20px; }
 
-#single_gallery_button_div a {
-  padding: 5px;
-  text-decoration: none; }
-
-.archive_gallery_all_posts,
-.archive_mobile_all_posts,
-.archive_all_posts {
-  max-width: 80%; }
-
 .archive_photo,
 .archive_photoalbum {
   margin: 5px;
