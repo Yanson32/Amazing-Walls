@@ -62,6 +62,10 @@ html {
       border-color: white;
       border-style: solid;
       border-width: 1px; }
+      html body header #aw_primary_header {
+        font-size: 40px; }
+      html body header #aw_header_subtext {
+        font-size: 20px; }
     html body #row_2 {
       width: 100%;
       margin: 0px;
@@ -100,7 +104,8 @@ ul.MainMenu li,
   text-decoration: none;
   padding: 0px;
   margin: 0px;
-  cursor: pointer; }
+  cursor: pointer;
+  font-size: 10px; }
 
 .FooterMenu a,
 ul.MainMenu li a,
@@ -111,6 +116,9 @@ ul.MainMenu li a,
 
 ul.MainMenu {
   margin: 20px; }
+
+ul.MainMenu li.Button {
+  font-size: 20px; }
 
 .archive_photo,
 .archive_photoalbum {
@@ -274,6 +282,9 @@ h2 {
 
 #SearchFormContainer {
   padding: 5px; }
+
+.searchform {
+  font-size: 10px; }
 
 .AWLable {
   width: 100px;

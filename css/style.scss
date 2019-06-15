@@ -1,4 +1,8 @@
 $scale: 1.03;
+$font_size:10px;
+$font_size_2x: 20px;
+$font_size_header: 40px;
+$font_size_description: 20px;
 *{
 	padding:0px;
 	margin:0px;
@@ -87,6 +91,15 @@ html
 			border-color:white;
 			border-style:solid;
 			border-width:1px;
+
+			#aw_primary_header
+			{
+				font-size:$font_size_header;
+			}
+			#aw_header_subtext
+			{
+				font-size:$font_size_description;
+			}
 		}
 
 		margin:0px;
@@ -157,6 +170,7 @@ ul.MainMenu li,
 		padding:0px;
 		margin:0px;
 		cursor:pointer;
+		font-size:$font_size;
 }
 
 .FooterMenu a,
@@ -173,7 +187,10 @@ ul.MainMenu
 	margin:20px;
 }
 
-
+ul.MainMenu li.Button
+{
+	font-size: $font_size_2x;
+}
 .archive_photo,
 .archive_photoalbum
 {
@@ -383,6 +400,11 @@ h2
 #SearchFormContainer
 {
 	padding:5px;
+}
+
+.searchform
+{
+		font-size:$font_size;
 }
 
 .AWLable
