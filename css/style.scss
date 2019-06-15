@@ -78,6 +78,7 @@ html
 {
 	min-height:100%;
 	margin:5px;
+	font-size:0px;
 	body
 	{
 		header
@@ -121,7 +122,7 @@ html
 			#row_2_column_2
 			{
 				display:inline-block;
-				width:calc(20% - 5px);
+				width:20%;
 				margin:0px;
 				padding:0px;
 			}
@@ -175,16 +176,20 @@ ul.MainMenu
 .archive_photo,
 .archive_photoalbum
 {
-	margin:5px;
+	margin-top:5px;
+	margin-right:5px;
+	margin-bottom:5px;
 	display:inline-block;
-	width:calc((100% / 3) - 15px);
+	width:calc((100% / 3) - 5px);
 }
 .archive_mobile,
 .archive_video
 {
-	margin:5px;
+	margin-top:5px;
+	margin-right:5px;
+	margin-bottom:5px;
   display:inline-block;
-	width:calc((100% / 5) - 15px);
+	width:calc((100% / 5) - 5px);
 }
 
 /*Archive Page Main Content*/
@@ -208,9 +213,10 @@ ul.MainMenu
 
 /*CSS for navigation menu at bottom of post page.*/
 
-.post_navigation_menu {
+.post_navigation_menu
+{
     text-align: center;
-	margin:20px;
+		margin:20px;
 }
 .post_navigation_menu li a,
 .post_navigation_menu li a:hover,
@@ -242,28 +248,27 @@ ul.MainMenu
 
 .MainMenu
 {
-    margin-left: 50px;
-    font-size: 2em;
-    padding: 0px;
-    font-weight: bold;
+  	margin-left: 50px;
+  	font-size: 2em;
+  	padding: 0px;
+  	font-weight: bold;
 }
 .MainMenu li
 {
-    display: inline-block;
-	text-align:center;
+  	display: inline-block;
+		text-align:center;
 }
 .MainMenu ul
 {
-    list-style-type: none;
+  	list-style-type: none;
 }
 
 .MainMenu a:link
 {
-
-	display:block;
-    boarder-style: none;
-    text-decoration: none;
-	padding:5px;
+		display:block;
+  	boarder-style: none;
+  	text-decoration: none;
+		padding:5px;
 }
 
 
@@ -292,7 +297,11 @@ ul.MainMenu
     text-decoration: none;
 }
 /*-------------------------------------------------------Header File-------------------------------------------------------*/
-
+#primary
+{
+	margin-top:5px;
+	margin-bottom:5px;
+}
 #search_form
 {
 	margin-right:20px;
@@ -376,6 +385,7 @@ main
 	width:100%;
 	padding:0px;
 	margin:0px;
+	font-size:0px;
 }
 
 main img

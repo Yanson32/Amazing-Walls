@@ -13,11 +13,11 @@
 
 .archive_photo,
 .archive_photoalbum {
-  width: calc((100% / 2) - 15px); }
+  width: calc((100% / 2) - 10px); }
 
 .archive_mobile,
 .archive_video {
-  width: calc(100% / 3 - 15px); }
+  width: calc(100% / 3 - 10px); }
 
 .MainMenu li {
   display: inline-block;
