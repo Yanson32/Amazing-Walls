@@ -1,5 +1,5 @@
 .thumbnail {
-  width: calc((100% / 3) - 15px); }
+  width: calc((100% / 3) - 5px); }
 
 .taxonomy_list {
   display: none; }
