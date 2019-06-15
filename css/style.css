@@ -59,7 +59,6 @@ html {
     margin: 0px;
     padding: 0px; }
     html body header {
-      border-color: white;
       border-style: solid;
       border-width: 1px; }
       html body header #aw_primary_header {
@@ -161,8 +160,7 @@ ul.MainMenu li.Button {
 .post_navigation_menu li a:hover,
 .post_navigation_menu li.active a,
 .post_navigation_menu li.disabled {
-  text-decoration: none;
-  color: black; }
+  text-decoration: none; }
 
 .post_navigation_menu li {
   display: inline; }
@@ -174,12 +172,7 @@ ul.MainMenu li.Button {
   border-radius: 3px;
   cursor: pointer;
   padding: 12px;
-  padding: 0.75rem;
-  background-color: white; }
-
-.post_navigation_menu li a:hover,
-.post_navigation_menu li.active a {
-  background-color: red; }
+  padding: 0.75rem; }
 
 /*-------------------------------------------------------Main Menu-------------------------------------------------------*/
 .MainMenu {

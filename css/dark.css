@@ -86,4 +86,26 @@ h2 {
 .PrimaryTitleColor {
   text-shadow: inherit inherit green; }
 
+header {
+  border-color: white; }
+
+.post_navigation_menu li a,
+.post_navigation_menu li a:hover,
+.post_navigation_menu li.active a,
+.post_navigation_menu li.disabled {
+  color: black; }
+
+.post_navigation_menu li a,
+.post_navigation_menu li a:hover,
+.post_navigation_menu li.active a,
+.post_navigation_menu li.disabled {
+  background-color: white; }
+
+.post_navigation_menu li a:hover,
+.post_navigation_menu li.active a {
+  background-color: red; }
+
+.thumbnail:hover {
+  outline-color: red; }
+
 /*# sourceMappingURL=dark.css.map */
