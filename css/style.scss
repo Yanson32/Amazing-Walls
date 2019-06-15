@@ -3,6 +3,7 @@ $font_size:10px;
 $font_size_2x: 20px;
 $font_size_header: 40px;
 $font_size_description: 20px;
+$archive_grid_margin: 2.5px;
 *{
 	padding:0px;
 	margin:0px;
@@ -194,11 +195,10 @@ ul.MainMenu li.Button
 .archive_photo,
 .archive_photoalbum
 {
-	margin-top:5px;
-	margin-right:5px;
-	margin-bottom:5px;
+	//margin-top:5px;
+	margin:$archive_grid_margin;
 	display:inline-block;
-	width:calc((100% / 3) - 5px);
+	width:calc((100% / 3) - (2 * #{$archive_grid_margin}));
 }
 .archive_photo:hover,
 .archive_photoalbum:hover
@@ -208,11 +208,10 @@ ul.MainMenu li.Button
 .archive_mobile,
 .archive_video
 {
-	margin-top:5px;
-	margin-right:5px;
-	margin-bottom:5px;
+	//margin-top:5px;
+	margin:$archive_grid_margin;
   display:inline-block;
-	width:calc((100% / 5) - 5px);
+	width:calc((100% / 5) - (2 * #{$archive_grid_margin}));
 }
 .archive_mobile:hover,
 .archive_video:hover
@@ -326,8 +325,8 @@ ul.MainMenu li.Button
 /*-------------------------------------------------------Header File-------------------------------------------------------*/
 #primary
 {
-	margin-top:5px;
-	margin-bottom:5px;
+	//margin-top:5px;
+	margin:$archive_grid_margin;
 }
 #search_form
 {
@@ -359,10 +358,10 @@ ul.MainMenu li.Button
 /*Attachment page styling*/
 .thumbnail
 {
-	width:calc((100% / 5) - 15px);
+	width:calc((100% / 5) - 5px);
 	display:inline-block;
 	vertical-align: top;
-	margin:5px;
+	margin:$archive_grid_margin;
 }
 .thumbnail:hover
 {

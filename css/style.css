@@ -122,11 +122,9 @@ ul.MainMenu li.Button {
 
 .archive_photo,
 .archive_photoalbum {
-  margin-top: 5px;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  margin: 2.5px;
   display: inline-block;
-  width: calc((100% / 3) - 5px); }
+  width: calc((100% / 3) - (2 * 2.5px)); }
 
 .archive_photo:hover,
 .archive_photoalbum:hover {
@@ -134,11 +132,9 @@ ul.MainMenu li.Button {
 
 .archive_mobile,
 .archive_video {
-  margin-top: 5px;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  margin: 2.5px;
   display: inline-block;
-  width: calc((100% / 5) - 5px); }
+  width: calc((100% / 5) - (2 * 2.5px)); }
 
 .archive_mobile:hover,
 .archive_video:hover {
@@ -227,8 +223,7 @@ ul.MainMenu li.Button {
 
 /*-------------------------------------------------------Header File-------------------------------------------------------*/
 #primary {
-  margin-top: 5px;
-  margin-bottom: 5px; }
+  margin: 2.5px; }
 
 #search_form {
   margin-right: 20px;
@@ -253,10 +248,10 @@ ul.MainMenu li.Button {
 
 /*Attachment page styling*/
 .thumbnail {
-  width: calc((100% / 5) - 15px);
+  width: calc((100% / 5) - 5px);
   display: inline-block;
   vertical-align: top;
-  margin: 5px; }
+  margin: 2.5px; }
 
 .thumbnail:hover {
   transform: scale(1.03);
