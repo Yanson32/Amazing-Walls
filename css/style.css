@@ -313,7 +313,8 @@ ul#aw_post_header li a {
   display: inline-block; }
 
 div h1 {
-  margin: 5px; }
+  margin: 5px;
+  font-size: 20px; }
 
 .aw_post_upload_form {
   display: none; }
