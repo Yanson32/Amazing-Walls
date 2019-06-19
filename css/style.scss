@@ -83,7 +83,7 @@ ul.Tag li a
 html
 {
 	min-height:100%;
-	margin:5px;
+	padding:5px;
 	font-size:0px;
 	body
 	{
@@ -262,6 +262,10 @@ ul.MainMenu li.Button
     padding: 0.75rem;
 }
 
+.navigation
+{
+	font-size:$font_size_2x;
+}
 /*-------------------------------------------------------Main Menu-------------------------------------------------------*/
 
 .MainMenu
@@ -355,6 +359,7 @@ ul.MainMenu li.Button
 	vertical-align: top;
 	margin:$archive_grid_margin;
 }
+
 .thumbnail:hover
 {
 	transform:scale($scale);
@@ -366,6 +371,7 @@ ul.MainMenu li.Button
 h2
 {
 	text-align:center;
+	font-size:$font_size_2x;
 }
 
 .photoalbum,
@@ -469,4 +475,5 @@ div h1
 {
 	text-align:left;
 	margin:5px;
+	font-size:$font_size_2x;
 }
