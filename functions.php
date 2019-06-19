@@ -476,12 +476,7 @@ function aw_posts_section($args = array('title' <= 'none', 'custom_field' <= 'Re
   echo '</div>';
 }
 
-function aw_login_button($args)
-{
-  return $args;
-}
 
-add_filter('wp_nav_menu_items', 'aw_login_button');
 /******************************************************************//**
 * @Brief  Create an admin panel to display additional content
 *         when the admin views a single post. The capabilities
@@ -513,3 +508,19 @@ function aw_get_all_custom_post_types()
 
   return get_post_types( $args, $output, $operator );
 }
+
+
+function aw_add_login_button($args)
+{
+
+  if($args->theme_location == 'header-menu'):
+    if(is_user_logged_in()):
+      $args .= '<li>Test</li>';
+    else:
+      $args .= '<li>Test2</li>';
+    endif;
+  endif;
+  return $args;
+}
+
+add_filter("wp_nav_menu_items", "aw_add_login_button");
