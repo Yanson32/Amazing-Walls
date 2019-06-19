@@ -510,17 +510,21 @@ function aw_get_all_custom_post_types()
 }
 
 
-function aw_add_login_button($args)
+/****************************************************//**
+* @Brief  This filter adds a login / logout Button
+*         to the header navigation menu.
+* @param  $menu is the navigation menu being modified.
+* @param  $args menu options see wp_nav_menu()
+*         documentation for details.
+********************************************************/
+function aw_add_login_button($menu, $args)
 {
-
+  //Add login/out button to header navigation menu
   if($args->theme_location == 'header-menu'):
-    if(is_user_logged_in()):
-      $args .= '<li>Test</li>';
-    else:
-      $args .= '<li>Test2</li>';
-    endif;
+    $menu .= '<li class="Button ButtonColor">'. wp_loginout($_SERVER['REQUEST_URI'], false) .'</li>';
   endif;
-  return $args;
+
+  return $menu;
 }
 
-add_filter("wp_nav_menu_items", "aw_add_login_button");
+add_filter("wp_nav_menu_items", "aw_add_login_button", 10, 2);
