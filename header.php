@@ -9,6 +9,14 @@
 </head>
 <body <?php body_class('BodyColor'); ?>>
 	<header class="HeaderColor">
+		<?php
+			$args = array(	'theme_location' => 'header-menu',
+							'container' => 'nav',
+							'container_class' => 'header_nav',
+							'menu_class' => 'HeaderMenu',
+						);
+			wp_nav_menu($args);
+		?>
 			<div class="clearfix">
 				<div id="aw_site_logo">
 					<?php the_custom_logo(); ?>
@@ -28,7 +36,14 @@
 						);
 			wp_nav_menu($args);
 		?>
-		</div>
 	</header>
+	<?php
+		$args = array(	'theme_location' => 'header-menu',
+						'container' => 'nav',
+						'container_class' => 'header_nav',
+						'menu_class' => 'HeaderMenuPhone',
+					);
+		wp_nav_menu($args);
+	?>
 	<br>
 	<br>

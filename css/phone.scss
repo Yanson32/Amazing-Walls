@@ -3,10 +3,24 @@
 	width:100%;
 }
 
+.FooterMenu
+{
+	margin:0px;
+}
 .archive_single_post
 {
   display:inline-block;
 	width:calc(100% - 5px);
+}
+
+.HeaderMenu
+{
+	display:none;
+}
+.HeaderMenuPhone
+{
+	display:inline-block;
+	font-size:15px;
 }
 
 .MainMenu li

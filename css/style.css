@@ -94,6 +94,7 @@ ul {
 /*Button Styling*/
 .FooterMenu li,
 ul.MainMenu li,
+.HeaderMenu li,
 .Tags li,
 .Button {
   display: inline-block;
@@ -105,6 +106,13 @@ ul.MainMenu li,
   margin: 0px;
   cursor: pointer;
   font-size: 10px; }
+
+.HeaderMenu li {
+  font-size: 15px;
+  float: right; }
+
+.HeaderMenuPhone {
+  display: none; }
 
 .FooterMenu a,
 ul.MainMenu li a,

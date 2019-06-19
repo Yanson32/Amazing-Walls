@@ -159,6 +159,7 @@ ul
 
 .FooterMenu li,
 ul.MainMenu li,
+.HeaderMenu li,
 .Tags li,
 .Button
 {
@@ -173,6 +174,16 @@ ul.MainMenu li,
 		font-size:$font_size;
 }
 
+.HeaderMenu li
+{
+	font-size:15px;
+	float:right;
+}
+
+.HeaderMenuPhone
+{
+	display:none;
+}
 .FooterMenu a,
 ul.MainMenu li a,
 .Button a

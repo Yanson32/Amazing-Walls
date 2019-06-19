@@ -164,7 +164,8 @@ if ( ! function_exists( 'aw_setup' ) )
    		/*add menu support*/
    		register_nav_menus( array(
        		'main-menu'   => __( 'main-menu', 'Amazing_Walls_Domain'),
-       		'footer-menu' => __( 'footer-menu', 'Amazing_Walls_Domain' )
+       		'footer-menu' => __( 'footer-menu', 'Amazing_Walls_Domain' ),
+          'header-menu' => __( 'header-menu', 'Amazing_Walls_Domain' )
    		) );
    	}
    	add_action('after_setup_theme', 'aw_setup');
@@ -475,7 +476,12 @@ function aw_posts_section($args = array('title' <= 'none', 'custom_field' <= 'Re
   echo '</div>';
 }
 
+function aw_login_button($args)
+{
+  return $args;
+}
 
+add_filter('wp_nav_menu_items', 'aw_login_button');
 /******************************************************************//**
 * @Brief  Create an admin panel to display additional content
 *         when the admin views a single post. The capabilities
