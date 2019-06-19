@@ -13,21 +13,24 @@
 			$args = array(	'theme_location' => 'header-menu',
 							'container' => 'nav',
 							'container_class' => 'header_nav',
-							'menu_class' => 'HeaderMenu',
+							'menu_class' => 'HeaderMenu clearfix',
 						);
 			wp_nav_menu($args);
 		?>
 			<div class="clearfix">
-				<div id="aw_site_logo">
-					<?php the_custom_logo(); ?>
-				</div>
+				<?php if(has_custom_logo()): ?>
+					<div id="aw_site_logo">
+						<?php the_custom_logo(); ?>
+					</div>
+				<?php endif; ?>
 				<div id="aw_header_text">
 					<h1 id="aw_primary_header" class="PrimaryHeaderColor"><?php bloginfo('name'); ?></h1>
 				</div>
+				<div id="aw_header_subtext" class="HeaderDescritionText">
+					<?php bloginfo('description'); ?>
+				</div>
 			</div>
-			<div id="aw_header_subtext" class="HeaderDescritionText">
-				<?php bloginfo('description'); ?>
-			</div>
+
 		<?php
 			$args = array(	'theme_location' => 'main-menu',
 							'container' => 'div',

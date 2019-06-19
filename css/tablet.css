@@ -24,7 +24,7 @@ ul.MainMenu {
 
 .MainMenu li {
   display: inline-block;
-  width: 47%;
+  width: calc(50% - 1px * 2 - 2px * 2);
   margin: 0px;
   padding: 0px; }
 
@@ -62,6 +62,19 @@ ul.MainMenu {
   display: inline-block;
   width: 47%; }
 
+html body header .custom-logo {
+  disply: block;
+  width: 100px;
+  height: 100px; }
+html body header #aw_site_logo {
+  float: left; }
+html body header #aw_primary_header {
+  text-align: center; }
+html body header #aw_header_text {
+  display: block; }
+html body header #aw_header_subtext {
+  text-aligh: center;
+  display: block; }
 html body #row_2 #row_2_column_1 {
   width: 100%; }
   html body #row_2 #row_2_column_1 main {

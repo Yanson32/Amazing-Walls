@@ -61,9 +61,22 @@ html {
     html body header {
       border-style: solid;
       border-width: 1px; }
-      html body header #aw_primary_header {
-        font-size: 40px; }
+      html body header .custom-logo {
+        disply: block;
+        width: 100px;
+        height: 100px; }
+      html body header #aw_site_logo {
+        float: left;
+        margin: 5px; }
+      html body header #aw_header_text {
+        disaplay: inline-block;
+        margin: 5px; }
+        html body header #aw_header_text #aw_primary_header {
+          font-size: 40px; }
       html body header #aw_header_subtext {
+        color: white;
+        margin: 5px;
+        display: inline-block;
         font-size: 20px; }
     html body #row_2 {
       width: 100%;
@@ -95,6 +108,7 @@ ul {
 .FooterMenu li,
 ul.MainMenu li,
 .HeaderMenu li,
+.HeaderMenuPhone li,
 .Tags li,
 .Button {
   display: inline-block;
@@ -103,7 +117,7 @@ ul.MainMenu li,
   border-radius: 5px;
   text-decoration: none;
   padding: 0px;
-  margin: 0px;
+  margin: 2px;
   cursor: pointer;
   font-size: 10px; }
 
@@ -116,6 +130,8 @@ ul.MainMenu li,
 
 .FooterMenu a,
 ul.MainMenu li a,
+ul.HeaderMenu li a,
+ul.HeaderPhone li a,
 .Button a {
   margin: 0px;
   padding: 10px;
@@ -313,9 +329,6 @@ ul#aw_post_header li {
 
 ul#aw_post_header li a {
   padding: 5px; }
-
-#aw_site_logo {
-  display: inline-block; }
 
 div h1 {
   margin: 5px;

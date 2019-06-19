@@ -347,18 +347,11 @@ function aw_queue_enabled()
 
 
 /***********************************************************************//**
-* @brief  Use 'nav_menu_css_class' filter to add css class to
-*         the main menu.
+* @brief  filter to add css class to navigation menus.
 ***************************************************************************/
 function aw_add_main_menu_class( $classes, $item, $args )
 {
-    // Only affect the menu placed in the 'secondary' wp_nav_bar() theme location
-    if ( 'main-menu' === $args->theme_location || $args->theme_location === 'footer-menu')
-    {
-        // Make these items 3-columns wide in Bootstrap
-        $classes[] = 'Button ButtonColor';
-    }
-
+    $classes[] = 'Button ButtonColor';
     return $classes;
 }
 add_filter( 'nav_menu_css_class', 'aw_add_main_menu_class', 10, 3 );

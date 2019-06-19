@@ -1,3 +1,5 @@
+$logo_margin:5px;
+
 .thumbnail
 {
 	width:100%;
@@ -97,12 +99,6 @@ div.widget h3
 	width:100%;
 }
 
-.main_nav
-{
-	border-top-style: solid;
-	border-top-width: 1px;
-}
-
 .FooterMenu li,
 ul.MainMenu li,
 .Tags li,
@@ -122,6 +118,39 @@ html
 {
 	body
 	{
+		header
+		{
+			.header_nav
+			{
+				display:none;
+			}
+			.custom-logo
+			{
+				width:calc(100% - (#{$logo_margin} * 2));
+				height:auto;
+				margin:$logo_margin;
+
+			}
+			#aw_site_logo
+			{
+				display:block;
+				margin:0px;
+				width:100%;
+			}
+			#aw_primary_header
+			{
+				text-align:center;
+			}
+			#aw_header_text
+			{
+				display:block;
+			}
+			#aw_header_subtext
+			{
+				text-aligh:center;
+				display:block;
+			}
+		}
 		#row_2
 		{
 			#row_2_column_1

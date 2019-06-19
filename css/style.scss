@@ -1,9 +1,11 @@
+@import "./variables.scss";
 $scale: 1.03;
 $font_size:10px;
 $font_size_2x: 20px;
 $font_size_header: 40px;
 $font_size_description: 20px;
 $archive_grid_margin: 2.5px;
+
 *{
 	padding:0px;
 	margin:0px;
@@ -91,13 +93,31 @@ html
 		{
 			border-style:solid;
 			border-width:1px;
-
-			#aw_primary_header
+			.custom-logo
 			{
-				font-size:$font_size_header;
+				disply:block;
+				width:100px;
+				height:100px;
+			}
+			#aw_site_logo
+			{
+				float:left;
+				margin:5px;
+			}
+			#aw_header_text
+			{
+				disaplay:inline-block;
+				margin:5px;
+				#aw_primary_header
+				{
+					font-size:$font_size_header;
+				}
 			}
 			#aw_header_subtext
 			{
+				color:white;
+				margin:5px;
+				display:inline-block;
 				font-size:$font_size_description;
 			}
 		}
@@ -160,16 +180,17 @@ ul
 .FooterMenu li,
 ul.MainMenu li,
 .HeaderMenu li,
+.HeaderMenuPhone li,
 .Tags li,
 .Button
 {
 		display:inline-block;
     border-style: solid;
-    border-width: 1px;
+    border-width: $button_border_width;
     border-radius: 5px;
 		text-decoration:none;
 		padding:0px;
-		margin:0px;
+		margin:$button_margin;
 		cursor:pointer;
 		font-size:$font_size;
 }
@@ -186,6 +207,8 @@ ul.MainMenu li,
 }
 .FooterMenu a,
 ul.MainMenu li a,
+ul.HeaderMenu li a,
+ul.HeaderPhone li a,
 .Button a
 {
 	margin:0px;
@@ -452,10 +475,7 @@ ul#aw_post_header li a
 {
 	padding:5px;
 }
-#aw_site_logo
-{
-	display:inline-block;
-}
+
 div h1
 {
 	margin:5px;
