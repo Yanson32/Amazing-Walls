@@ -55,23 +55,30 @@
     //    return $query;
     // }
     // add_filter( 'pre_get_posts', 'aw_serchform_filter' );
+
+
     /********************************************************************************************//**
     * @brief  Display taxonomy in wordpress template page
     ************************************************************************************************/
-    function aw_show_taxonomy($taxonomy, $lable)
+    function aw_show_taxonomy($args)
     {
+      $taxonomy = $args['tax'];
+      $lable = $args['lable'];
     	$terms = get_the_terms(get_the_ID(), $taxonomy);
-
       if(!empty($terms) && taxonomy_exists($taxonomy)):
-      	echo '<ul class="Tag" style="inline-block; text-align:left">';
-      	echo '<li class="TagLable">'.$lable.'</li>';
-      	foreach($terms as $term)
-      	{
-      		$link = get_term_link($term, $taxonomy);
-      		echo '<li class="Button ButtonColor Tag"><a href="'.$link.'">'.$term->name.'</a></li>';
-      	}
+        echo '<div class="tax_lable">';
+          echo $lable;
+        echo '</div>';
+        echo '<div class="tax_list">';
+          echo '<ul class="Tag">';
+          foreach($terms as $term)
+          {
+            $link = get_term_link($term, $taxonomy);
+            echo '<li class="Button ButtonColor Tag"><a href="'.$link.'">'.$term->name.'</a></li>';
+          }
 
-      	echo '</ul>';
+          echo '</ul>';
+        echo '</div>';
       endif;
     }
 

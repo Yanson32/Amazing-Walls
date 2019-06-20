@@ -26,6 +26,9 @@ Amazing Wallpapers is a wordpress theme. Designed for image based social media w
 **aw_photoalbum_filter:** This filter allows for the modification of the photoalbum array of pictures.In the single-photoalbum.php file
 
 
+**aw_tax_filter:** This filter allows for the modification of the taxonomy display in single template files.
+
+
 ## Custom Fields
 * Photo
 * Related

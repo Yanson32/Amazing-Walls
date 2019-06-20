@@ -14,18 +14,16 @@
     <?php aw_admin_panel(); ?>
 
     <?php if(!is_page(get_the_ID()) && !post_password_required()): ?>
-      <!-- <div class="Tag TagColor"> -->
-        <div id="taxonomies">
-          <?php do_action("aw_before_tax"); ?>
-          <?php aw_show_taxonomy('post_tag', 'Tags'); ?>
-          <?php aw_show_taxonomy('category', 'Category');?>
-          <?php aw_show_taxonomy('People', 'People'); ?>
-          <?php aw_show_taxonomy('Resolution', 'Resolution'); ?>
-          <?php aw_show_taxonomy('Aspect Ratio', 'Aspect Ratio'); ?>
-          <?php do_action("aw_after_tax"); ?>
-          <?php $post_meta = get_post_meta(get_the_ID()) ?>
-        </div>
-        <?php endif; ?>
+      <div id="taxonomies" style="font-size:15px">
+        <?php
+          $tax = apply_filters('aw_tax_filter', $taxonomies);
+          for($i = 0; $i < sizeof($tax); $i++)
+          {
+            aw_show_taxonomy($tax[$i]);
+          }
+        ?>
+      </div>
+		<?php endif; ?>
 		<main id="single">
 
     <?php $custom_fields = get_post_custom_values('Photo'); ?>

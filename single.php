@@ -1,3 +1,4 @@
+<?php require_once(get_template_directory().'/includes/config.php'); ?>
 <?php get_header(); ?>
 <!-- print the name of the page when in debug mode -->
 <?php aw_print_name('single.php'); ?>
@@ -12,18 +13,17 @@
 
 		<!-- Display info for admin only-->
 		<?php aw_admin_panel(); ?>
-
+    <?php print_r($GLOBALS); ?>
 		<?php if(!is_page(get_the_ID()) && !post_password_required()): ?>
-			<!-- <div class="Tag TagColor"> -->
-			<div id="taxonomies">
-				<?php aw_show_taxonomy('post_tag', 'Tags'); ?>
-				<?php aw_show_taxonomy('category', 'Category');?>
-				<?php aw_show_taxonomy('People', 'People'); ?>
-				<?php aw_show_taxonomy('Resolution', 'Resolution'); ?>
-				<?php aw_show_taxonomy('Aspect Ratio', 'Aspect Ratio'); ?>
-				<?php $post_meta = get_post_meta(get_the_ID()) ?>
-			</div>
-
+      <div id="taxonomies" style="font-size:15px">
+        <?php
+          $tax = apply_filters('aw_tax_filter', $taxonomies);
+          for($i = 0; $i < sizeof($tax); $i++)
+          {
+            aw_show_taxonomy($tax[$i]);
+          }
+        ?>
+      </div>
 		<?php endif; ?>
 
 		<main id="single">
