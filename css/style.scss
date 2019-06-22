@@ -136,6 +136,16 @@ html
 				margin:0px;
 				padding:0px;
 				vertical-align:top;
+				main#single
+				{
+					text-align:center;
+				}
+
+				main#single img
+				{
+					max-width:100%;
+					width:auto;
+				}
 				main#single .Thumbnail
 				{
 					width:calc((100% / 5) - 10px);
@@ -480,6 +490,7 @@ div h1
 {
 	margin:5px;
 	font-size:$font_size_2x;
+	text-align:center;
 }
 
 .aw_post_upload_form
