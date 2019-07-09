@@ -88,16 +88,10 @@ html {
         margin: 0px;
         padding: 0px;
         vertical-align: top; }
-        html body #row_2 #row_2_column_1 main#single {
-          text-align: center; }
-        html body #row_2 #row_2_column_1 main#single img {
-          max-width: 100%;
-          width: auto; }
         html body #row_2 #row_2_column_1 main#single .Thumbnail {
           width: calc((100% / 5) - 10px); }
         html body #row_2 #row_2_column_1 main#single_photoalbum .Thumbnail {
-          width: calc((100% / 5) - 10px);
-          display: none; }
+          width: calc((100% / 5) - 10px); }
         html body #row_2 #row_2_column_1 div.Related {
           width: calc((100% / 5) - 10px); }
         html body #row_2 #row_2_column_1 footer {
@@ -340,8 +334,7 @@ ul#aw_post_header li a {
 
 div h1 {
   margin: 5px;
-  font-size: 20px;
-  text-align: center; }
+  font-size: 20px; }
 
 .aw_post_upload_form {
   display: none; }
@@ -362,14 +355,5 @@ div h1 {
   text-align: left;
   margin: 5px;
   font-size: 20px; }
-
-.tax_lable {
-  display: inline-block;
-  width: 25%;
-  font-size: 15px; }
-
-.tax_list {
-  display: inline-block;
-  width: 75%; }
 
 /*# sourceMappingURL=style.css.map */

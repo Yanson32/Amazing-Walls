@@ -74,7 +74,6 @@ ul.Tag li a
 	margin:0px;
 }
 
-
 #comments
 {
 	float:left;
@@ -136,16 +135,6 @@ html
 				margin:0px;
 				padding:0px;
 				vertical-align:top;
-				main#single
-				{
-					text-align:center;
-				}
-
-				main#single img
-				{
-					max-width:100%;
-					width:auto;
-				}
 				main#single .Thumbnail
 				{
 					width:calc((100% / 5) - 10px);
@@ -153,7 +142,6 @@ html
 				main#single_photoalbum .Thumbnail
 				{
 					width:calc((100% / 5) - 10px);
-					display:none;
 				}
 				div.Related
 				{
@@ -495,7 +483,6 @@ div h1
 {
 	margin:5px;
 	font-size:$font_size_2x;
-	text-align:center;
 }
 
 .aw_post_upload_form
@@ -523,15 +510,4 @@ div h1
 	text-align:left;
 	margin:5px;
 	font-size:$font_size_2x;
-}
-.tax_lable
-{
-	display:inline-block;
-	width:25%;
-	font-size:15px;
-}
-.tax_list
-{
-	display:inline-block;
-	width:75%;
 }
