@@ -66,18 +66,20 @@
       $lable = $args['lable'];
     	$terms = get_the_terms(get_the_ID(), $taxonomy);
       if(!empty($terms) && taxonomy_exists($taxonomy)):
-        echo '<div class="tax_lable">';
-          echo $lable;
-        echo '</div>';
-        echo '<div class="tax_list">';
-          echo '<ul class="Tag">';
-          foreach($terms as $term)
-          {
-            $link = get_term_link($term, $taxonomy);
-            echo '<li class="Button ButtonColor Tag"><a href="'.$link.'">'.$term->name.'</a></li>';
-          }
+        echo '<div>';
+          echo '<div class="tax_lable">';
+            echo $lable;
+          echo '</div>';
+          echo '<div class="tax_list">';
+            echo '<ul class="Tag">';
+            foreach($terms as $term)
+            {
+              $link = get_term_link($term, $taxonomy);
+              echo '<li class="Button ButtonColor Tag"><a href="'.$link.'">'.$term->name.'</a></li>';
+            }
 
-          echo '</ul>';
+            echo '</ul>';
+          echo '</div>';
         echo '</div>';
       endif;
     }

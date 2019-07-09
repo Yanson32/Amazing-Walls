@@ -46,10 +46,21 @@ ul.Tag li a {
   font-size: 0.7em;
   margin: 0px; }
 
+#commentform {
+  font-size: 10px; }
+
 #comments {
   float: left;
   width: 100%;
   margin-top: 20px; }
+
+.tax_lable {
+  display: inline-block;
+  width: 20%; }
+
+.tax_list {
+  display: inline-block;
+  width: 80%; }
 
 html {
   min-height: 100%;
