@@ -24,7 +24,7 @@
         ?>
       </div>
 		<?php endif; ?>
-		<main id="single">
+		<main id="single_photoalbum">
 
     <?php $custom_fields = get_post_custom_values('Photo'); ?>
     <?php $custom_fields = apply_filters('aw_photoalbum_filter', $custom_fields); ?>

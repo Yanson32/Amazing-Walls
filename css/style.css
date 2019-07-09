@@ -95,7 +95,10 @@ html {
           width: auto; }
         html body #row_2 #row_2_column_1 main#single .Thumbnail {
           width: calc((100% / 5) - 10px); }
-        html body #row_2 #row_2_column_1 div.related_posts {
+        html body #row_2 #row_2_column_1 main#single_photoalbum .Thumbnail {
+          width: calc((100% / 5) - 10px);
+          display: none; }
+        html body #row_2 #row_2_column_1 div.Related {
           width: calc((100% / 5) - 10px); }
         html body #row_2 #row_2_column_1 footer {
           margin: 5px; }

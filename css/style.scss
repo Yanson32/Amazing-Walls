@@ -150,7 +150,12 @@ html
 				{
 					width:calc((100% / 5) - 10px);
 				}
-				div.related_posts
+				main#single_photoalbum .Thumbnail
+				{
+					width:calc((100% / 5) - 10px);
+					display:none;
+				}
+				div.Related
 				{
 					width:calc((100% / 5) - 10px);
 				}
