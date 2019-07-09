@@ -1,5 +1,5 @@
 .thumbnail {
-  width: 100%; }
+  width: calc(100% - 5px); }
 
 .FooterMenu {
   margin: 0px; }
@@ -99,11 +99,11 @@ html body header #aw_header_subtext {
   text-aligh: center;
   display: block; }
 html body #row_2 #row_2_column_1 main#single .Thumbnail {
-  width: calc(100% - 10px); }
+  width: calc(100% - 100px); }
 html body #row_2 #row_2_column_1 main#single_photoalbum .Thumbnail {
   width: calc((100%) - 10px); }
 html body #row_2 #row_2_column_1 div.Related {
-  width: calc((100%) - 10px); }
+  width: 100%; }
 html body #row_2 #row_2_column_1 #taxonomies {
   display: none; }
 
