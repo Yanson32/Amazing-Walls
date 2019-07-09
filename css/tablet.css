@@ -81,7 +81,9 @@ html body #row_2 #row_2_column_1 {
     margin: auto; }
   html body #row_2 #row_2_column_1 main#single .Thumbnail {
     width: calc((100% / 3) - 10px); }
-  html body #row_2 #row_2_column_1 div.related_posts {
+  html body #row_2 #row_2_column_1 main#single_photoalbum .Thumbnail {
+    width: calc((100% / 3) - 10px); }
+  html body #row_2 #row_2_column_1 div.Related {
     width: calc((100% / 3) - 10px); }
 html body #row_2 #row_2_column_2 {
   display: none; }

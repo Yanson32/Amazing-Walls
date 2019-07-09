@@ -132,7 +132,11 @@ html
 				{
 					width:calc((100% / 3) - 10px);
 				}
-				div.related_posts
+				main#single_photoalbum .Thumbnail
+				{
+					width:calc((100% / 3) - 10px);
+				}
+				div.Related
 				{
 					width:calc((100% / 3) - 10px);
 				}
