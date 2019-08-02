@@ -202,7 +202,7 @@ ul.MainMenu li,
 		padding:0px;
 		margin:$button_margin;
 		cursor:pointer;
-		font-size:15px;
+		font-size:$font_size;
 }
 
 .HeaderMenu li
@@ -273,6 +273,7 @@ ul.MainMenu li.Button
     display:block;
 		padding:10px;
 		font-size:16.173913043478pt;
+		overflow:hidden;
 }
 .sidebar ul {
     list-style-type: none;
@@ -518,18 +519,3 @@ div h1
 	margin:5px;
 	font-size:$font_size_2x;
 }
-<<<<<<< current
-=======
-.tax_lable
-{
-	display:inline-block;
-	width:25%;
-	font-size:15px;
-	vertical-align: text-top;
-}
-.tax_list
-{
-	display:inline-block;
-	width:75%;
-}
->>>>>>> before discard
