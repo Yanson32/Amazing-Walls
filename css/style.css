@@ -177,7 +177,8 @@ ul.MainMenu li.Button {
   border-radius: 25px;
   height: auto;
   display: block;
-  padding: 10px; }
+  padding: 10px;
+  font-size: 16.173913043478pt; }
 
 .sidebar ul {
   list-style-type: none;
