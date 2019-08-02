@@ -64,12 +64,17 @@ ul.MainMenu
 	height:300px;
 }
 
+footer li
+{
+	width: calc(50% - 5px);
+}
+
 .FooterMenu li
 {
 	padding:0px;
-	margin:0px;
-	width:100%;
-	display:block;
+	margin:2px;
+	width: calc(50% - 6px);
+	display:inline-block;
 }
 .FooterMenu li a
 {
@@ -83,11 +88,7 @@ ul.MainMenu
 {
 	display:none;
 }
-.FooterMenu li
-{
-	display:inline-block;
-	width:47%;
-}
+
 html
 {
 	body
