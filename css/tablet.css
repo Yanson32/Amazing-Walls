@@ -62,12 +62,6 @@ ul.MainMenu {
   display: inline-block;
   width: 47%; }
 
-.tax_lable {
-  width: 30%; }
-
-.tax_list {
-  width: 70%; }
-
 html body header .custom-logo {
   disply: block;
   width: 100px;
@@ -87,9 +81,9 @@ html body #row_2 #row_2_column_1 {
     margin: auto; }
   html body #row_2 #row_2_column_1 main#single .Thumbnail {
     width: calc((100% / 3) - 10px); }
+  html body #row_2 #row_2_column_1 div.related_posts {
+    width: calc((100% / 3) - 5px); }
   html body #row_2 #row_2_column_1 main#single_photoalbum .Thumbnail {
-    width: calc((100% / 3) - 10px); }
-  html body #row_2 #row_2_column_1 div.Related {
     width: calc((100% / 3) - 10px); }
 html body #row_2 #row_2_column_2 {
   display: none; }

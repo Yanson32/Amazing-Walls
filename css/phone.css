@@ -100,6 +100,8 @@ html body header #aw_header_subtext {
   display: block; }
 html body #row_2 #row_2_column_1 main#single .Thumbnail {
   width: calc(100% - 100px); }
+html body #row_2 #row_2_column_1 div.related_posts {
+  width: calc((100%) - 5px); }
 html body #row_2 #row_2_column_1 main#single_photoalbum .Thumbnail {
   width: calc((100%) - 10px); }
 html body #row_2 #row_2_column_1 div.Related {

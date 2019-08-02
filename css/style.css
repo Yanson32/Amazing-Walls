@@ -99,7 +99,7 @@ html {
         html body #row_2 #row_2_column_1 main#single .Thumbnail {
           width: calc((100% / 5) - 10px); }
         html body #row_2 #row_2_column_1 div.related_posts {
-          width: calc((100% / 5) - 10px); }
+          width: calc((100% / 5) - 5px); }
         html body #row_2 #row_2_column_1 footer {
           margin: 5px; }
       html body #row_2 #row_2_column_2 {
@@ -277,7 +277,7 @@ ul.MainMenu li.Button {
 
 /*Attachment page styling*/
 .thumbnail {
-  width: calc((100% / 5) - 5px);
+  width: calc((100% / 5) - 10px);
   display: inline-block;
   vertical-align: top;
   margin: 2.5px; }

@@ -88,17 +88,6 @@ ul.MainMenu
 	display:inline-block;
 	width:47%;
 }
-
-.tax_lable
-{
-	width:30%;
-}
-
-.tax_list
-{
-	width:70%;
-}
-
 html
 {
 	body
@@ -143,11 +132,11 @@ html
 				{
 					width:calc((100% / 3) - 10px);
 				}
-				main#single_photoalbum .Thumbnail
+				div.related_posts
 				{
-					width:calc((100% / 3) - 10px);
+					width:calc((100% / 3) - 5px);
 				}
-				div.Related
+				main#single_photoalbum .Thumbnail
 				{
 					width:calc((100% / 3) - 10px);
 				}
