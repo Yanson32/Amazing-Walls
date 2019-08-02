@@ -43,11 +43,8 @@ ul.Tag li a {
   display: block;
   padding: 5px;
   text-decoration: none;
-  font-size: 0.7em;
+  font-size: 10px;
   margin: 0px; }
-
-#commentform {
-  font-size: 10px; }
 
 #comments {
   float: left;
@@ -101,9 +98,7 @@ html {
         vertical-align: top; }
         html body #row_2 #row_2_column_1 main#single .Thumbnail {
           width: calc((100% / 5) - 10px); }
-        html body #row_2 #row_2_column_1 main#single_photoalbum .Thumbnail {
-          width: calc((100% / 5) - 10px); }
-        html body #row_2 #row_2_column_1 div.Related {
+        html body #row_2 #row_2_column_1 div.related_posts {
           width: calc((100% / 5) - 10px); }
         html body #row_2 #row_2_column_1 footer {
           margin: 5px; }

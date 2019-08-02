@@ -62,6 +62,12 @@ ul.MainMenu {
   display: inline-block;
   width: 47%; }
 
+.tax_lable {
+  width: 30%; }
+
+.tax_list {
+  width: 70%; }
+
 html body header .custom-logo {
   disply: block;
   width: 100px;
