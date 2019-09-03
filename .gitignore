@@ -2,6 +2,6 @@ build/
 BUILD/
 bUILD/
 Build/
-.orig
-.swp
-.map
+*.orig
+*.swp
+*.map
