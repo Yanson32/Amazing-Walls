@@ -13,7 +13,7 @@
 
 		<!-- Display info for admin only-->
 		<?php aw_admin_panel(); ?>
-    <?php print_r($GLOBALS); ?>
+
 		<?php if(!is_page(get_the_ID()) && !post_password_required()): ?>
       <div id="taxonomies" style="font-size:15px">
         <?php
