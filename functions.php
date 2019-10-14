@@ -5,8 +5,166 @@
    	require_once('includes/helpers.php');
     require_once('includes/AWPlugins/AWPlugins.php');
     require('includes/config.php');
+	
+	function aw_get_cat_id($cat)
+	{
+		$cat_id = array();
+		foreach($_POST['category_upload'] as $var)
+		{
+			$term = term_exists(sanitize_text_field($var), 'category');
+
+			if($term)
+				$cat_id[] = $term['term_id'];
+						
+		}
+		
+		return $cat_id;
+	}
+	
+	function aw_to_tax($arr, $tax)
+	{
+		$tax_array = array();
+			
+		foreach( $arr as $value ) 
+		{
+			$tax_array[$tax] = sanitize_text_field($value);
+		}
+		return $tax_array;	
+	}
+	
+	function aw_insert_post()
+	{
+		if(current_user_can('publish_posts'))
+		{	
+			//Parse people taxonomy
+			$tax_array = aw_to_tax($_POST['people_upload'], 'People');
+			
+			//Get an array of category id's
+			$cat_id = aw_get_cat_id($_POST['category_upload']);
+			
+			//Create post
+			$post_arr = array(	'post_title' => sanitize_text_field($_POST['upload_title']), 
+			'post_type' => sanitize_text_field( $_POST['upload_post_type']),
+			'post_status' => 'publish',
+			'tags_input' => $_POST['upload_tags'],
+			'tax_input' => $tax_array,
+			'post_category' => $cat_id);
+													
+			return wp_insert_post($post_arr);
+		}
+		
+		return WP_Error('Error' , 'Unable to create post');
+	}
+	 
+	function aw_create_photo_album() 
+	{
+		if ( $_FILES ) 
+		{ 
+			$files = $_FILES["aw_photo_upload"];  
+			$count = 0;
+			$post_id = aw_insert_post();
+			foreach ($files['name'] as $key => $value) 
+			{ 			
+					if ($files['name'][$key]) 
+					{ 
+						$file = array( 
+							'name' => $files['name'][$key],
+							'type' => $files['type'][$key], 
+							'tmp_name' => $files['tmp_name'][$key], 
+							'error' => $files['error'][$key],
+							'size' => $files['size'][$key]
+						); 
+						$_FILES = array ("aw_photo_upload" => $file); 
+						foreach ($_FILES as $file => $array) 
+						{	
 
 
+ 							$attachment_id = aw_handle_attachment($file,$post_id, true); 
+							
+							if ( !is_wp_error( $attachment_id )) 
+							{
+								if($count == 0)
+								{
+									//Set featured image. 
+									set_post_thumbnail($post_id, $attachment_id);
+									
+									$count += 1;
+								}
+
+								
+								//Add custom field entry
+								add_post_meta($post_id, 'Photo', $attachment_id);
+							
+								//Set alt text 
+								update_post_meta($attachment_id, '_wp_attachment_image_alt', $_POST['alt_text_upload']);
+							} 
+							
+
+							
+						}
+					} 
+				} 
+			}
+	}
+	
+	function aw_create_photo_mobile() 
+	{
+		if ( $_FILES ) 
+		{ 
+			$files = $_FILES["aw_photo_upload"];  
+			foreach ($files['name'] as $key => $value) 
+			{ 			
+					if ($files['name'][$key]) 
+					{ 
+						$file = array( 
+							'name' => $files['name'][$key],
+							'type' => $files['type'][$key], 
+							'tmp_name' => $files['tmp_name'][$key], 
+							'error' => $files['error'][$key],
+							'size' => $files['size'][$key]
+						); 
+						$_FILES = array ("aw_photo_upload" => $file); 
+						foreach ($_FILES as $file => $array) 
+						{	
+							$post_id = aw_insert_post();
+							$attachment_id = aw_handle_attachment($file,$post_id, true); 
+							if ( !is_wp_error( $attachment_id ) ) 
+							{
+								//Set featured image. 
+								set_post_thumbnail($post_id, $attachment_id);
+								
+								//Set alt text 
+								update_post_meta($attachment_id, '_wp_attachment_image_alt', $_POST['alt_text_upload']);
+								
+								//Add custom field entry
+								add_post_meta($post_id, 'Photo', $attachment_id);
+							}
+							
+						}
+					} 
+				} 
+			}
+	}
+	function aw_handle_attachment($file_handler,$post_id,$set_thu=true) 
+	{
+		// Check that the nonce is valid, and the user can edit this post.
+		if ( 	isset( $_POST['aw_image_upload_nonce'] ) 
+				&& wp_verify_nonce( $_POST['aw_image_upload_nonce'], 'aw_image_upload' )
+				&& current_user_can( 'edit_post', $post_id )) 
+		{
+			
+			// check to make sure its a successful upload
+			if ($_FILES[$file_handler]['error'] !== UPLOAD_ERR_OK) 
+				__return_false();
+
+			require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+			require_once(ABSPATH . "wp-admin" . '/includes/file.php');
+			require_once(ABSPATH . "wp-admin" . '/includes/media.php');
+
+			return media_handle_upload( $file_handler, $post_id );
+
+		}
+	}
     function aw_post_serchform_filter_options()
     {
       if(empty(get_option('aw_default_post_types')))
