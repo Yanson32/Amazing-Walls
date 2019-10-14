@@ -453,6 +453,7 @@ h2
 {
 	width: 100px;
 	display:inline-block;
+	font-size:$font_size_2x;
 }
 main
 {
@@ -517,5 +518,10 @@ div h1
 {
 	text-align:left;
 	margin:5px;
+	font-size:$font_size_2x;
+}
+
+p
+{
 	font-size:$font_size_2x;
 }

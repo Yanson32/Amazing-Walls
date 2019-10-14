@@ -313,7 +313,8 @@ h2 {
 
 .AWLable {
   width: 100px;
-  display: inline-block; }
+  display: inline-block;
+  font-size: 20px; }
 
 main {
   width: 100%;
@@ -363,4 +364,5 @@ div h1 {
   margin: 5px;
   font-size: 20px; }
 
-/*# sourceMappingURL=style.css.map */
+p {
+  font-size: 20px; }
