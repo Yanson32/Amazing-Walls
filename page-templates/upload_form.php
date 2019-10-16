@@ -21,6 +21,7 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  )
 <div id="row_2">
   <div id="row_2_column_1" class="">
     <main class="clearfix">
+      <h2>Upload</h2>
       <form id="aw_upload_form" method="post" enctype="multipart/form-data" name="front_end_upload">
 		<?php wp_nonce_field( 'aw_image_upload', 'aw_image_upload_nonce' ); ?>
         <label class="AWLable" for="upload_title" >Title</label>
@@ -66,9 +67,13 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  )
         <button id="aw_upload_submit_button" class="Button ButtonColor" style="padding:5px" type="submit" name="Upload" >Submit</button>
         <?php //wp_insert_post; ?>
       </form>
-	  <span style="color:red;font-size:20px">Max upload size: <?php echo ini_get("upload_max_filesize");?></span>
-	  <span style="color:red;font-size:20px">Cat1: <?php print_r(term_exists('cat1', 'category'));?></span>
-	  
+      <div id="admin_upload_info">
+      <?php if(current_user_can('administrator')): ?>
+  	   <span style="color:red;font-size:20px">Max upload size: <?php echo ini_get("upload_max_filesize");?></span><br>
+	    <?php else: ?>
+        <?php echo 'you nedd to be an admin'; ?>
+      <?php endif; ?>
+      </div>
     </main>
 
     <!-- Create page footer -->

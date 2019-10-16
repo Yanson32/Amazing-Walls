@@ -366,3 +366,12 @@ div h1 {
 
 p {
   font-size: 20px; }
+
+#admin_upload_info {
+  text-align: center; }
+
+#aw_upload_form {
+  text-align: center;
+  padding: 5px; }
+
+/*# sourceMappingURL=style.css.map */
