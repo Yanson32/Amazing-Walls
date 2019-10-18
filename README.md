@@ -32,7 +32,7 @@ Amazing Wallpapers is a wordpress theme. Designed for image based social media w
 ## Custom Fields
 * Photo
 * Related
-
+* Video
 
 allow the user to change the size of the post featured images form settings panel.
 allow the user to upload an image to be displayed when a featured image is not available.

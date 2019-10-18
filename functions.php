@@ -559,14 +559,20 @@ function aw_the_download_button()
           aw_createZipFile($server_path);
           chmod($server_path, $permissions);
       endif;
-    //When downloading a non album type we just need to download the file itself.
-    else:
-      $custom_fields = get_post_custom_values('Photo');
+    elseif(get_post_type() == 'video' && is_single()):
+      $custom_fields = get_post_custom_values('Video');
 
       $url = '';
       if($custom_fields):
         $url = wp_get_attachment_url($custom_fields[0]);
+        //When downloading a non album type we just need to download the file itself.
+      else:
+        $custom_fields = get_post_custom_values('Photo');
       endif;
+
+      $url = '';
+      if($custom_fields)
+        $url = wp_get_attachment_url($custom_fields[0]);
     endif;
     echo '<a class="Button ButtonColor" href="'.$url.'" download>Download</a>';
   endif;
