@@ -435,17 +435,21 @@ function aw_createZipFile($filename)
 {
 	if(extension_loaded('zip'))
 	{
-		$server_root = get_site_url();
-		$tempZip = new ZipArchive();
-		if($tempZip->open($filename, ZipArchive::CREATE|ZipArchive::OVERWRITE) == True)
-		{
-			foreach(aw_get_images() as $image)
-			{
-					$tempZip->addFile($image, basename(($image)));
-			}
-		}
+        //Create file if it does not already exist
+        if(!file_exists($filename))
+        {
+		    $server_root = get_site_url();
+		    $tempZip = new ZipArchive();
+		    if($tempZip->open($filename, ZipArchive::CREATE|ZipArchive::OVERWRITE) == True)
+		    {
+			    foreach(aw_get_images() as $image)
+			    {
+					    $tempZip->addFile($image, basename(($image)));
+			    }
+		    }
 
-		$tempZip->close();
+		    $tempZip->close();
+        }
 	}
 }
 
@@ -542,19 +546,19 @@ function aw_the_download_button()
 
     //When downloading an album we need to create a zip file
     if(get_post_type() == 'photoalbum' && is_single()):
-      $permissions = 0744;
-      $downloads_folder = ABSPATH."Downloads/";
-
       $title = sanitize_title(get_the_title(get_the_ID()));
       $file = (($title)? $title: get_the_ID()).".zip";
+      $downloads_folder = ABSPATH."Downloads/";
       $server_path = $downloads_folder.$file;
-      $url = get_site_url()."/Downloads/".$file;
-
-      mkdir($downloads_folder);
-      chmod($downloads_folder, $permissions);
-      aw_createZipFile($server_path);
-      chmod($server_path, $permissions);
-
+        
+      if(!file_exists($server_path)):
+          $permissions = 0744;
+          $url = get_site_url()."/Downloads/".$file;
+          mkdir($downloads_folder);
+          chmod($downloads_folder, $permissions);
+          aw_createZipFile($server_path);
+          chmod($server_path, $permissions);
+      endif;
     //When downloading a non album type we just need to download the file itself.
     else:
       $custom_fields = get_post_custom_values('Photo');
