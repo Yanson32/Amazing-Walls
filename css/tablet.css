@@ -87,4 +87,20 @@ html body #row_2 #row_2_column_1 {
 html body #row_2 #row_2_column_2 {
   display: none; }
 
+form#aw_upload_form {
+  min-width: calc(100% - 10px); }
+
+form#aw_upload_form label {
+  width: 50%;
+  text-align: center; }
+
+form#aw_upload_form input {
+  width: 50%; }
+
+form#aw_upload_form select {
+  width: 50%; }
+
+form#aw_upload_form button {
+  width: 50%; }
+
 /*# sourceMappingURL=tablet.css.map */
