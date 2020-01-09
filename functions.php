@@ -1,6 +1,6 @@
 <?php
 
-    require_once('Admin/Admin.php');
+    //require_once('Admin/Admin.php');
     require_once('widgets/widgets.php');
    	require_once('includes/helpers.php');
     require_once('includes/AWPlugins/AWPlugins.php');
