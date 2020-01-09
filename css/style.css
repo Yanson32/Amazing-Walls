@@ -374,4 +374,17 @@ p {
   text-align: center;
   padding: 5px; }
 
+form#aw_upload_form {
+  min-width: 450; }
+
+form#aw_upload_form label {
+  width: 200px;
+  text-align: left; }
+
+form#aw_upload_form input {
+  width: calc(100% - 200px); }
+
+form#aw_upload_form select {
+  width: calc(100% - 200px); }
+
 /*# sourceMappingURL=style.css.map */
