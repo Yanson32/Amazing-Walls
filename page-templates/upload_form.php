@@ -7,10 +7,14 @@ Template Name: Upload
 <?php 
 if( 'POST' == $_SERVER['REQUEST_METHOD']  ) 
 {
-	if($_POST['upload_post_type'] == 'photo' || $_POST['upload_post_type'] == 'mobile'):
-		aw_create_photo_mobile();
+	if($_POST['upload_post_type'] == 'photo'):
+		aw_create_photo_mobile('Photo');
+    elseif($_POST['upload_post_type'] == 'mobile'):
+        aw_create_photo_mobile('Photo');
 	elseif($_POST['upload_post_type'] == 'photoalbum'):
 		aw_create_photo_album();
+    elseif($_POST['upload_post_type'] == 'video'):
+        aw_create_video();
 	endif;
 }
 ?>

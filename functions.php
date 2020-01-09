@@ -107,7 +107,7 @@
 			}
 	}
 	
-	function aw_create_photo_mobile() 
+	function aw_create_photo_mobile(string $type) 
 	{
 		if ( $_FILES ) 
 		{ 
@@ -137,7 +137,7 @@
 								update_post_meta($attachment_id, '_wp_attachment_image_alt', $_POST['alt_text_upload']);
 								
 								//Add custom field entry
-								add_post_meta($post_id, 'Photo', $attachment_id);
+								add_post_meta($post_id, $type, $attachment_id);
 							}
 							
 						}
@@ -145,6 +145,46 @@
 				} 
 			}
 	}
+
+    function aw_create_video()
+    {
+		if ( $_FILES ) 
+		{ 
+			$files = $_FILES["aw_photo_upload"];  
+			foreach ($files['name'] as $key => $value) 
+			{ 			
+					if ($files['name'][$key]) 
+					{ 
+						$file = array( 
+							'name' => $files['name'][$key],
+							'type' => $files['type'][$key], 
+							'tmp_name' => $files['tmp_name'][$key], 
+							'error' => $files['error'][$key],
+							'size' => $files['size'][$key]
+						); 
+						$_FILES = array ("aw_photo_upload" => $file); 
+						foreach ($_FILES as $file => $array) 
+						{	
+							$post_id = aw_insert_post();
+							$attachment_id = aw_handle_attachment($file,$post_id, true); 
+							if ( !is_wp_error( $attachment_id ) ) 
+							{
+								//Set featured image. 
+								set_post_thumbnail($post_id, $attachment_id);
+								
+								//Set alt text 
+								update_post_meta($attachment_id, '_wp_attachment_image_alt', $_POST['alt_text_upload']);
+								
+								//Add custom field entry
+								add_post_meta($post_id, 'Video', $attachment_id);
+							}
+							
+						}
+					} 
+				} 
+			}
+    }
+
 	function aw_handle_attachment($file_handler,$post_id,$set_thu=true) 
 	{
 		// Check that the nonce is valid, and the user can edit this post.
