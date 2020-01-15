@@ -46,6 +46,13 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  )
         <input type="text" id="category_upload" name="category_upload[]" placeholder="Comma seperated list"><br>
         <label class="AWLable" for="alt_text_upload">Alt Text:</label>
         <input type="text" id="alt_text_upload" name="alt_text_upload" required><br>
+        
+        <label class="AWLable" for="aw_upload_visibility">Visibility</label>
+        <select id="aw_upload_visibility" name="aw_upload_visibility" required>
+            <option>Public</option>
+            <option>Private</option>
+            <option>Password Protected</option>
+        </select>
 		<div  id="photo_upload_form">
 
           <label class="AWLable" for="aw_photo_upload">Upload</label>

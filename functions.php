@@ -50,7 +50,9 @@
 			'tax_input' => $tax_array,
 			'post_category' => $cat_id);
 													
-			return wp_insert_post($post_arr);
+			$return_val = wp_insert_post($post_arr);
+            wp_update_post( array( 'ID' => $return_val, 'post_status' => sanitize_text_field( $_POST['aw_upload_visibility'])));
+            return $return_val;
 		}
 		
 		return WP_Error('Error' , 'Unable to create post');
