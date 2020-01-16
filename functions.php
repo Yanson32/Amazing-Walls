@@ -6,19 +6,22 @@
     require_once('includes/AWPlugins/AWPlugins.php');
     require('includes/config.php');
 	
-	function aw_get_cat_id($cat)
+	function aw_get_cat_id($arr)
 	{
-		$cat_id = array();
-		foreach($_POST['category_upload'] as $var)
-		{
-			$term = term_exists(sanitize_text_field($var), 'category');
 
-			if($term)
-				$cat_id[] = $term['term_id'];
+		$cat_array = array();
+
+		foreach($arr as $var)
+		{   
+            $term = get_term_by('name', $var, 'category');
+
+            if($term)
+			    $cat_array[] = $term->term_id;
 						
 		}
-		
-		return $cat_id;
+        
+
+		return $cat_array;
 	}
 	
 	function aw_to_tax($arr, $tax)
@@ -39,9 +42,11 @@
 			//Parse people taxonomy
 			$tax_array = aw_to_tax($_POST['people_upload'], 'People');
 			
+
 			//Get an array of category id's
-			$cat_id = aw_get_cat_id($_POST['category_upload']);
-			
+			$cat_id = aw_get_cat_id(explode(',', $_POST['category_upload']));
+	
+
 			//Create post
 			$post_arr = array(	'post_title' => sanitize_text_field($_POST['upload_title']), 
 			'post_type' => sanitize_text_field( $_POST['upload_post_type']),
