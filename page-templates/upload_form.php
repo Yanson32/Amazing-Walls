@@ -46,7 +46,6 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  )
         <input type="text" id="category_upload" name="category_upload" placeholder="Comma seperated list"><br>
         <label class="AWLable" for="alt_text_upload">Alt Text:</label>
         <input type="text" id="alt_text_upload" name="alt_text_upload" required><br>
-        
         <label class="AWLable" for="aw_upload_visibility">Visibility</label>
         <select id="aw_upload_visibility" name="aw_upload_visibility"  required>
             <option value='publish'>Public</option>
@@ -56,30 +55,10 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  )
         <input id="aw_upload_password" name='aw_upload_password' placeholder="Enter Password" type="password">
         <label class="AWLable" for="aw_upload_password_confirm">Password</label>
         <input id="aw_upload_password_confirm" name='aw_upload_password_confirm' placeholder="Enter Password" type="password">
-		<div  id="photo_upload_form">
-
-          <label class="AWLable" for="aw_photo_upload">Upload</label>
-          <input type="file" name="aw_photo_upload[]"  multiple="multiple" id="aw_photo_upload">
-        </div>
-
-        <div id="mobile_upload_form" class="aw_post_upload_form">
-
-        </div>
-
-        <div id="photoalbum_upload_form" class="aw_post_upload_form">
-			<label class="AWLable" for="aw_featured_image_upload">Upload</label>
-			<input type="file" name="aw_featured_image_upload" id="aw_featured_image_upload">
-        </div>
-
-        <div id="video_upload_form" class="aw_post_upload_form">
-
-        </div>
-        <br>
-
-        <br>
+        <label class="AWLable" for="aw_photo_upload">Upload</label>
+        <input type="file" name="aw_photo_upload[]"  multiple="multiple" id="aw_photo_upload">
         <label class="AWLable" for="aw_upload_submit_button"></label>
         <button id="aw_upload_submit_button" class="Button ButtonColor" style="padding:5px" type="submit" name="Upload" >Submit</button>
-        <?php //wp_insert_post; ?>
       </form>
       <div id="admin_upload_info">
       <?php if(current_user_can('administrator')): ?>
