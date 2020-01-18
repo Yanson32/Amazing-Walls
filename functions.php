@@ -35,6 +35,11 @@
 		return $tax_array;	
 	}
 	
+
+    /***********************************************************************************//**
+    *   @brief  This method inserts a post into the database baised on information
+    *           provided in the upload form page template.
+    **************************************************************************************/
 	function aw_insert_post()
 	{
 		if(current_user_can('publish_posts'))
@@ -47,13 +52,12 @@
 			$cat_id = aw_get_cat_id(explode(',', $_POST['category_upload']));
 
 			//Create post
-            
             if($_POST['aw_upload_password'] == $_POST['aw_upload_password_confirm']):
                 $password = sanitize_text_field($_POST['aw_upload_password']);
 			    $post_arr = array(	'post_title' => sanitize_text_field($_POST['upload_title']), 
 			    'post_type' => sanitize_text_field( $_POST['upload_post_type']),
 			    'post_status' => sanitize_text_field( $_POST['aw_upload_visibility']),
-			    'tags_input' => $_POST['upload_tags'],
+			    'tags_input' => sanitize_text_field($_POST['upload_tags']),
 			    'tax_input' => $tax_array,
 			    'post_category' => $cat_id,
                 'post_password' => $password);
