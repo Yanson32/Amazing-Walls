@@ -43,16 +43,19 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  )
 		<label class="AWLable" for="people_upload">People:</label>
         <input type="text" id="people_upload" name="people_upload[]" placeholder="Comma seperated list"><br>
 		<label class="AWLable" for="category_upload">Category:</label>
-        <input type="text" id="category_upload" name="category_upload[]" placeholder="Comma seperated list"><br>
+        <input type="text" id="category_upload" name="category_upload" placeholder="Comma seperated list"><br>
         <label class="AWLable" for="alt_text_upload">Alt Text:</label>
         <input type="text" id="alt_text_upload" name="alt_text_upload" required><br>
         
         <label class="AWLable" for="aw_upload_visibility">Visibility</label>
-        <select id="aw_upload_visibility" name="aw_upload_visibility" required>
-            <option>Public</option>
-            <option>Private</option>
-            <option>Password Protected</option>
+        <select id="aw_upload_visibility" name="aw_upload_visibility"  required>
+            <option value='publish'>Public</option>
+            <option value='private'>Private</option>
         </select>
+        <label class="AWLable" for="aw_upload_password">Password</label>
+        <input id="aw_upload_password" name='aw_upload_password' placeholder="Enter Password" type="password">
+        <label class="AWLable" for="aw_upload_password_confirm">Password</label>
+        <input id="aw_upload_password_confirm" name='aw_upload_password_confirm' placeholder="Enter Password" type="password">
 		<div  id="photo_upload_form">
 
           <label class="AWLable" for="aw_photo_upload">Upload</label>
