@@ -152,6 +152,22 @@
 								
 								//Add custom field entry
 								add_post_meta($post_id, $type, $attachment_id);
+
+                                #Get width and height of the thumbnail
+                                $image = wp_get_attachment_image_src($attachment_id, 'full');
+                                $width = $image[1];
+                                $height = $image[2];
+
+
+                               //Set the resolution of the post thumbnail. We erase any previous entries resolution entries
+                                wp_set_object_terms( $post_id, $width.'x'.$height, 'Resolution', false);
+
+                                $cd = array_reduce(array($width, $height), 'gcd');
+                                $width /= $cd;
+                                $height /= $cd;
+
+			                    //Set the AspectRatio of the post thumbnail. We erase any previous AspectRatio entries
+                                wp_set_object_terms( $post_id, $width.'x'.$height, 'AspectRatio', false);
 							}
 							
 						}
