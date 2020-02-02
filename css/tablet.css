@@ -92,7 +92,7 @@ form#aw_upload_form {
 
 form#aw_upload_form label {
   width: 50%;
-  text-align: center; }
+  text-align: left; }
 
 form#aw_upload_form input {
   width: 50%; }
