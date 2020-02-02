@@ -74,53 +74,70 @@
 	{
 		if ( $_FILES ) 
 		{ 
-			$files = $_FILES["aw_photo_upload"];  
-			$count = 0;
+            $count = 0;
 			$post_id = aw_insert_post();
+
+			$files = $_FILES["aw_photo_upload"];
+            $featured_image;
+
+            if(isset($_FILES['aw_featured_image_upload']))
+            {
+                $featured_image = aw_handle_attachment('aw_featured_image_upload', $post_id);
+            }
+
+
 			foreach ($files['name'] as $key => $value) 
 			{ 			
 					if ($files['name'][$key]) 
 					{ 
-						$file = array( 
+						$file_array = array( 
 							'name' => $files['name'][$key],
 							'type' => $files['type'][$key], 
 							'tmp_name' => $files['tmp_name'][$key], 
 							'error' => $files['error'][$key],
 							'size' => $files['size'][$key]
 						); 
-						$_FILES = array ("aw_photo_upload" => $file); 
+
+                        //The wordpress function media_upload_file cannot handle multi file uploads
+                        //So we have to set $_FILES to a single file.
+						$_FILES = array ("aw_photo_upload" => $file_array); 
 						foreach ($_FILES as $file => $array) 
 						{	
 
+                                $attachment_id = aw_handle_attachment($file,$post_id, true); 		                    
 
- 							$attachment_id = aw_handle_attachment($file,$post_id, true); 
-							
-							if ( !is_wp_error( $attachment_id )) 
-							{
-								if($count == 0)
-								{
-									//Set featured image. 
-									set_post_thumbnail($post_id, $attachment_id);
-									
-									$count += 1;
-								}
+							    if ( !is_wp_error( $attachment_id )) 
+							    {
+								    if($count == 0)
+								    {
+									    //Set featured image. 
+									    set_post_thumbnail($post_id, $attachment_id);
+									    
+									    $count += 1;
+								    }
 
-								
-								//Add custom field entry
-								add_post_meta($post_id, 'Photo', $attachment_id);
+								    
+								    //Add custom field entry
+								    add_post_meta($post_id, 'Photo', $attachment_id);
+							    
+								    //Set alt text 
+								    update_post_meta($attachment_id, '_wp_attachment_image_alt', $_POST['alt_text_upload']);
+							    } 
 							
-								//Set alt text 
-								update_post_meta($attachment_id, '_wp_attachment_image_alt', $_POST['alt_text_upload']);
-							} 
-							
-
+                            }
 							
 						}
 					} 
+
+                    if($featured_image)
+                    {
+                        set_post_thumbnail($post_id, $featured_image);
+                    }
 				} 
-			}
+			
 	}
-	
+
+
 	function aw_create_photo_mobile(string $type) 
 	{
 		if ( $_FILES ) 
@@ -137,6 +154,9 @@
 							'error' => $files['error'][$key],
 							'size' => $files['size'][$key]
 						); 
+
+                        //The wordpress function media_upload_file cannot handle multi file uploads
+                        //So we have to set $_FILES to a single file.
 						$_FILES = array ("aw_photo_upload" => $file); 
 						foreach ($_FILES as $file => $array) 
 						{	
@@ -180,39 +200,44 @@
     {
 		if ( $_FILES ) 
 		{ 
-			$files = $_FILES["aw_photo_upload"];  
-			foreach ($files['name'] as $key => $value) 
-			{ 			
-					if ($files['name'][$key]) 
-					{ 
-						$file = array( 
-							'name' => $files['name'][$key],
-							'type' => $files['type'][$key], 
-							'tmp_name' => $files['tmp_name'][$key], 
-							'error' => $files['error'][$key],
-							'size' => $files['size'][$key]
-						); 
-						$_FILES = array ("aw_photo_upload" => $file); 
-						foreach ($_FILES as $file => $array) 
-						{	
-							$post_id = aw_insert_post();
-							$attachment_id = aw_handle_attachment($file,$post_id, true); 
-							if ( !is_wp_error( $attachment_id ) ) 
-							{
-								//Set featured image. 
-								set_post_thumbnail($post_id, $attachment_id);
+
+			$post_id = aw_insert_post();
+            $featured_image;
+
+            if(isset($_FILES['aw_featured_image_upload']))
+            {
+                $featured_image = aw_handle_attachment('aw_featured_image_upload', $post_id);
+            }
+
+            $file = array( 
+                'name' => $_FILES['aw_photo_upload']['name'][0],
+				'type' => $_FILES['aw_photo_upload']['type'][0], 
+				'tmp_name' => $_FILES['aw_photo_upload']['tmp_name'][0], 
+			    'error' => $_FILES['aw_photo_upload']['error'][0],
+				'size' => $_FILES['aw_photo_upload']['size'][0]
+			); 
+            $_FILES = array ("aw_photo_upload" => $file); 
+
+			$attachment_id = aw_handle_attachment('aw_photo_upload',$post_id, true); 
+			if ( !is_wp_error( $attachment_id ) ) 
+			{
+				//Set featured image. 
+				set_post_thumbnail($post_id, $attachment_id);
 								
-								//Set alt text 
-								update_post_meta($attachment_id, '_wp_attachment_image_alt', $_POST['alt_text_upload']);
+				//Set alt text 
+				update_post_meta($attachment_id, '_wp_attachment_image_alt', $_POST['alt_text_upload']);
 								
-								//Add custom field entry
-								add_post_meta($post_id, 'Video', $attachment_id);
-							}
-							
-						}
-					} 
-				} 
+				//Add custom field entry
+				add_post_meta($post_id, 'Video', $attachment_id);
 			}
+
+            if($featured_image)
+            {
+                set_post_thumbnail($post_id, $featured_image);
+            }
+							
+	    }
+					
     }
 
 	function aw_handle_attachment($file_handler,$post_id,$set_thu=true) 

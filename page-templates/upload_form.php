@@ -32,7 +32,7 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  )
         <input type="text" id="upload_title" name="upload_title" required>
         <br>
         <label class="AWLable" for="upload_post_type">Post Type</label>
-        <select id="upload_post_type" name="upload_post_type">
+        <select id="upload_post_type" name="upload_post_type" onchange="selectionChangedUploadForm();">
            <option value="photo">Photo</option>
            <option value="photoalbum">Photo Album</option>
            <option value="video">Video</option>
@@ -47,7 +47,7 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  )
         <label class="AWLable" for="alt_text_upload">Alt Text:</label>
         <input type="text" id="alt_text_upload" name="alt_text_upload" required><br>
         <label class="AWLable" for="aw_upload_visibility">Visibility</label>
-        <select id="aw_upload_visibility" name="aw_upload_visibility"  required>
+        <select id="aw_upload_visibility" name="aw_upload_visibility" required>
             <option value='publish'>Public</option>
             <option value='private'>Private</option>
         </select>
@@ -57,6 +57,10 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  )
         <input id="aw_upload_password_confirm" name='aw_upload_password_confirm' placeholder="Enter Password" type="password">
         <label class="AWLable" for="aw_photo_upload">Upload</label>
         <input type="file" name="aw_photo_upload[]"  multiple="multiple" id="aw_photo_upload">
+        <div id="aw_featured_image_upload_container">
+            <label class="AWLable" for="aw_featured_image_upload">Featured Image:</label>
+            <input type="file" name="aw_featured_image_upload" id="aw_featured_image_upload">
+        </div>
         <label class="AWLable" for="aw_upload_submit_button"></label>
         <button id="aw_upload_submit_button" class="Button ButtonColor" style="padding:5px" type="submit" name="Upload" >Submit</button>
       </form>
@@ -76,3 +80,9 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  )
     <?php get_sidebar( 'primary' ); ?>
   </div>
 </div>
+
+<script>
+    jQuery(document).ready(function($) {
+    selectionChangedUploadForm();
+});
+</script>
