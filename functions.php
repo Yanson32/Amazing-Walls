@@ -52,16 +52,13 @@
 			$cat_id = aw_get_cat_id(explode(',', $_POST['category_upload']));
 
 			//Create post
-            if($_POST['aw_upload_password'] == $_POST['aw_upload_password_confirm']):
-                $password = sanitize_text_field($_POST['aw_upload_password']);
-			    $post_arr = array(	'post_title' => sanitize_text_field($_POST['upload_title']), 
-			    'post_type' => sanitize_text_field( $_POST['upload_post_type']),
-			    'post_status' => sanitize_text_field( $_POST['aw_upload_visibility']),
-			    'tags_input' => sanitize_text_field($_POST['upload_tags']),
-			    'tax_input' => $tax_array,
-			    'post_category' => $cat_id,
-                'post_password' => $password);
-		    endif;									
+			$post_arr = array(	'post_title' => sanitize_text_field($_POST['upload_title']), 
+			'post_type' => sanitize_text_field( $_POST['upload_post_type']),
+			'post_status' => sanitize_text_field( $_POST['aw_upload_visibility']),
+			'tags_input' => sanitize_text_field($_POST['upload_tags']),
+			'tax_input' => $tax_array,
+			'post_category' => $cat_id);
+								
 			$return_val = wp_insert_post($post_arr);
             
             return $return_val;

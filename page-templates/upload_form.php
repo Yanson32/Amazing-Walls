@@ -51,10 +51,7 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  )
             <option value='publish'>Public</option>
             <option value='private'>Private</option>
         </select>
-        <label class="AWLable" for="aw_upload_password">Password</label>
-        <input id="aw_upload_password" name='aw_upload_password' placeholder="Enter Password" type="password">
-        <label class="AWLable" for="aw_upload_password_confirm">Password</label>
-        <input id="aw_upload_password_confirm" name='aw_upload_password_confirm' placeholder="Enter Password" type="password">
+
         <label class="AWLable" for="aw_photo_upload">Upload</label>
         <input type="file" name="aw_photo_upload[]"  multiple="multiple" id="aw_photo_upload">
         <div id="aw_featured_image_upload_container">
