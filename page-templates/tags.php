@@ -8,7 +8,7 @@ Template Name: Tag Template
 
 <?php get_header(); ?>
 <!-- print the name of the page when in debug mode -->
-<?php aw_print_name('tag.php template'); ?>
+<?php aw_print_name('tag.php'); ?>
 <?php get_template_part('/Templates/Parts/post header'); ?>
 <div id="row_2">
   <div id="row_2_column_1" class="">

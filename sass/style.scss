@@ -558,3 +558,19 @@ form#aw_upload_form select
 {
 	width:calc(100% - 200px);
 }
+
+video 
+{
+	width:100%;
+	min-width:100%;
+}
+.video_gallery_item
+{
+  display: none;
+  width:100%;
+}
+.video_gallery_item video
+{
+	position:absolute;
+	display:none;
+}
