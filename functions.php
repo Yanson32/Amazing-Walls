@@ -374,6 +374,7 @@ if ( ! function_exists( 'amazing_walls_enqued' ) )
 		wp_enqueue_style('tablet-style', get_template_directory_uri().'/css/tablet.css', array(), '1.0.0', 'all and (max-width: 640px)');
     wp_enqueue_style('phone-style', get_template_directory_uri().'/css/phone.css', array(), '1.0.0', 'all and (max-width: 320px)');
 		wp_enqueue_script('customjs', get_template_directory_uri().'/js/amazing.js', array(), '1.0.0', true);
+wp_enqueue_script('jquery');
 
 		$style = get_option('aw_theme');
 
