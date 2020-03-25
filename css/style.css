@@ -387,4 +387,18 @@ form#aw_upload_form input {
 form#aw_upload_form select {
   width: calc(100% - 200px); }
 
+video {
+  width: 100%;
+  min-width: 100%; }
+
+.video_gallery_item{
+  display: none;
+  width:100%;
+}
+#video_gallery_left_arrow{
+
+}
+#video_gallery_right_arrow{
+
+}
 /*# sourceMappingURL=style.css.map */
