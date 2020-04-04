@@ -123,8 +123,6 @@
        		echo '</ul></div>' . "\n";
 
    	}
-   endif
+   endif;
 
 
-
-?>
