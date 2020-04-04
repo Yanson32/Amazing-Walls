@@ -52,7 +52,7 @@
                         }
                         
                         echo '<div class="video_gallery_item" id="video-container-'.$value.'">';
-                            echo '<video id="video-'.$value.'" controls>';
+                            echo '<video id="video-'.$value.'" controls loop>';
 							echo '<source src="'.$url.'">';
                             echo '</video>';
                         echo '</div>';
