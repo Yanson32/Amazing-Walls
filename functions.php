@@ -645,7 +645,7 @@ function aw_the_download_button()
       $file = (($title)? $title: get_the_ID()).".zip";
       $downloads_folder = ABSPATH."Downloads/";
       $server_path = $downloads_folder.$file;
-        
+        echo "server path ".$server_path;
       if(!file_exists($server_path)):
           $permissions = 0744;
           $url = get_site_url()."/Downloads/".$file;
@@ -653,9 +653,11 @@ function aw_the_download_button()
           chmod($downloads_folder, $permissions);
           aw_createZipFile($server_path);
           chmod($server_path, $permissions);
+      else:
+        $url = get_site_url()."/Downloads/".$file;
       endif;
     elseif(get_post_type() == 'video' && is_single()):
-      $custom_fields = get_post_custom_values('Photo');
+      $custom_fields = get_post_custom_values('Video');
 
       
       if($custom_fields):
@@ -668,7 +670,9 @@ function aw_the_download_button()
       if($custom_fields)
         $url = wp_get_attachment_url($custom_fields[0]);
     endif;
-    echo '<a class="Button ButtonColor" href="'.$url.'" download>Download</a>';
+
+    if($url != '#')
+     echo '<a class="Button ButtonColor" href="'.$url.'" download>Download</a>';
   endif;
 }
 
