@@ -637,6 +637,8 @@ function aw_the_download_button()
   //setting in the theme's settings page is set
   if(aw_download_enabled()):
 
+    $url = '#';
+
     //When downloading an album we need to create a zip file
     if(get_post_type() == 'photoalbum' && is_single()):
       $title = sanitize_title(get_the_title(get_the_ID()));
@@ -655,7 +657,7 @@ function aw_the_download_button()
     elseif(get_post_type() == 'video' && is_single()):
       $custom_fields = get_post_custom_values('Video');
 
-      $url = '';
+      
       if($custom_fields):
         $url = wp_get_attachment_url($custom_fields[0]);
         //When downloading a non album type we just need to download the file itself.
