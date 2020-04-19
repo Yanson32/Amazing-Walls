@@ -655,7 +655,7 @@ function aw_the_download_button()
           chmod($server_path, $permissions);
       endif;
     elseif(get_post_type() == 'video' && is_single()):
-      $custom_fields = get_post_custom_values('Video');
+      $custom_fields = get_post_custom_values('Photo');
 
       
       if($custom_fields):
@@ -665,7 +665,6 @@ function aw_the_download_button()
         $custom_fields = get_post_custom_values('Photo');
       endif;
 
-      $url = '';
       if($custom_fields)
         $url = wp_get_attachment_url($custom_fields[0]);
     endif;
