@@ -80,25 +80,3 @@
 // 		echo _wp_post_thumbnail_html( $thumbnail_id, $post->ID );
 // 		echo '<a class="upload_image_button">upload</a>';
 // }
-
-/************************************************************//**
-*	@brief	When a photo is saved we set the custum field 'photo'
-*					to the featured image id.
-***************************************************************/
-function aw_save_photo()
-{
-	//get custom field photo
-	$custom_fields = get_post_custom_values('Photo');
-
-	//if custom field photo is empty, post type equals
-	//photo, and a featured image has been set. We set custom
-	//field photo to featured image id
-	if(empty($custom_fields) && get_post_type(get_the_ID()) == 'photo'):
-		$thumbnail_id = get_post_thumbnail_id(get_the_ID());
-
-		//Add thumbnail id as post meta photo if there is a thumbnail
-		if(!empty($thumbnail_id))
-			add_post_meta(get_the_ID(), 'Photo', $thumbnail_id);
-	endif;
-}
-add_action( 'save_post', 'aw_save_photo' );
