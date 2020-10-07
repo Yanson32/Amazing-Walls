@@ -637,45 +637,47 @@ function aw_the_download_button()
   //setting in the theme's settings page is set
   if(aw_download_enabled()):
 
-    $url = '#';
+    $zip_url = '#';
 
     //When downloading an album we need to create a zip file
     if(get_post_type() == 'photoalbum' && is_single()):
       $title = sanitize_title(get_the_title(get_the_ID()));
       $file = (($title)? $title: get_the_ID()).".zip";
+      $permissions = 0744;
       $downloads_folder = ABSPATH."Downloads/";
-      $server_path = $downloads_folder.$file;
-        echo "server path ".$server_path;
-      if(!file_exists($server_path)):
-          $permissions = 0744;
-          $url = get_site_url()."/Downloads/".$file;
-          mkdir($downloads_folder);
-          chmod($downloads_folder, $permissions);
-          aw_createZipFile($server_path);
-          chmod($server_path, $permissions);
+      if(!file_exists($downloads_folder) && is_dir($downloads_folder))
+      {
+        mkdir($downloads_folder);
+        chmod($downloads_folder, $permissions);
+      }
+      $zip_server_path = $downloads_folder.$file;
+      if(!file_exists($zip_server_path)):
+          
+          aw_createZipFile($zip_server_path);
+          chmod($zip_server_path, $permissions);
+          $zip_url = get_site_url()."/Downloads/".$file;
       else:
-        $url = get_site_url()."/Downloads/".$file;
+        $zip_url = get_site_url()."/Downloads/".$file;
       endif;
     elseif(get_post_type() == 'video' && is_single()):
       $custom_fields = get_post_custom_values('Video');
 
       
       if($custom_fields):
-        $url = wp_get_attachment_url($custom_fields[0]);
+        $zip_url = wp_get_attachment_url($custom_fields[0]);
         //When downloading a non album type we just need to download the file itself.
       else:
         $custom_fields = get_post_custom_values('Photo');
       endif;
 
       if($custom_fields)
-        $url = wp_get_attachment_url($custom_fields[0]);
+        $zip_url = wp_get_attachment_url($custom_fields[0]);
     endif;
 
-    if($url != '#')
-     echo '<a class="Button ButtonColor" href="'.$url.'" download>Download</a>';
+    if($zip_url != '#')
+     echo '<a class="Button ButtonColor" href="'.$zip_url.'" download>Download</a>';
   endif;
 }
-
 
 /***********************************************************************//**
 * @brief  Create a Queue button. If the appropriate settings in the

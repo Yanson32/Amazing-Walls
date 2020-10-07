@@ -66,7 +66,7 @@ function aw_gallery_meta_box()
 
 function aw_gallery_callback($post)
 {
-    wp_nonce_field(aw_save_gallery_data, 'aw_gallery_meta_box_nonce');
+    wp_nonce_field('aw_save_gallery_data', 'aw_gallery_meta_box_nonce');
     $value = esc_attr(get_post_meta($post->ID, '_gallery_value_key', true));
     echo '<label for="aw_gallery_field">User Gallery</label>';
     echo '<input class="widefat" type="email" id="aw_gallery_field" name="aw_gallery_field" value="' .esc_attr($value). '" size="25" />';

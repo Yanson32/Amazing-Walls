@@ -50,8 +50,12 @@ function aw_save_aspect_ratio()
       $width = $image[1];
       $height = $image[2];
       $cd = array_reduce(array($width, $height), 'gcd');
-      $width /= $cd;
-      $height /= $cd;
+
+      if($width != 0)
+        $width /= $cd;
+      
+      if($height != 0)
+        $height /= $cd;
 
 			//Set the AspectRatio of the post thumbnail. We erase any previous AspectRatio entries
       wp_set_object_terms( get_the_ID(), $width.'x'.$height, 'AspectRatio', false);
