@@ -35,12 +35,12 @@
                     
 					<?php
                     $i = -1;
+                    $previous_video;
                     foreach ($custom_fields as $value)
 					{   
                         $i += 1;
                         echo 'loop = '.$i;
                         $url = wp_get_attachment_url($value);
-                        $previous_video;
                         $next_video;
                         $left_arrow_id = 'video_gallery_left_arrow_'.$value;
                         $right_arrow_id = 'video_gallery_right_arrow_'.$value;

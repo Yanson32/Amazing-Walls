@@ -1,7 +1,7 @@
 <?php
 	require_once(get_template_directory().'/includes/config.php');
 	require_once('location_meta_box.php');
-	require_once('photo_meta_box.php');
+	//require_once('photo_meta_box.php');
 
   //only create the post type if the admin allows
   if(get_option('create_photo_type'))
