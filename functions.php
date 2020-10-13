@@ -526,20 +526,22 @@ function aw_the_featured_image_url($id, $width, $height)
 *********************************************************************************/
 function aw_createZipFile($filename)
 {
+
 	if(extension_loaded('zip'))
 	{
+
         //Create file if it does not already exist
         if(!file_exists($filename))
         {
 		    $server_root = get_site_url();
-		    $tempZip = new ZipArchive();
-		    if($tempZip->open($filename, ZipArchive::OVERWRITE) === True)
+		    $tempZip = new ZipArchive;
+		    if($tempZip->open($filename, ZipArchive::CREATE) === True)
 		    {
 			    foreach(aw_get_images() as $image)
 			    {
+                        echo "Has Images";
 					    $tempZip->addFile($image, basename(($image)));
 			    }
-
                 $tempZip->close();
 		    }
 		    
@@ -655,8 +657,11 @@ function aw_the_download_button()
       if(!file_exists($zip_server_path)):
           
           aw_createZipFile($zip_server_path);
-          chmod($zip_server_path, $permissions);
-          $zip_url = get_site_url()."/Downloads/".$file;
+
+          if(file_exists($zip_server_path)):
+            chmod($zip_server_path, $permissions);
+            $zip_url = get_site_url()."/Downloads/".$file;
+          endif;
       else:
         $zip_url = get_site_url()."/Downloads/".$file;
       endif;
