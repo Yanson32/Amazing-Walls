@@ -533,15 +533,16 @@ function aw_createZipFile($filename)
         {
 		    $server_root = get_site_url();
 		    $tempZip = new ZipArchive();
-		    if($tempZip->open($filename, ZipArchive::CREATE|ZipArchive::OVERWRITE) == True)
+		    if($tempZip->open($filename, ZipArchive::OVERWRITE) === True)
 		    {
 			    foreach(aw_get_images() as $image)
 			    {
 					    $tempZip->addFile($image, basename(($image)));
 			    }
-		    }
 
-		    $tempZip->close();
+                $tempZip->close();
+		    }
+		    
         }
 	}
 }
@@ -562,7 +563,7 @@ function aw_download_enabled()
 *********************************************************************************/
 function aw_get_images()
 {
-  $images =& get_children( array (
+  $images = get_children( array (
     'post_parent' => get_the_ID(),
     'post_type' => 'attachment',
     'post_mime_type' => 'image'
