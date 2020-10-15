@@ -35,7 +35,6 @@
                     
 					<?php
                     $i = -1;
-                    $previous_video;
                     foreach ($custom_fields as $value)
 					{   
                         $i += 1;
@@ -45,12 +44,6 @@
                         $left_arrow_id = 'video_gallery_left_arrow_'.$value;
                         $right_arrow_id = 'video_gallery_right_arrow_'.$value;
                         
-                        
-                        if($i < sizeof($custom_fields) - 1)
-                        {
-                            $next_video = $custom_fields[$i + 1];
-                        }
-                        
                         echo '<div class="video_gallery_item" id="video-container-'.$value.'">';
                             echo '<video id="video-'.$value.'" controls loop>';
 							echo '<source src="'.$url.'">';
@@ -59,8 +52,8 @@
 					}
                     $left_arrow = get_template_directory_uri()."/assets/images/arrow-left.png";
                     $right_arrow = get_template_directory_uri()."/assets/images/arrow-right.png";
-            echo '<img onclick=arrowClicked("video_gallery_left_arrow"); id="video_gallery_left_arrow" style="width:100px; height:100px;" value="'.$previous_video.'" src='.$left_arrow.'>';
-            echo '<img onclick=arrowClicked("video_gallery_right_arrow"); id="video_gallery_right_arrow" style="width:100px; height:100px;" value="'.$next_video.'" src='.$right_arrow.'>';
+            echo '<img onclick=arrowClicked("video_gallery_left_arrow"); id="video_gallery_left_arrow" style="width:100px; height:100px;" src='.$left_arrow.'>';
+            echo '<img onclick=arrowClicked("video_gallery_right_arrow"); id="video_gallery_right_arrow" style="width:100px; height:100px;" src='.$right_arrow.'>';
             ?>
 			<?php endif; ?>
     
