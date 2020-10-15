@@ -44,6 +44,7 @@
                         $left_arrow_id = 'video_gallery_left_arrow_'.$value;
                         $right_arrow_id = 'video_gallery_right_arrow_'.$value;
                         
+
                         echo '<div class="video_gallery_item" id="video-container-'.$value.'">';
                             echo '<video id="video-'.$value.'" controls loop>';
 							echo '<source src="'.$url.'">';
@@ -97,12 +98,18 @@
     *********************************************************************/
     jQuery(document).ready(function($) 
     {
-        //Set global current video variable
-        if(vid_array.length > 0)
+        for (const i in vid_array) 
         {
-            current_video_id = vid_array[0];
+            console.log(i);
         }
-
+        //Set global current video variable
+        if(vid_array.length == 0)
+        {
+            return;            
+        }
+        
+        current_video_id = vid_array[0];
+        
         setCurrentVideo(current_video_id);
 
         //The left arrow should not be displayed.
@@ -174,7 +181,7 @@
                     }
 
                     //Hide the arrow
-                    if((i) == (vid_array.length - 1))
+                    if((i) == (vid_array.length))
                     {
                         document.getElementById("video_gallery_right_arrow").style.display = "none";
                     }
