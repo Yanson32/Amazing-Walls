@@ -535,15 +535,24 @@ function aw_createZipFile($filename)
         {
 		    $server_root = get_site_url();
 		    $tempZip = new ZipArchive;
-		    if($tempZip->open($filename, ZipArchive::CREATE) === True)
+		    if($tempZip->open($filename, ZipArchive::CREATE) === False)
 		    {
-			    foreach(aw_get_images() as $image)
+                error_log('Error unable to open zip archive'.$filename);
+            }
+            else
+            {
+                foreach(aw_get_images() as $image)
 			    {
-                        echo "Has Images";
-					    $tempZip->addFile($image, basename(($image)));
-			    }
-                $tempZip->close();
-		    }
+                    if($tempZip->addFile($image, basename(($image))) === False )
+                    {
+                        error_log('Unable to add file '.$image.'to zip archive ');
+                    }
+                }
+                if($tempZip->close() === False)
+                {
+                    error_log('Unable to close zip archive');
+                }
+            }			    
 		    
         }
 	}
@@ -646,12 +655,17 @@ function aw_the_download_button()
     if(get_post_type() == 'photoalbum' && is_single()):
       $title = sanitize_title(get_the_title(get_the_ID()));
       $file = (($title)? $title: get_the_ID()).".zip";
-      $permissions = 0744;
+      $permissions = 744;
       $downloads_folder = ABSPATH."Downloads/";
-      if(!file_exists($downloads_folder) && is_dir($downloads_folder))
+      if(!file_exists($downloads_folder))
       {
         mkdir($downloads_folder);
         chmod($downloads_folder, $permissions);
+      }
+
+      if(!file_exists($downloads_folder))
+      { 
+            error_log('Unable to create directory '.$downloads_folder);
       }
       $zip_server_path = $downloads_folder.$file;
       if(!file_exists($zip_server_path)):
@@ -661,6 +675,8 @@ function aw_the_download_button()
           if(file_exists($zip_server_path)):
             chmod($zip_server_path, $permissions);
             $zip_url = get_site_url()."/Downloads/".$file;
+          else:
+            error_log('Zip file: '.$zip_server_path.' could not be created');
           endif;
       else:
         $zip_url = get_site_url()."/Downloads/".$file;
