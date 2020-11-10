@@ -655,7 +655,7 @@ function aw_the_download_button()
     if(get_post_type() == 'photoalbum' && is_single()):
       $title = sanitize_title(get_the_title(get_the_ID()));
       $file = (($title)? $title: get_the_ID()).".zip";
-      $permissions = 744;
+      $permissions = 0755;
       $downloads_folder = ABSPATH."Downloads/";
       if(!file_exists($downloads_folder))
       {
