@@ -28,7 +28,7 @@
 
     <?php $custom_fields = get_post_custom_values('Photo'); ?>
     <?php $custom_fields = apply_filters('aw_photoalbum_filter', $custom_fields); ?>
-			<?php if(is_array($custom_fields)): ?>
+			<?php if(False): ?>
 			   <?php
 				 foreach($custom_fields as $value)
 				 {
@@ -39,6 +39,25 @@
 					 echo '</div>';
 				 }
 			 ?>
+        <?php else: 
+
+                $images = get_children( array (
+                'post_parent' => get_the_ID(),
+                'post_type' => 'attachment',
+                'post_mime_type' => 'image',
+                'orderby' => 'ID',
+                'order' => 'ASC',
+              ));
+
+
+                foreach ( $images as $attachment_id => $attachment )
+                {
+					         $link = wp_get_attachment_url($attachment_id);
+					         $image = wp_get_attachment_image_url($attachment_id, 'aw_thumbnail');
+					         echo '<div class="thumbnail" style="margin:5px; display:inline-block;">';
+					         echo '<a href="'.$link.'"><img src="'.$image.'"></a>';
+					         echo '</div>';
+                }?>
 		 <?php endif; ?>
 
 		</main>
