@@ -6,6 +6,12 @@
     require_once('includes/AWPlugins/AWPlugins.php');
     require('includes/config.php');
 	
+
+    /***********************************************************************************//**
+    *   @brief  Remove image size limit.
+    **************************************************************************************/
+    add_filter( 'big_image_size_threshold', '__return_false' );
+
 	function aw_get_cat_id($arr)
 	{
 
