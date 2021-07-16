@@ -783,10 +783,18 @@ function aw_posts_section($args = array('title' <= 'none', 'custom_field' <= 'Re
 **********************************************************************/
 function aw_admin_panel()
 {
+  #Get all attachments
+  $attachments = get_children( array( 'post_parent' => get_the_ID() ) );
+  
+  #Get attachemnt count 
+  $count = count( $attachments );
+  
+  
   if(current_user_can(get_option('aw_admin_panel_permissions'))):
     echo '<div id="aw_admin_panel">';
     echo 'Post ID: '.get_the_ID().'</br>';
     echo 'Post Visibility: '.get_post_status().'</br>';
+    echo 'Attachments: '.$count.'</br>';
     echo '</div>';
   endif;
 }
