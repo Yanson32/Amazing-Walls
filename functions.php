@@ -785,7 +785,8 @@ function aw_admin_panel()
 {
   if(current_user_can(get_option('aw_admin_panel_permissions'))):
     echo '<div id="aw_admin_panel">';
-      echo 'Post ID '.get_the_ID();
+    echo 'Post ID: '.get_the_ID().'</br>';
+    echo 'Post Visibility: '.get_post_status().'</br>';
     echo '</div>';
   endif;
 }
