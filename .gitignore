@@ -3,6 +3,6 @@ BUILD/
 bUILD/
 Build/
 *.orig
-*.swp
+*.sw*
 *.map
 *.sass-cache/

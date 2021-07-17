@@ -61,13 +61,6 @@ if( 'POST' == $_SERVER['REQUEST_METHOD']  )
         <label class="AWLable" for="aw_upload_submit_button"></label>
         <button id="aw_upload_submit_button" class="Button ButtonColor" style="padding:5px" type="submit" name="Upload" >Submit</button>
       </form>
-      <div id="admin_upload_info">
-      <?php if(current_user_can('administrator')): ?>
-  	   <span style="color:red;font-size:20px">Max upload size: <?php echo ini_get("upload_max_filesize");?></span><br>
-	    <?php else: ?>
-        <?php echo 'you nedd to be an admin'; ?>
-      <?php endif; ?>
-      </div>
     </main>
 
     <!-- Create page footer -->

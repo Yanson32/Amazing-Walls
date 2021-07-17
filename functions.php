@@ -375,19 +375,19 @@ if ( ! function_exists( 'amazing_walls_enqued' ) )
 {
 	function amazing_walls_enqued()
    	{
-		wp_enqueue_style('desktop-style', get_template_directory_uri().'/css/style.css', array(), '1.0.0', 'all');
-		wp_enqueue_style('format-style', get_template_directory_uri().'/css/format.css', array(), '1.0.0', 'all');
-		wp_enqueue_style('tablet-style', get_template_directory_uri().'/css/tablet.css', array(), '1.0.0', 'all and (max-width: 640px)');
-    wp_enqueue_style('phone-style', get_template_directory_uri().'/css/phone.css', array(), '1.0.0', 'all and (max-width: 320px)');
-		wp_enqueue_script('customjs', get_template_directory_uri().'/js/amazing.js', array(), '1.0.0', true);
-wp_enqueue_script('jquery');
+		wp_enqueue_style('desktop-style', get_template_directory_uri().'/css/style.css', array(), null, 'all');
+		wp_enqueue_style('format-style', get_template_directory_uri().'/css/format.css', array(), null, 'all');
+		wp_enqueue_style('tablet-style', get_template_directory_uri().'/css/tablet.css', array(), null, 'all and (max-width: 640px)');
+        wp_enqueue_style('phone-style', get_template_directory_uri().'/css/phone.css', array(), null, 'all and (max-width: 320px)');
+		wp_enqueue_script('customjs', get_template_directory_uri().'/js/amazing.js', array(), null, true);
+        wp_enqueue_script('jquery');
 
 		$style = get_option('aw_theme');
 
 		if($style === 'Light')
-			wp_enqueue_style('colorstyle', get_template_directory_uri().'/css/light.css', array(), '1.0.0', 'all');
+			wp_enqueue_style('colorstyle', get_template_directory_uri().'/css/light.css', array(), null, 'all');
 		else if($style === 'Dark')
-			wp_enqueue_style('colorstyle', get_template_directory_uri().'/css/dark.css', array(), '1.0.0', 'all');
+			wp_enqueue_style('colorstyle', get_template_directory_uri().'/css/dark.css', array(), null, 'all');
 
    	}
 
@@ -774,33 +774,6 @@ function aw_posts_section($args = array('title' <= 'none', 'custom_field' <= 'Re
   echo '</div>';
 }
 
-
-/******************************************************************//**
-* @Brief  Create an admin panel to display additional content
-*         when the admin views a single post. The capabilities
-*         needed to view the admin panel can be changed in the
-*         themes admin menu.
-**********************************************************************/
-function aw_admin_panel()
-{
-  #Get all the Photo custom fields   
-  $custom_fields = get_post_custom_values('Photo');
-  
-  #Get all attachments
-  $attachments = get_children( array( 'post_parent' => get_the_ID() ) );
-  
-  #Get attachemnt count 
-  $count = count( $attachments );
-  
-  if(current_user_can(get_option('aw_admin_panel_permissions'))):
-    echo '<div id="aw_admin_panel">';
-    echo 'Custom Field - Photo: '.sizeof($custom_fields).'<br>';
-    echo 'Post ID: '.get_the_ID().'</br>';
-    echo 'Post Visibility: '.get_post_status().'</br>';
-    echo 'Attachments: '.$count.'</br>';
-    echo '</div>';
-  endif;
-}
 
 /****************************************************//**
 * @Brief  get all public post types
